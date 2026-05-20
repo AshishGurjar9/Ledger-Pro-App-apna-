@@ -1,0 +1,7716 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ledger Pro Final</title>
+  <style>
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 15px;
+}
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #0ea5e9, #0284c7);
+      display: flex;
+      justify-content: center;
+
+      align-items: center;
+      flex-direction: column;
+      overflow-x: hidden;
+      z-index: 9999;
+
+    }
+
+    .app-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 99999;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+  * {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 15px;
+}
+
+    .main-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    #splash h2 {
+      color: #f59e0b;
+      margin-top: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+    }
+
+    #splash h2 {
+      color: #f59e0b;
+      margin-top: 15px;
+      font-size: 20px;
+      letter-spacing: 1px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(0.9);
+      }
+
+      to {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+
+    button {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+
+    button.active {
+      background: #28a745;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eef6ff;
+      color: #222;
+      margin: 0;
+      padding: 15px;
+    }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #0ea5e9;
+      color: white;
+      padding: 14px 16px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 16px;
+    }
+
+    .app-header img {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .app-header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .toggle-card {
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .toggle-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    #imageSection img {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    body>button {
+      padding: 12px 16px;
+      font-size: 15px;
+      border-radius: 10px;
+      border: none;
+      margin: 5px 4px;
+      color: white;
+    }
+
+    #calcPopup .popup-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .back-fixed {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: white;
+      padding: 10px;
+    }
+
+    .calc-mode {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .calc-mode label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+    }
+
+    /* अलग-अलग color */
+    body>button:nth-of-type(1) {
+      background: #16a34a;
+    }
+
+    /* New Add */
+    body>button:nth-of-type(2) {
+      background: #2563eb;
+    }
+
+    /* Overview */
+    body>button:nth-of-type(3) {
+      background: #f59e0b;
+    }
+
+    /* History */
+    body>button:nth-of-type(4) {
+      background: #0ea5e9;
+    }
+
+    /* Search */
+    body>button:nth-of-type(5) {
+      background: #9333ea;
+    }
+
+    /* Calculator 🔥 */
+
+    /* hover */
+    button {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    body>button {
+      margin: 5px 2px;
+
+      color: white;
+      font-weight: bold;
+      background-color: #0ea5e9;
+    }
+
+    body>button:hover {
+
+      transform: scale(1.05);
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+
+
+    #members button:nth-child(2) {
+      background: #dc3545;
+      color: white;
+    }
+
+    #members button {
+      margin: 5px 4px;
+      padding: 8px 12px;
+      width: calc(20% - 6px);
+      font-weight: bold;
+      font-size: 15PX;
+
+    }
+
+    #members button :hover {
+      background-color: #28a745;
+      color: white;
+      transform: scale(1.05);
+
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background: #007bff;
+      color: white;
+    }
+
+    tr:hover {
+      background: #f1f1f1;
+    }
+
+    .total {
+      background: #eee;
+      font-weight: bold;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+    .popup-content {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 350px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: popupShow 0.25s ease-in-out;
+    }
+
+    .popup-content h3 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .save-btn {
+      background: #55c67e;
+      color: white;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .save-btn:hover {
+      background: #1b9749;
+    }
+
+    .back-btn {
+      background: #64748b;
+      color: white;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .save-btn:hover,
+    .back-btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    body.dim {
+      background: #b8c3cc !important;
+      color: #111 !important;
+    }
+
+    body.dark {
+      background: #111 !important;
+      color: white !important;
+    }
+
+    .popup-content input {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .popup-content input:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+    }
+
+    .popup-content button {
+      width: 48%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .popup-content button:first-of-type {
+      background: #007bff;
+      color: white;
+    }
+
+    #searchName {
+      padding: 10px;
+      width: 200px;
+    }
+
+    button {
+      opacity: 1 !important;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .popup-content button:last-of-type {
+      background: #dc3545;
+      color: white;
+    }
+
+    .card {
+      background: rgb(168, 157, 157);
+      padding: 15px;
+      margin: 5px 0;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+      line-height: 1.5;
+    }
+
+    .card button {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 10px 15px;
+
+      margin: 5px 5px 5px 0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .card {
+      margin-bottom: 10px;
+    }
+
+    .card button:hover {
+      background: #0056b3;
+      opacity: 0.95;
+    }
+
+    .card button:active {
+      background: #003d82;
+    }
+
+    #output {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .radio-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+      gap: 15px;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .notes-panel button {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      margin: 6px 4px;
+      cursor: pointer;
+      background: #0ea5e9;
+      color: white;
+      margin-bottom: 100px;
+    }
+
+    .notes-panel button:hover {
+      transform: scale(1.05);
+    }
+
+    .notes-panel .close-btn {
+      background: #de5f6b;
+    }
+
+    .notes-panel .add-btn {
+      background: #65d28d;
+    }
+
+    .notes-panel .view-btn {
+      background: #a0865a;
+    }
+
+    body.dark {
+      background: #111;
+      color: white;
+    }
+
+    body.dim {
+      background: #cfd8dc;
+      color: #222;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      /* left: -260px;
+      width: 240px; */
+      left: -100%;
+width: 235px;
+max-width: 80%;
+      height: 100%;
+      background: #0ea5e9;
+      color: white;
+      padding: 15px;
+      transition: 0.3s ease;
+      z-index: 99999;
+
+
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior:contain;
+    }
+
+    @media (max-width: 600px) {
+  .side-menu {
+    width: 85%;
+  }
+}
+
+    .side-menu h3 {
+      margin-top: 0;
+    }
+
+    .side-menu::-webkit-scrollbar {
+      display: none;
+    }
+
+    .side-menu {
+      scrollbar-width: none;
+    }
+
+    .side-menu button {
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: white;
+      color: #03090c;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .side-menu button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+      background: rgb(164, 237, 161);
+      color: #0ea5e9;
+    }
+
+    #noteViewer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 20px;
+      z-index: 99999;
+      overflow: auto;
+    }
+
+    .calc-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .calc-buttons button {
+      flex: 1;
+    }
+
+    #noteContent {
+      background: white;
+      color: black;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    @media (max-width:600px) {
+      .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .theme-dropdown {
+      position: relative;
+    }
+
+
+    .theme-box {
+      display: none;
+      flex-direction: column;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+
+    .theme-box button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #fff;
+      color: #aa8c13;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .theme-box button:hover {
+      background: #9ac0e7;
+    }
+
+    @media (max-width:600px) {
+
+      body {
+        padding: 10px;
+      }
+
+      body>button {
+        width: 100%;
+        margin: 6px 0;
+        font-size: 14px;
+      }
+
+      #searchName {
+        width: 100%;
+      }
+
+      #members {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .member-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .member-row button {
+        flex: 1;
+      }
+
+      .card {
+        font-size: 13px;
+      }
+
+    }
+
+    @keyframes popupShow {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slide {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-btn {
+      font-size: 28px;
+      background: #e2e7ea;
+      border: none;
+      color: rgb(10, 3, 3);
+      cursor: pointer;
+      border-radius: 15px;
+      padding: 6px 10px;
+      margin-left: 90px;
+    }
+
+
+    #securityPopup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 999999;
+    }
+
+    .sec-box {
+      background: #fff;
+      padding: 20px;
+      width: 90%;
+      max-width: 360px;
+      border-radius: 15px;
+    }
+
+    .sec-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 0;
+      color: #111;
+    }
+
+    .sec-row input {
+      width: 18px;
+      height: 18px;
+    }
+
+    .sec-box button {
+      width: 100%;
+      margin: 6px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #0ea5e9;
+      color: white;
+    }
+
+    .lang-dropdown {
+      position: relative;
+    }
+
+
+    .lang-box {
+      display: none;
+      flex-direction: column;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+
+    .lang-box button {
+      display: block;
+      width: 100%;
+      margin: 5px 0;
+      color: #aa8c13;
+      font-weight: bold;
+    }
+
+    #mergeBoxPanel {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+
+
+
+
+
+    #editMenu button {
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      background: #e5e5e5;
+      color: #111;
+    }
+
+    /* Hover Effect */
+    #editMenu button:hover {
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
+
+    /* Active Selected Button */
+    #editMenu button.activeEdit {
+      background: #1677ff;
+      color: white;
+    }
+
+    /* Merge Button Same Old Color */
+    .btnMerge {
+      background: #54e7f7 !important;
+      color: rgb(21, 14, 14) !important;
+    }
+
+
+
+    /* SAVE BUTTON */
+    #editMenu .saveBtn {
+      background: #43cd75 !important;
+      color: white !important;
+      transition: 0.2s;
+    }
+
+
+
+    #editMenu .saveBtn:hover {
+      background: #00ff66 !important;
+      color: #000 !important;
+      box-shadow: 0 0 15px #00ff66;
+      transform: scale(1.05);
+    }
+
+    /* CLOSE BUTTON */
+    #editMenu .closeBtn {
+      background: #db5a5a !important;
+      color: white !important;
+      transition: 0.2s;
+      width: 100% !important;
+    }
+
+    #editMenu .closeBtn:hover {
+      background: #dc2626 !important;
+      color: #000 !important;
+      box-shadow: 0 0 15px #ef4444;
+      transform: scale(1.03);
+    }
+
+    .editLabel {
+      margin-top: 12px;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .downArrow {
+      font-size: 14px;
+      margin-left: 5px;
+      color: #1677ff;
+    }
+
+
+
+    #editBoxArea {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+
+    /* INPUT */
+    #editBoxArea input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 2px solid #3b82f6;
+      box-sizing: border-box;
+    }
+
+    /* BUTTONS COMMON */
+    #editBoxArea button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+
+
+
+
+    #output {
+      padding-bottom: 120px;
+    }
+
+    .recycle-popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999999;
+    }
+
+    .recycle-box {
+      width: 90%;
+      max-width: 420px;
+      max-height: 80vh;
+      background: white;
+      border-radius: 16px;
+      padding: 15px;
+
+      display: flex;
+      flex-direction: column;
+
+      overflow: hidden;
+      /* 🔥 IMPORTANT FIX */
+    }
+
+    .recycle-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 10px;
+
+      position: sticky;
+      top: 0;
+      background: white;
+      z-index: 10;
+
+      border-bottom: 1px solid #ddd;
+    }
+
+    .recycle-head button {
+      background: red;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* 🔥 ONLY CONTENT SCROLL */
+    #recycleContent {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 5px;
+    }
+
+
+
+
+
+    .recycle-box {
+      width: 90%;
+      max-width: 420px;
+
+      max-height: 80vh;
+
+      overflow-y: auto;
+
+      background: white;
+
+      border-radius: 16px;
+
+      padding: 15px;
+
+      box-sizing: border-box;
+    }
+
+    .recycle-box {
+      -webkit-overflow-scrolling: touch;
+    }
+
+
+
+
+    .share-btn {
+      width: 100%;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: white;
+
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .share-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #13ee1e, #4ae355);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .share-btn:active {
+      transform: scale(0.97);
+    }
+
+    .share-btn {
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 5px #17e71e;
+      }
+
+      to {
+        box-shadow: 0 0 20px #38f141;
+      }
+    }
+
+
+
+
+    a.github-link {
+      color: #1f6feb;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    a.github-link:hover {
+      color: #0d1117;
+      text-decoration: underline;
+    }
+
+    /* Overlay */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 999;
+
+      /* center content */
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* जब popup open होगा */
+    .modal.show {
+      display: flex;
+    }
+
+    /* Popup box */
+    .modal-box {
+      background: #ffffff;
+      width: 90%;
+      max-width: 320px;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+      animation: popup 0.2s ease-in-out;
+    }
+
+    /* Date input */
+    .modal-box input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    /* Buttons */
+    .modal-box button {
+      margin: 10px 5px 0;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* OK button */
+    .modal-box button:first-of-type {
+      background: rgb(19, 203, 68);
+      color: white;
+    }
+
+    /* Cancel button */
+    .modal-box button:last-of-type {
+      background: red;
+      color: white;
+    }
+
+    /* Animation */
+    @keyframes popup {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+
+
+
+    .userHeader {
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+    }
+
+    .userPhoto {
+
+      width: 55px;
+      height: 55px;
+
+      border-radius: 50%;
+
+      object-fit: cover;
+
+      border: 2px solid white;
+
+    }
+
+
+
+
+
+
+    .print-modal {
+
+      display: none;
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.6);
+
+      justify-content: center;
+      align-items: center;
+
+      z-index: 9999;
+
+    }
+
+    .print-box {
+
+      background: white;
+
+      padding: 20px;
+
+      border-radius: 10px;
+
+      width: 85%;
+      max-width: 320px;
+
+      text-align: center;
+
+    }
+
+    /* .print-box button {
+
+  display: block;
+
+  width: 100%;
+
+  margin: 8px 0;
+
+  padding: 12px;
+
+  font-weight: bold;
+
+} */
+
+    .print-box button {
+
+      display: block;
+      width: 100%;
+
+      margin: 8px 0;
+      padding: 12px;
+
+      font-weight: bold;
+
+      border: none;
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      background: #ecd5d5;
+
+      transition: 0.2s;
+
+    }
+
+    .print-box button:hover {
+
+      background: #2196F3;
+
+      color: white;
+
+      transform: scale(1.03);
+
+    }
+
+
+
+
+
+    #storagePopup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 99999;
+
+      /* display: flex;    🔥 ADD THIS */
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* .storage-popup-box {
+  background: #fff;
+  width: 90%;
+
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  border-radius: 12px;
+  padding: 15px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+} */
+
+    .storage-popup-box {
+      background: #fff;
+      width: 92%;
+      max-width: 600px;
+      max-height: 85vh;
+      overflow-y: auto;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    #reportViewPopup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 99999;
+
+      display: flex;
+      /* 🔥 ADD THIS */
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+
+    .reportItem {
+      background: #b4abab;
+      color: black;
+      border-radius: 12px;
+      padding: 12px;
+      margin: 10px 0;
+
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Date */
+    .reportItem .date {
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Title/Text */
+    .reportItem .title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    /* Button row */
+    .reportItem .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    /* Buttons */
+    .reportItem button {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      border-radius: 8px;
+
+      font-size: 14px;
+      font-weight: 500;
+
+      cursor: pointer;
+      color: black;
+    }
+
+    .reportItem .pdfviewBtn {
+      background: #387ee7;
+
+    }
+
+    .reportItem .pdfshareBtn {
+      background: #c37c11;
+    }
+
+    .reportItem .pdfremoveBtn {
+      background: #d55452;
+    }
+
+
+    .pdf-report {
+      font-family: Arial;
+      padding: 20px;
+      background: white;
+      color: black;
+    }
+
+    .pdf-report img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .pdf-report .card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+
+
+
+
+    #languagePopup {
+
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+
+      display: none;
+
+      justify-content: center;
+      align-items: center;
+
+      z-index: 99999;
+    }
+
+    #languagePopup .popup-box {
+
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+
+      width: 90%;
+      max-width: 320px;
+    }
+
+    #languagePopup button {
+
+      width: 100%;
+      padding: 14px;
+
+      border: none;
+      border-radius: 12px;
+
+      font-size: 16px;
+      font-weight: bold;
+
+      background: #2563eb;
+      color: white;
+    }
+
+
+
+
+
+
+
+
+
+
+    #logoutPopup {
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.45);
+
+      display: none;
+
+      justify-content: center;
+      align-items: center;
+
+      z-index: 99999;
+    }
+
+    #logoutPopup .popup-box {
+
+      width: 90%;
+      max-width: 340px;
+
+      background: #fff;
+
+      border-radius: 22px;
+
+      padding: 25px 20px;
+
+      text-align: center;
+
+      box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25);
+
+      animation: popupFade .25s ease;
+    }
+
+    #logoutTitle {
+
+      font-size: 22px;
+
+      color: #111;
+
+      margin-bottom: 10px;
+    }
+
+    #logoutYesBtn {
+
+      width: 100%;
+
+      padding: 14px;
+
+      border: none;
+
+      border-radius: 14px;
+
+      background: #dc2626;
+
+      color: white;
+
+      font-size: 16px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      transition: .2s;
+    }
+
+    #logoutYesBtn:hover {
+
+      transform: scale(1.02);
+    }
+
+    #logoutCancelBtn {
+
+      width: 100%;
+
+      padding: 14px;
+
+      border: none;
+
+      border-radius: 14px;
+
+      background: #e5e7eb;
+
+      color: #111;
+
+      font-size: 16px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      transition: .2s;
+    }
+
+    #logoutCancelBtn:hover {
+
+      background: #d1d5db;
+    }
+
+    @keyframes popupFade {
+
+      from {
+
+        opacity: 0;
+        transform: scale(.9);
+      }
+
+      to {
+
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+
+
+    .userPhone {
+
+      margin: 0;
+
+      font-size: 14px;
+
+      color: #555;
+
+      font-weight: bold;
+
+    }
+
+
+
+
+    .memberCard_side {
+
+      background: white;
+
+      color: black;
+
+      padding: 10px;
+
+      margin: 8px 0;
+
+      border-radius: 12px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      cursor: pointer;
+
+    }
+
+    .memberCard_side img {
+
+      width: 40px;
+
+      height: 40px;
+
+      border-radius: 50%;
+
+      object-fit: cover;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* .calculator_nor{ */
+    /* background:#e0e5ec;
+    padding:20px;
+    border-radius:25px;
+    width:320px;
+    margin:auto; */
+    /*   
+width:100%;
+        background-color: #e0e5ec;
+    padding: 26px;
+    border-radius: 30px;
+    box-shadow:
+    20px 20px 60px #bec3c9,
+    -20px -20px 60px #ffffff;
+    width: 320px; */
+
+    .calculator_nor {
+
+
+      background-color: #e0e5ec;
+
+      padding: 26px;
+
+      border-radius: 30px;
+
+      box-shadow:
+        20px 20px 60px #bec3c9,
+        -20px -20px 60px #ffffff;
+
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+
+
+    }
+
+    .display_nor {
+      background: #e0e5ec;
+      padding: 15px;
+      border-radius: 20px;
+      /* margin-bottom:20px; */
+      margin-bottom: 25px;
+
+
+      box-shadow:
+        inset 6px 6px 12px #bec3c9,
+        inset -6px -6px 12px #ffffff;
+    }
+
+    #history_nor {
+      /* min-height:20px;
+    text-align:right;
+    color:#777; */
+
+
+      min-height: 25px;
+
+      text-align: right;
+
+      color: #888;
+
+      font-size: 18px;
+
+      overflow-x: auto;
+
+      margin-bottom: 8px;
+
+      padding-right: 5px;
+    }
+
+    #result_nor {
+      /* width:100%;
+    border:none;
+    background:transparent;
+    font-size:35px;
+    text-align:right;
+    outline:none; */
+      /* /////////////////////////////// */
+      width: 100%;
+      /* height: 60px; */
+      box-sizing: border-box;
+      background: #e0e5ec;
+      border-radius: 15px;
+
+      border: none;
+
+      outline: none;
+
+
+      margin: 0;
+      /* background: transparent; */
+
+      text-align: right;
+
+      font-size: 38px;
+
+      font-weight: bold;
+
+      color: #333;
+      box-shadow:
+        inset 6px 6px 12px #bec3c9,
+        inset -6px -6px 12px #ffffff;
+      padding-right: 5px;
+
+      transition:
+        transform 0.08s ease,
+        opacity 0.08s ease;
+
+      /* /////////// */
+      /* width: 100%;
+    height: 60px;
+    background: #e0e5ec;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+
+    box-shadow:
+    inset 6px 6px 12px #bec3c9,
+    inset -6px -6px 12px #ffffff;
+
+    text-align: right;
+    padding:  20px;
+    font-size: 28px;
+    color: #555; */
+    }
+
+    #preview_nor {
+
+      text-align: right;
+
+      margin-top: 8px;
+
+      font-size: 22px;
+
+      color: #777;
+
+      padding-right: 5px;
+
+      min-height: 28px;
+
+    }
+
+    .buttons_nor {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      flex: 1;
+      align-content: start;
+    }
+
+    .btn_nor {
+      /* height:60px;
+    border:none;
+    border-radius:15px;
+    font-size:20px;
+    cursor:pointer;
+
+    background:#e0e5ec;
+
+    box-shadow:
+    6px 6px 12px #bec3c9,
+    -6px -6px 12px #ffffff; */
+      width: 100%;
+      aspect-ratio: 1/1;
+
+
+      height: 60px;
+      background-color: #e0e5ec;
+      border: none;
+      border-radius: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #555;
+      color: #444343;
+      cursor: pointer;
+
+      box-shadow:
+        6px 6px 12px #bec3c9,
+        -6px -6px 12px #ffffff;
+
+      transition: all 0.2s ease;
+
+      will-change: transform;
+
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn_nor:hover {
+      transform: scale(1.03);
+      /* color: white; */
+      background-color: rgb(242, 232, 232);
+    }
+
+
+    .btn_nor:active {
+      transform: scale(0.95);
+
+      box-shadow:
+        inset 4px 4px 8px #bec3c9,
+        inset -4px -4px 8px #ffffff;
+    }
+
+
+
+
+
+
+
+    .equal_nor {
+      width: 135px;
+      grid-column: span 2;
+      background: #d13d7c;
+      color: white;
+    }
+
+    .equal_nor:hover {
+      background: #bb115b;
+
+    }
+
+    .operator_nor {
+      color: #d13d7c;
+    }
+
+    .action_nor {
+      color: #d13d7c;
+    }
+
+
+
+
+
+
+
+.side_menu_header{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  padding: 12px 14px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+.side_menu_header h3{
+  margin: 0;
+  font-size: 15px;
+  font-weight: bold;
+
+  color: #333;   /* IMPORTANT */
+
+  display: block;
+}
+
+.profileSection{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 8px;
+}
+
+   .profileIcon{
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+  background: #2563eb;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+
+  box-shadow: 0 4px 10px rgba(37,99,235,0.3);
+}
+
+  .profileInfo{
+  flex: 1;
+}
+
+#profileName{
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+#profileEmail{
+  font-size: 13px;
+  color: #666; /* FIXED (pehle white tha) */
+  margin-top: 3px;
+}
+
+#profileEmail{
+  color: #666;
+}
+
+.profileSection{
+  margin-bottom: 6px;
+  padding: 10px 0;
+}
+  </style>
+
+</head>
+
+<body>
+
+  <div id="splash">
+    <img src="./icon.png" alt="logo">
+    <h2>Radhe Radhe</h2>
+  </div>
+
+  <div class="app-header">
+    <img id="myImage" src="./icon1.png" alt="Ledger Pro icon" onclick="toggleImage()" style="cursor:pointer;">
+    <div>
+      <h1>Ledger Pro</h1>
+      <div style="font-size:14px; opacity:0.9;">Tap the icon to change it.</div>
+    </div>
+    <button id="btnMenu" onclick="toggleMenu()" class="menu-btn">☰ MENU</button>
+  </div>
+  <div id="sideMenu" class="side-menu">
+
+    <div class="side_menu_header">
+      <div class="profileSection">
+
+        <div class="profileIcon" id="profileInitial">
+        </div>
+
+        <div class="profileInfo">
+
+          <div id="profileName">
+            User
+          </div>
+
+          <div id="profileEmail">
+            email@gmail.com
+          </div>
+
+        </div>
+
+      </div>
+      <h3>⚙ Settings Menu</h3>
+    </div>
+    <div class="theme-dropdown">
+
+      <button id="btnTheme" onclick="toggleThemeDropdown()">🎨 App Theme</button>
+
+      <div id="themeBox" class="theme-box">
+        <button onclick="setMode('normal')">☀️ Normal</button>
+        <button onclick="setMode('dim')">🌤 Dim</button>
+        <button onclick="setMode('dark')">🌙 Dark</button>
+      </div>
+    </div>
+
+    <button id="btnSecurity" onclick="openSecurity()">🔐 Security</button>
+
+
+    <div class="lang-dropdown">
+      <button id="btnLanguage" onclick="toggleLangBox()">🌐 Language</button>
+
+      <div id="langBox" class="lang-box">
+        <button onclick="setLang('en')">🇬🇧 English</button>
+        <button onclick="setLang('hi')">🇮🇳 Hindi</button>
+      </div>
+    </div>
+
+
+    <button onclick="openRecycleBin()" id="btnRecycleBin">
+      🗑️ Recycle Bin
+    </button>
+    <button id="openSavedReportsBtn" onclick="openSavedReports()">
+    </button>
+    <!-- <button onclick="resetAppData()" id="resetBtn">
+      🗑️ Reset App Data
+    </button> -->
+    <!-- <button
+id="btnAllContacts_side"
+onclick="toggleMembersBox_side()">
+
+  <div
+id="allMembersBox_side"
+style="display:none;">
+
+</div>
+👥 All Members Contect no.
+
+</button> -->
+    <button id="btnAllContacts_side" onclick="toggleMembersBox_side()">
+
+      👥 All Members Contact No.
+
+    </button>
+
+    <div id="allMembersBox_side" style="display:none;">
+
+
+    </div>
+
+    <button id="btnCalculatorNor_side" onclick="openCalculator_norm()">
+
+      🧮 Normal Calculator
+
+    </button>
+    <button onclick="openAppInfo()" id="btnAppInfo">
+
+      ℹ️ App Info
+
+    </button>
+
+    <button id="logoutBtn" onclick="openLogoutPopup()">
+
+      🚪 Logout
+
+    </button>
+
+    <button onclick="resetAppData()" id="resetBtn">
+      🗑️ Reset App Data
+    </button>
+
+    <button id="btnClose" onclick="closeMenu()">❌ Close</button>
+
+  </div>
+
+  
+  <div id="recyclePopup" class="recycle-popup">
+
+    <div class="recycle-box">
+
+      <div class="recycle-head">
+        <h3 id="recycleTitle">🗑️ Recycle Bin</h3>
+
+        <button onclick="closeRecycleBin()">✖️</button>
+      </div>
+
+      <div id="recycleContent"></div>
+
+    </div>
+
+  </div>
+  <div id="storagePopup">
+
+    <div class="storage-popup-box">
+
+      <h2 id="savedReportsText"></h2>
+
+      <div id="storageList"></div>
+
+      <button onclick="closeStorage()" id="storageCloseBtn">
+        ❌ Close
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="reportViewPopup" style="display:none;">
+
+    <div class="storage-popup-box">
+
+      <h2 id="viewReportText"></h2>
+
+
+      <div id="reportPreviewBox"></div>
+
+      <button onclick="closeReportView()" id="reportViewCloseBtn">
+        ❌ Close
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div id="logoutPopup" class="popup">
+
+    <div class="popup-box">
+
+      <h3 id="logoutTitle">
+        🚪 Logout?
+      </h3>
+
+      <br>
+
+      <button id="logoutYesBtn" onclick="confirmLogout()">
+
+        ✅ Logout
+
+      </button>
+
+      <br><br>
+
+      <button id="logoutCancelBtn" onclick="closeLogoutPopup()">
+
+        ❌ Cancel
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div id="appInfoPopup" class="recycle-popup">
+
+    <div class="recycle-box">
+
+      <div class="recycle-head">
+
+        <h3 id="appInfoTitle">
+          ℹ️ App Info
+        </h3>
+
+        <button onclick="closeAppInfo()">
+          ✖️
+        </button>
+
+      </div>
+
+      <div id="appInfoContent"></div>
+
+    </div>
+
+  </div>
+
+  <div style="text-align:center; margin-bottom:12px;">
+    <button id="installBtn" onclick="installApp()"
+      style="display:none; background:#0ea5e9; padding:10px 18px; border-radius:12px;">Install App</button>
+  </div>
+
+  <button id="btnAdd" onclick="showForm()">➕👶 New Add</button>
+  <button id="btnOverview" onclick="showOverview()">📊 Overview</button>
+  <button id="btnHistory" onclick="toggleHisab()">📅 Hisab History</button>
+  <button id="btnCalc" onclick="openCalculator()">🧮 Calculator</button>
+  <button id="btnNotes" onclick="showNotes()">📝 Notes</button>
+  <button id="btnMembers" onclick="toggleMembers()">👥 All Members</button>
+
+  <div id="calcPopup" class="popup">
+    <div class="popup-content">
+      <h3 id="calcTitle">Interest Calculator</h3>
+
+      <input id="c_amount" type="number" placeholder="Amount"><br>
+      <input id="c_rate" type="number" placeholder="Rate(ब्याज दर) %"><br>
+      <div class="calc-mode">
+
+        <label>
+          <input type="radio" name="calcMode" value="dates" checked onchange="updateCalcMode()">
+
+          <span id="dateRangeText"></span>
+        </label>
+
+        <label>
+          <input type="radio" name="calcMode" value="days" onchange="updateCalcMode()">
+
+          <span id="daysText"></span>
+        </label>
+
+      </div>
+
+      <div id="calcDateFields">
+
+        <label id="startDateLabel" for="c_start"></label>
+
+        <input id="c_start" type="date"><br>
+
+        <label id="endDateLabel" for="c_end"></label>
+
+        <input id="c_end" type="date"><br>
+
+      </div>
+
+      <div id="calcDayField" style="display:none;">
+
+        <label id="daysLabel" for="c_days"></label><br>
+
+        <input id="c_days" type="number" placeholder=""><br>
+
+      </div>
+
+      <div class="calc-buttons">
+
+        <button id="calcBtn" onclick="calculateInterest()"></button>
+
+        <button id="calcCloseBtn" onclick="closeCalculator()"></button>
+
+      </div>
+
+      <div id="calcResult" style="margin-top:10px;"></div>
+    </div>
+  </div>
+
+  <input id="searchName" type="text" placeholder="🔍 Search...">
+  <button id="btnSearch" onclick="searchUser()">Search</button>
+
+  <hr>
+
+  <div id="formPopup" class="popup">
+    <div class="popup-content">
+      <h3 id="formTitle"></h3>
+
+      <input id="name" placeholder=""><br>
+
+      <input id="amount" type="number" placeholder=""><br>
+
+      <input id="rate" type="number" placeholder=""><br>
+
+      <label id="dateLabel" for="date"></label>
+
+      <input id="date" type="date"><br>
+
+      <button id="saveBtn" onclick="saveEntry()"></button>
+
+      <button id="closeBtn" onclick="closeForm()"></button>
+    </div>
+  </div>
+  <hr>
+
+  <h3 id="membersTitle">ALL Members</h3>
+  <!-- <div id="members"></div> -->
+  <div id="members" style="display:none;"></div>
+
+  <hr>
+
+  <div id="output"></div>
+
+  <div id="noteViewer" onclick="closeNoteView()">
+    <div id="noteContent"></div>
+  </div>
+  <div id="securityPopup" class="sec-popup">
+    <div class="sec-box">
+
+      <h3>🔐 Security Settings</h3>
+
+      <button onclick="setOrChangePassword()">🔑 Set / Change Password</button>
+
+      <h4>📌 Lock Options</h4>
+
+      <div class="sec-row">
+        <input type="checkbox" id="securityActive">
+        <label>🔐 Security Active</label>
+      </div>
+
+      <div class="sec-row">
+        <input type="checkbox" id="lockOverview">
+        <label>📊 Overview</label>
+      </div>
+
+      <div class="sec-row">
+        <input type="checkbox" id="lockAdd">
+        <label>➕ New Add</label>
+      </div>
+
+      <div class="sec-row">
+        <input type="checkbox" id="lockNotes">
+        <label>📝 Notes</label>
+      </div>
+
+      <div class="sec-row">
+        <input type="checkbox" id="lockHistory">
+        <label>📅 History</label>
+      </div>
+
+      <div class="sec-row">
+        <input type="checkbox" id="lockMembers">
+        <label>👥 Members</label>
+      </div>
+
+      <button onclick="saveSecurity()">💾 Save</button>
+      <button onclick="closeSecurity()">❌ Close</button>
+
+    </div>
+  </div>
+  <div id="mergeBoxPanel" class="popup">
+    <div class="popup-content">
+
+      <h3 id="mergeTitle">
+        🔀 Select Kist to Merge
+      </h3>
+
+      <div id="mergeList"></div>
+
+      <button id="mergeBtn" onclick="mergeSelected()">
+        ✔ Merge
+      </button>
+
+      <button id="closeMergeBtn" onclick="closeMergePanel()">
+        ❌ Close
+      </button>
+
+    </div>
+  </div>
+
+  <div id="editMenu" class="popup" style="display:none;">
+
+    <div class="popup-content">
+
+      <h3>✏️ Edit Details</h3>
+
+      <!-- MENU BUTTONS -->
+      <div id="editMainButtons">
+
+        <button class="btnMerge" class="btnEdit" onclick="openMergePanel(editUser, editIndex)">
+          🔀 किस्त मर्ज
+        </button>
+
+        <button onclick="showEditBox('name')">
+          👤 ${t.nameEdit || "Name Edit"}
+        </button>
+
+        <button onclick="showEditBox('amount')">
+          💰 मूल राशि </button>
+
+        <button onclick="showEditBox('rate')">
+          📊 Interest Rate
+        </button>
+
+        <button onclick="showEditBox('start')">
+          📅 Start Date
+        </button>
+
+        <button onclick="showEditBox('end')">
+          📅 End Date
+        </button>
+        <button id="photoBtn" onclick="showEditBox('photo')">
+          🎬📷 Photo
+        </button>
+
+        <button onclick="showEditBox('contact')">
+
+          📞 Contact Number
+
+        </button>
+      </div>
+
+      <!-- EDIT AREA -->
+      <div id="editBoxArea"></div>
+
+      <button class="closeBtn" id="closeEditBtn" onclick="closeEditMenu()">
+
+      </button>
+
+    </div>
+
+  </div>
+  <div id="hisabModal" class="modal">
+    <div class="modal-box">
+      <h3 id="hisabModalTitle">
+        📅 हिसाब की डेट चुनें
+      </h3>
+
+      <input type="date" id="hisabDateInput">
+
+      <div style="margin-top:10px;">
+        <button id="hisabSubmitBtn" onclick="submitHisabDate()">Submit</button>
+        <button id="hisabCancelBtn" onclick="closeHisabModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div id="printMenu" class="print-modal">
+
+    <div class="print-box">
+
+      <h3 id="printTypeText"></h3>
+
+      <button onclick="openPrintOptions('current')" id="currentBtn"></button>
+
+      <button onclick="openPrintOptions('user')" id="fullListBtn"></button>
+
+      <button onclick="openPrintOptions('active')" id="activeBtn"></button>
+
+      <button onclick="closePrintMenu()" id="printMenuCloseBtn">
+        ❌ Close
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="actionMenu" class="print-modal">
+
+    <div class="print-box">
+
+      <h3 id="previewTitle">Preview</h3>
+
+      <!-- 👇 यही नया preview box यहाँ डालना है -->
+      <div id="previewBox" style="
+      max-height:250px;
+      overflow:auto;
+      background:#f5f5f5;
+      padding:10px;
+      margin:10px 0;
+      border-radius:8px;
+    "></div>
+
+      <button onclick="doAction('save')" id="actionSaveBtn">
+        💾 Save
+      </button>
+      <button onclick="doAction('share')" id="shareBtn"></button>
+      <button onclick="doAction('cancel')" id="actionCancelBtn">
+        ❌ Cancel
+      </button>
+
+
+    </div>
+
+  </div>
+
+  <div id="languagePopup" class="popup">
+
+    <div class="popup-box">
+
+      <h2>
+        🌐 Choose Language
+      </h2>
+
+      <br>
+
+      <button onclick="checkFirstLanguage('en')">
+
+        🇬🇧 English
+
+      </button>
+
+      <br><br>
+
+      <button onclick="checkFirstLanguage('hi')">
+
+        🇮🇳 हिंदी
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- NORMAL CALCULATOR POPUP -->
+
+  <div id="calculatorPopup_norm" style="
+    display:none;
+    position:fixed;
+
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.3);
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+
+    pointer-events:none;
+
+">
+
+    <!-- <div style="
+background:#e0e5ec;
+padding:15px;
+border-radius:20px;
+position:relative;
+max-height:95vh;
+overflow:auto;
+"> -->
+
+
+    <div id="calcResizeBox" style="
+ pointer-events:auto;
+background:#e0e5ec;
+padding:15px;
+border-radius:20px;
+position:absolute;
+
+left:40px;
+top:40px;
+
+width:370px;
+
+ max-height:90vh;
+overflow:hidden;
+
+touch-action:none;
+
+transform:scale(1);
+transform-origin:top left;
+">
+
+      <!-- <div id="calculatorBox_norm"
+style="
+background:#e0e5ec;
+padding:15px;
+border-radius:20px;
+position:absolute;
+
+top:80px;
+left:40px;
+
+width:370px;
+min-width:260px;
+min-height:300px;
+
+max-width:95vw;
+max-height:95vh;
+
+overflow:auto;
+
+resize:both;
+
+cursor:move;
+
+box-shadow:
+0 0 20px rgba(0,0,0,0.2);
+"> -->
+
+      <!-- CLOSE BUTTON -->
+
+      <button onclick="closeCalculator_norm()" style="
+position:absolute;
+top:10px;
+right:10px;
+border:none;
+background:red;
+color:white;
+padding:8px 12px;
+border-radius:10px;
+cursor:pointer;
+">
+
+        ✖
+
+      </button>
+
+      <!-- YAHA APNA CALCULATOR PASTE KARO -->
+
+      <div class="calculator_nor">
+
+        <div class="display_nor">
+
+          <div id="history_nor"></div>
+
+          <input type="text" id="result_nor" readonly value="0">
+
+          <div id="preview_nor">0</div>
+
+        </div>
+
+        <div class="buttons_nor">
+
+          <button class="btn_nor action_nor" onclick="appendValue_nor('AC')">
+            AC
+          </button>
+
+          <button class="btn_nor action_nor" onclick="deleteLast_nor()">
+            ⌫
+          </button>
+
+          <button class="btn_nor operator_nor" onclick="appendValue_nor('%')">
+            %
+          </button>
+
+          <button class="btn_nor operator_nor" onclick="appendValue_nor('/')">
+            ÷
+          </button>
+
+          <button class="btn_nor" onclick="appendValue_nor('7')">7</button>
+
+          <button class="btn_nor" onclick="appendValue_nor('8')">8</button>
+
+          <button class="btn_nor" onclick="appendValue_nor('9')">9</button>
+
+          <button class="btn_nor operator_nor" onclick="appendValue_nor('*')">
+            ×
+          </button>
+
+          <button class="btn_nor" onclick="appendValue_nor('4')">4</button>
+
+          <button class="btn_nor" onclick="appendValue_nor('5')">5</button>
+
+          <button class="btn_nor" onclick="appendValue_nor('6')">6</button>
+
+          <button class="btn_nor operator_nor" onclick="appendValue_nor('-')">
+            −
+          </button>
+
+          <button class="btn_nor" onclick="appendValue_nor('1')">1</button>
+
+          <button class="btn_nor" onclick="appendValue_nor('2')">2</button>
+
+          <button class="btn_nor" onclick="appendValue_nor('3')">3</button>
+
+          <button class="btn_nor operator_nor" onclick="appendValue_nor('+')">
+            +
+          </button>
+
+          <button class="btn_nor" onclick="appendValue_nor('0')">0</button>
+
+          <button class="btn_nor" onclick="appendValue_nor('.')">.</button>
+
+          <button class="btn_nor equal_nor" onclick="calculate_nor()">
+            =
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+
+
+    let isLoggedIn =
+      localStorage.getItem(
+        "ledgerLoggedIn"
+      );
+
+    if (isLoggedIn !== "true") {
+
+
+
+      location.href =
+        "login.html";
+    }
+
+    let editUser = "";
+    let editIndex = -1;
+
+    let notesState = "menu";
+
+    window.addEventListener("load", () => {
+
+      let savedLang = localStorage.getItem("appLang") || "en";
+      setLang(savedLang);
+      setTimeout(() => {
+        document.getElementById("splash").style.display = "none";
+        showAll();
+      }, 1500);
+    });
+
+    function getRecycle() {
+      return JSON.parse(localStorage.getItem("recycle")) || [];
+    }
+    function moveToRecycle(type, data) {
+
+      let recycle = getRecycle();
+
+      recycle.push({
+        id: crypto.randomUUID(),
+        type: type,
+        data: structuredClone(data),
+        date: new Date().toISOString()
+      });
+
+      // latest first
+      recycle.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      localStorage.setItem("recycle", JSON.stringify(recycle));
+    }
+    let todayStr = new Date().toISOString().split('T')[0];
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+
+    let savedReports = JSON.parse(localStorage.getItem("savedReports")) || [];
+
+    const dateInput = document.getElementById("date");
+    if (dateInput) {
+      dateInput.value = todayStr;
+    }
+    const cStartInput = document.getElementById("c_start");
+    const cEndInput = document.getElementById("c_end");
+    if (cStartInput) {
+      cStartInput.value = todayStr;
+    }
+    if (cEndInput) {
+      cEndInput.value = todayStr;
+    }
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(function (reg) { console.log('Service worker registered.', reg); })
+          .catch(function (err) { console.warn('SW registration failed:', err); });
+      });
+    }
+
+    let imageIndex = 0;
+    const images = ['./icon1.png', './icon.png']; // front icon and open icon
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const btn = document.getElementById('installBtn');
+      if (btn) btn.style.display = 'inline-block';
+    });
+
+    window.addEventListener('appinstalled', () => {
+      console.log('App installed');
+      deferredPrompt = null;
+      const btn = document.getElementById('installBtn');
+      if (btn) btn.style.display = 'none';
+    });
+
+    function installApp() {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+        const btn = document.getElementById('installBtn');
+        if (btn) btn.style.display = 'none';
+      });
+    }
+
+    function setMode(mode) {
+
+      localStorage.setItem("appMode", mode);
+
+      document.body.classList.remove("dark", "dim");
+
+      if (mode === "dark") {
+        document.body.classList.add("dark");
+      }
+
+      if (mode === "dim") {
+        document.body.classList.add("dim");
+      }
+    }
+    window.addEventListener("load", () => {
+      let mode = localStorage.getItem("appMode") || "normal";
+
+      document.body.classList.remove("dark", "dim");
+
+      if (mode === "dark") {
+        document.body.classList.add("dark");
+      }
+
+      if (mode === "dim") {
+        document.body.classList.add("dim");
+      }
+    });
+    function toggleThemeDropdown() {
+      let box = document.getElementById("themeBox");
+
+      if (box.style.display === "flex") {
+        box.style.display = "none";
+      } else {
+        box.style.display = "flex";
+      }
+    }
+    function toggleMembers() {
+
+      let box = document.getElementById("members");
+
+      // 👉 अगर already open है → close (NO password)
+      if (box.style.display === "block") {
+        box.style.display = "none";
+        return;
+      }
+
+      // 👉 open करने से पहले password check
+      if (!checkLock("members")) return;
+
+      // 👉 अब open करो
+      box.style.display = "block";
+      // showAll();
+    }
+    function toggleImage() {
+      imageIndex = (imageIndex + 1) % images.length;
+      document.getElementById('myImage').src = images[imageIndex];
+    }
+
+    function showForm() {
+      if (!checkLock("add")) return;
+
+      document.getElementById("formPopup").style.display = "flex";
+      const dateInput = document.getElementById("date");
+      if (dateInput && !dateInput.value) {
+        dateInput.value = todayStr;
+      }
+    }
+
+
+    let currentUser = "";
+    let currentIndex = "";
+
+
+
+    function openHisabDatePopup(name, index) {
+      currentUser = name;
+      currentIndex = index;
+
+      document.getElementById("hisabDateInput").value =
+        new Date().toISOString().split("T")[0];
+
+      document.getElementById("hisabModal").classList.add("show");
+    }
+
+
+    function submitHisabDate() {
+      let user = users.find(u => u.name === currentUser);
+      if (!user) return;
+
+      let entry = user.entries[currentIndex];
+      if (!entry) return;
+
+      let date = document.getElementById("hisabDateInput").value;
+
+      if (!entry.hisabHistory) {
+        entry.hisabHistory = [];
+      }
+
+      entry.hisabHistory.push({
+        date: date,
+        paid: 0
+      });
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      closeHisabModal();
+      alert("✅ हिसाब सेव हो गया!");
+
+      openUser(currentUser);
+    }
+
+
+
+
+    function closeHisabModal() {
+      document.getElementById("hisabModal").classList.remove("show");
+    }
+
+    function addHisabDate(name, index) {
+
+
+      try {
+        let user = users.find(u => u.name === name);
+        if (!user) {
+          alert("❌ User not found!");
+          return;
+        }
+        let entry = user.entries[index];
+        if (!entry) {
+          alert("❌ Entry not found!");
+          return;
+        }
+
+        // let dateInput = prompt("हिसाब की डेट डालें (dd/mm/yyyy) या आज की डेट के लिए 0 दबाएं:");
+        // if (!dateInput) return;
+
+        openHisabDatePopup(name, index);
+        return;
+
+        let date;
+        if (dateInput === "0") {
+          date = todayStr;
+        } else {
+          // Parse dd/mm/yyyy to YYYY-MM-DD
+          let parts = dateInput.split('/');
+          if (parts.length !== 3) {
+            alert("❌ गलत डेट फॉर्मेट! ➡️ dd/mm/yyyy में डालें।");
+            return;
+          }
+          let day = parseInt(parts[0]);
+          let month = parseInt(parts[1]) - 1; // JS months are 0-based
+          let year = parseInt(parts[2]);
+          let dt = new Date(year, month, day);
+          if (isNaN(dt.getTime())) {
+            alert("❌ अमान्य डेट!");
+            return;
+          }
+          date = dt.toISOString().split('T')[0]; // YYYY-MM-DD
+        }
+
+        if (!entry.hisabHistory) {
+          entry.hisabHistory = [];
+        }
+
+        entry.hisabHistory.push({
+          date: date,
+          paid: 0
+        });
+
+        localStorage.setItem("users", JSON.stringify(users));
+        alert("✅ हिसाब दर्ज हो गया!");
+        openUser(name);
+      } catch (err) {
+        console.error("Error in addHisabDate:", err);
+        alert("❌ Error: " + err.message);
+      }
+    }
+
+    function closeForm() {
+      document.getElementById("formPopup").style.display = "none";
+    }
+
+    function toggleHisab() {
+
+      let lang = localStorage.getItem("appLang") || "en";
+      let t = langData[lang];
+
+      let box = document.getElementById("output");
+
+      if (box.getAttribute("data-open") === "hisab") {
+        box.innerHTML = "";
+        box.setAttribute("data-open", "");
+        return;
+      }
+      if (!checkLock("history")) return;
+
+      let html = `<h3>📅 ${t.history}</h3>`;
+      users.forEach(u => {
+
+        u.entries.forEach((e, i) => {
+
+          if (e.hisabHistory) {
+
+            e.hisabHistory.forEach((h, hi) => {
+
+              html += `
+          <div class="card">
+
+            👤 ${u.name}<br>
+
+            ${h.paid ? `✔ जमा 💰: ₹${h.paid}<br>` : ``}
+
+            📅 ${formatDate(h.date)}
+
+            <button  style="margin-left:10px"
+ onclick="deleteHistory('${u.name}', ${i}, ${hi})">
+              🗑️
+            </button>
+
+          </div>
+        `;
+            });
+
+          }
+
+        });
+
+      });
+
+      box.innerHTML = html;
+      box.setAttribute("data-open", "hisab");
+    }
+
+    function toggleMenu() {
+      let menu = document.getElementById("sideMenu");
+
+      if (menu.style.left === "0px") {
+        menu.style.left = "-260px";
+      } else {
+        menu.style.left = "0px";
+      }
+    }
+
+    function closeMenu() {
+      document.getElementById("sideMenu").style.left = "-260px";
+    }
+    function formatDate(d) {
+      let dt = new Date(d);
+      let day = String(dt.getDate()).padStart(2, '0');
+      let month = String(dt.getMonth() + 1).padStart(2, '0');
+      let year = dt.getFullYear();
+      return `${day}/${month}/${year}`;
+    }
+
+    function parseDate(ddmmyyyy) {
+      let parts = ddmmyyyy.split('/');
+      if (parts.length !== 3) return null;
+      let day = parseInt(parts[0]);
+      let month = parseInt(parts[1]) - 1;
+      let year = parseInt(parts[2]);
+      let dt = new Date(year, month, day);
+      if (isNaN(dt.getTime())) return null;
+      return dt.toISOString().split('T')[0];
+    }
+
+    function openCalculator() {
+      document.getElementById("calcPopup").style.display = "flex";
+      applyCalcLanguage();
+    }
+
+    function closeCalculator() {
+      document.getElementById("calcPopup").style.display = "none";
+      document.getElementById("calcResult").innerHTML = "";
+    }
+    ////////////////////////
+    function updateCalcMode() {
+      let mode = document.querySelector('input[name="calcMode"]:checked').value;
+
+      document.getElementById("calcDateFields").style.display =
+        mode === "dates" ? "block" : "none";
+
+      document.getElementById("calcDayField").style.display =
+        mode === "days" ? "block" : "none";
+    }
+    ///////////////////////////////////////
+    function calculateInterest() {
+      let amount = parseFloat(document.getElementById("c_amount").value);
+      let rate = parseFloat(document.getElementById("c_rate").value);
+      let mode = document.querySelector('input[name="calcMode"]:checked').value;
+
+      if (!amount || !rate) {
+        alert("Sab field bharo!");
+        return;
+      }
+
+      let interest = 0;
+      let total = 0;
+      let displayTime = "";
+
+      if (mode === "dates") {
+
+        let start = document.getElementById("c_start").value;
+        let end = document.getElementById("c_end").value;
+
+        if (!start || !end) {
+          alert("Start aur End date bharo!");
+          return;
+        }
+
+        let d1 = new Date(start);
+        let d2 = new Date(end);
+
+        if (d2 <= d1) {
+          alert("End date start se badi honi chahiye!");
+          return;
+        }
+
+        let days = (d2 - d1) / (1000 * 60 * 60 * 24);
+
+        let months = Math.floor(days / 30);
+        let remDays = Math.floor(days % 30);
+        let totalMonths = days / 30;
+
+        interest = (amount * rate * totalMonths) / 100;
+        total = amount + interest;
+
+        displayTime = `<b>⏳ Time:</b> ${months} माह ${remDays} दिन <br>`;
+
+      } else {
+
+        let days = parseFloat(document.getElementById("c_days").value);
+
+        if (!days || days <= 0) {
+          alert("Valid days daalo!");
+          return;
+        }
+
+        let totalMonths = days / 30;
+
+        interest = (amount * rate * totalMonths) / 100;
+        total = amount + interest;
+
+        displayTime = `<b>⏳ Time:</b> ${days} दिन<br>`;
+      }
+
+      document.getElementById("calcResult").innerHTML = `
+    ${displayTime}
+    <b>💰 Interest:</b> ₹ ${interest.toFixed(2)} <br>
+    <b>🔢 Total:</b> ₹ ${total.toFixed(2)}
+  `;
+    }
+
+
+    function calculate(start, end) {
+      let d1 = new Date(start);
+      let d2 = new Date(end);
+      let days = (d2 - d1) / (1000 * 60 * 60 * 24);
+      let months = Math.floor(days / 30);
+      let remDays = Math.floor(days % 30);
+      return { months, remDays, total: days / 30 };
+    }
+
+    function saveEntry() {
+      document.getElementById("formPopup").style.display = "none";
+      let originalName = document.getElementById("name").value;
+      let name = originalName.toLowerCase();
+      let amount = parseFloat(document.getElementById("amount").value);
+      let rate = parseFloat(document.getElementById("rate").value);
+      let start = document.getElementById("date").value;
+      let t = calculate(start, todayStr);
+      let interest = parseFloat(((amount * rate * t.total) / 100).toFixed(2));
+      let total = parseFloat((amount + interest).toFixed(2));
+
+      let entry = {
+        amount: parseFloat(amount.toFixed(2)),
+        originalAmount: parseFloat(amount.toFixed(2)),
+        rate: rate,
+        start: start,
+        endDate: null,
+        months: t.months,
+        days: t.remDays,
+        interest: parseFloat(interest.toFixed(2)),
+        total: parseFloat(total.toFixed(2)),
+        paid: 0,
+        hisabHistory: [],
+        completed: false,
+        kistNo: null,
+        status: ""
+      };
+
+
+      if (name === "" || isNaN(amount) || isNaN(rate) || !start) {
+        alert("Sab field bharo!");
+        return;
+      }
+
+      let user = users.find(u => u.name === name);
+
+      if (user) {
+        user.entries.push(entry);
+      } else {
+        users.push({ name, originalName, entries: [entry] });
+      }
+
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      document.getElementById("name").value = "";
+      document.getElementById("amount").value = "";
+      document.getElementById("rate").value = "";
+      document.getElementById("date").value = "";
+
+
+      showAll();
+    }
+
+
+    function showAll() {
+
+      let box = document.getElementById("members");
+
+      if (!box) {
+        console.log("members div missing");
+        return;
+      }
+
+
+      let html = "";
+
+      users.forEach(u => {
+        if (u.deleted) return;
+        html += `
+      <div class="member-row" >
+        <button onclick="openUser('${u.name}')">
+          ${u.originalName || u.name}
+        </button>
+        <button onclick="deleteUser('${u.name}')">❌ Delete</button>
+      </div>
+    `;
+      });
+
+      // box.style.display = "block";
+      box.innerHTML = html;
+
+      console.log("Users count:", users.length);
+    }
+
+    function cycleMode() {
+
+      let current = localStorage.getItem("appMode") || "normal";
+
+      if (current === "normal") {
+        setMode("dim");
+        return;
+      }
+
+      if (current === "dim") {
+        setMode("dark");
+        return;
+      }
+
+      if (current === "dark") {
+        setMode("normal");
+        return;
+      }
+    }
+    // function deleteUser(name) {
+    //   if (confirm(" ⚠️Delete user ?")) {
+    //     users = users.filter(u => u.name !== name);
+    //     localStorage.setItem("users", JSON.stringify(users));
+    //     alert(name + "✅ User delete हो गया!");
+    //     showAll();
+    //     document.getElementById("output").innerHTML = "";
+    //   }
+    // }
+    function deleteUser(name) {
+
+      if (!confirm("⚠️ Kya aap user delete karna chahte ho?"))
+        return;
+
+      let userIndex =
+        users.findIndex(u => u.name === name);
+
+      if (userIndex === -1) {
+        alert("❌ User not found!");
+        return;
+      }
+
+      let user = users[userIndex];
+
+      // ✅ recycle id
+      user.recycleId = crypto.randomUUID();
+
+      // ✅ recycle me bhejo
+      moveToRecycle("user", user);
+
+      // ✅ original se remove
+      users.splice(userIndex, 1);
+
+      // ✅ save
+      localStorage.setItem(
+        "users",
+        JSON.stringify(users)
+      );
+
+      // alert("🗑️ User moved to recycle bin");
+
+      showAll();
+
+      document.getElementById("output").innerHTML = "";
+    }
+
+    function searchUser() {
+
+      let name =
+        document.getElementById("searchName")
+          .value.toLowerCase();
+
+      let user =
+        users.find(u => u.name === name);
+
+      let lang =
+        localStorage.getItem("appLang") || "en";
+
+      let t = langData[lang];
+
+      if (user) {
+
+        openUser(name);
+
+      } else {
+
+        document.getElementById("output").innerHTML =
+          `<h3>${t.notFound || "Not Found"}</h3>`;
+      }
+    }
+
+    let currentOpenUser = "";
+    function openUser(name) {
+
+      currentOpenUser = name;
+
+      let box = document.getElementById("output");
+
+      // ✅ toggle open/close
+      // if (box.getAttribute("data-user") === name) {
+      //   box.innerHTML = "";
+      //   box.setAttribute("data-user", "");
+      //   return;
+      // }
+
+      if (
+        box.getAttribute("data-user") === name &&
+        !forceOpenUser
+      ) {
+
+        box.innerHTML = "";
+
+        box.setAttribute("data-user", "");
+
+        return;
+      }
+
+      forceOpenUser = false;
+
+      box.setAttribute("data-user", name);
+
+
+      let user = users.find(u => u.name === name);
+
+      let lang = localStorage.getItem("appLang") || "en";
+      let t = langData[lang];
+
+      // let html = `<h3>👤 ${(user.originalName || name).toUpperCase()}</h3>`;
+      let html = `
+
+<div class="userHeader">
+
+<img
+  src="${user.photo || './default-user.png'}"
+  class="userPhoto">
+
+<h3>
+
+👤 ${(user.originalName || name).toUpperCase()}
+
+</h3>
+
+<p class="userPhone">
+
+📞 ${user.phone || "No Number"}
+
+</p>
+
+
+</div>
+
+`;
+
+      // user.entries.forEach((e, i) => {
+      user.entries.forEach((e, i) => {
+
+        if (e.deleted === true) return;   // 🔥 hide deleted
+
+        // Use endDate if available, else current date
+        let endDateToShow = e.endDate || todayStr;
+        let tt = calculate(e.start, endDateToShow);
+
+        let displayAmount = e.amount;
+        let currentInterest = (displayAmount * e.rate * tt.total) / 100;
+
+        let currentTotal = displayAmount + currentInterest;
+        let remain = currentTotal - e.paid;
+        let daily = (displayAmount * e.rate) / (100 * 30);
+
+        // History
+        let historyHTML = "";
+        if (e.hisabHistory && e.hisabHistory.length > 0) {
+          historyHTML = e.hisabHistory.map((h, hi) =>
+            `📅 ${formatDate(h.date)} (₹${h.paid})
+         `
+          ).join("<br>");
+        } else {
+          historyHTML = t.noData;
+        }
+
+
+        html += `
+<div class="card">
+
+<br>
+🆔 ${t.installment}: ${e.kistNo || (i + 1)}<br>
+
+💰 ${t.currentAmount}: ₹ ${displayAmount.toFixed(2)}<br>
+
+${e.originalAmount && e.originalAmount !== e.amount ? `${t.originalAmount || "Original Amount"}: ₹ ${e.originalAmount.toFixed(2)}<br>` : ``}
+
+📊 ${t.interestRate}: ${e.rate}%<br>
+
+📅 ${t.start}: ${formatDate(e.start)}<br>
+📅 ${t.end}: ${formatDate(endDateToShow)}<br>
+
+⏳ ${t.duration}: ${tt.months} ${tt.monthLabel || "months"} ${tt.remDays} ${tt.dayLabel || "days"}<br>
+
+💵 ${t.dailyInterest}: ₹ ${daily.toFixed(2)}<br>
+📈 ${t.totalInterest}: ₹ ${currentInterest.toFixed(2)}<br>
+
+🔢 ${t.totalAmount}: ₹${currentTotal.toFixed(2)}<br>
+
+✔ ${t.paid}: ₹ ${e.paid.toFixed(2)}<br>
+
+✅✅  ${t.balance}: ₹ ${remain.toFixed(2)}<br>
+
+<br>
+
+${historyHTML}<br><br>
+`;
+
+        if (remain <= 0) {
+          html += `<b style="color:green;">✔ पूरा भुगतान हो चुका है<b>`;
+        }
+        else if (e.completed) {
+          html += `${e.status ? "📌 " + e.status + "<br>" : ""}`;
+        }
+
+        if (!e.completed) {
+          // if (e.completed !== true) {
+
+          html += `<button style="background-color: #2196F3; color: white; padding: 15px; margin: 5px; font-weight: bold;" class="btnAddDate" onclick="addHisabDate('${name.replace(/'/g, "\\'")}',${i})">${t.addDate}</button>`;
+
+          // html += `<button class="btnMerge" onclick="openMergePanel('${name.replace(/'/g, "\\'")}')">${t.mergeKist}</button>`;
+
+          html += `<button style=  "color: white; padding: 14px; margin: 5px; font-weight: bold;" class="btnEdit"  onclick="openEditMenu('${name.replace(/'/g, "\\'")}', ${i})">${t.edit}</button>`;
+        }
+
+
+        if (!e.completed && remain > 0) {
+          //if (e.completed !== true && remain > 0) {
+          // 🖨️ PRINT BUTTON (ADD HERE)
+          html += `<button style="background-color:   #08af0d;; color: white; padding: 15px; margin: 5px; font-weight: bold;" class="btnContinue" onclick="continueLoan('${name.replace(/'/g, "\\'")}',${i})">${t.continue}</button>`;
+          html += `
+<button
+  style="background-color:#555;
+  color:white;
+  padding:15px;
+
+  margin:5px;
+  font-weight:bold;"
+
+  class="btnPrint"
+
+  onclick="openPrintMenu()">
+
+  🖨️ ${t.print}
+
+</button>
+`;
+          html += `<button style="background-color: #f44336; color: white; padding: 15px; margin: 5px; font-weight: bold;" class="btnDelete" onclick="deleteEntry('${name.replace(/'/g, "\\'")}',${i})">${t.delete}</button>`;
+
+        }
+        if (e.deleted === true) {
+
+          html += `
+  <div style="background:#ffe0e0;padding:10px;border-radius:8px;margin:5px;">
+
+    🗑️ Deleted Entry
+
+    <button style="background:#ff9800;color:white;padding:10px;margin:5px;"
+      onclick="restoreFromRecycle('${name.replace(/'/g, "\\'")}', ${i})">
+      ♻️ Restore
+    </button>
+
+    <button style="background:#e53935;color:white;padding:10px;margin:5px;"
+      onclick="permanentDeleteEntry('${name.replace(/'/g, "\\'")}', ${i})">
+      ❌ Permanent Delete
+    </button>
+
+  </div>
+  `;
+
+          return; // 👈 important (normal buttons hide)
+        }
+
+        html += `</div>`;
+      });
+
+      document.getElementById("output").innerHTML = html;
+
+      applyAllUI();
+    }
+
+    function continueLoan(name, index) {
+      try {
+        let user = users.find(u => u.name === name);
+
+        if (!user) {
+          alert("❌ User not found!");
+          return;
+        }
+        let entry = user.entries[index];
+        if (!entry) {
+          alert("❌ Entry not found!");
+          return;
+        }
+
+        // Calculate remaining on current amount
+        let displayAmount = entry.amount;
+        let tt = calculate(entry.start, todayStr);
+        let currentInterest = (displayAmount * entry.rate * tt.total) / 100;
+        let currentTotal = displayAmount + currentInterest;
+        let remaining = currentTotal - entry.paid;
+
+        if (remaining <= 0) {
+          alert("✔ पूरा पैसा जमा हो चुका है");
+          return;
+        }
+
+        let choice = prompt("क्या पैसा जमा किया? (yes / no)");
+        if (!choice) return;
+
+        let newAmount = 0;
+        let status = "";
+        let paidAmount = 0;
+
+        entry.status = "";
+
+        if (choice === "yes" || choice === "y" || choice === "YES") {
+          paidAmount = parseFloat(prompt("कितना पैसा जमा किया?")) || 0;
+
+          // Add payment
+          entry.paid = parseFloat((entry.paid + paidAmount).toFixed(2));
+
+          // Add to history
+          if (!entry.hisabHistory) {
+            entry.hisabHistory = [];
+          }
+          entry.hisabHistory.push({
+            date: todayStr,
+            paid: paidAmount
+          });
+
+          // Calculate remaining balance
+          let remaining = parseFloat((currentTotal - entry.paid).toFixed(2));
+          if (remaining < 0) remaining = 0;
+
+          // New amount = remaining balance
+          newAmount = remaining;
+          entry.total = parseFloat(currentTotal.toFixed(2));
+
+          // Set end date to today (when jama was done)
+          entry.endDate = todayStr;
+
+          entry.status = `✔ ₹${paidAmount} जमा किया`;
+          status = `✔ ₹${paidAmount} जमा करके आगे बढ़ाया`;
+        } else {
+          newAmount = parseFloat(currentTotal.toFixed(2));
+          entry.total = parseFloat(currentTotal.toFixed(2));
+          entry.endDate = todayStr;
+          entry.status = "❌ पैसा जमा नहीं किया पूरा जोड़कर आगे बढ़ाया";
+          status = "❌ पैसा जमा नहीं किया, पूरा जोड़कर आगे बढ़ाया";
+        }
+
+        let baseKist = entry.kistNo || (index + 1);
+        let count = user.entries.filter(e =>
+          String(e.kistNo).startsWith(baseKist)
+        ).length;
+
+        let newKist = baseKist + "." + count;
+
+        let newEntry = {
+          amount: newAmount,
+          originalAmount: newAmount,
+          rate: entry.rate,
+          start: todayStr, // Current date as start
+          endDate: null, // End date will be set when jama is done
+          months: 0,
+          days: 0,
+          interest: 0,
+          total: newAmount, // New total = remaining balance
+          paid: 0,
+          hisabHistory: [],
+          completed: false,
+          kistNo: newKist,
+          status: status
+        };
+
+        user.entries.push(newEntry);
+        entry.completed = true;
+
+        // entry.completed = "old";
+
+        localStorage.setItem("users", JSON.stringify(users));
+        alert("✅ कंटिन्यू हो गया!");
+
+        // openUser(name);
+        forceOpenUser = true;
+
+        openUser(name);
+
+      } catch (err) {
+        console.error("Error in continueLoan:", err);
+        alert("❌ Error: " + err.message);
+      }
+    }
+    function deleteEntry(name, index) {
+
+      if (!confirm("⚠️ Delete entry?")) return;
+
+      let user = users.find(u => u.name === name);
+      if (!user) return;
+
+      let entry = user.entries[index];
+      if (!entry) return;
+
+      moveToRecycle("entry", {
+        user: name,
+        entry: structuredClone(entry)
+      });
+
+      user.entries.splice(index, 1);
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      // alert("🗑️ Moved to recycle");
+
+      openUser(name);
+    }
+    function showOverview() {
+      let box = document.getElementById("output");
+
+      // toggle close
+      if (box.getAttribute("data-open") === "overview") {
+        box.innerHTML = "";
+        box.setAttribute("data-open", "");
+        return;
+      }
+
+      // security
+      if (!checkLock("overview")) return;
+
+      let lang = localStorage.getItem("appLang") || "en";
+      let t = langData[lang];
+
+      let html = `
+    <h3>📊 ${t.overview}</h3>
+    <table>
+      <tr>
+        <th>S.No</th>
+        <th>${t.members}</th>
+        <th>${t.amount}</th>
+        <th>${t.interest}</th>
+        <th>${t.total}</th>
+        <th>${t.date}</th>
+      </tr>
+  `;
+
+      let principal = 0;
+      let interestTotal = 0;
+      let grandTotal = 0;
+
+      users.forEach((u, i) => {
+
+        u.entries.forEach((e, j) => {
+
+          if (e.completed) return;
+
+          let base = e.originalAmount || e.amount;
+          let remaining = base - e.paid;
+
+          let calc = calculate(e.start, e.endDate || todayStr);
+          let interest = (base * e.rate * calc.total) / 100;
+
+          let total = remaining + interest;
+
+          let dateToShow = e.endDate || e.start || todayStr;
+
+          html += `
+        <tr>
+          <td>${i + 1}.${j + 1}</td>
+          <td>${u.originalName || u.name}</td>
+          <td>₹${remaining.toFixed(2)}</td>
+          <td>₹${interest.toFixed(2)}</td>
+          <td>₹${total.toFixed(2)}</td>
+          <td>${formatDate(dateToShow)}</td>
+        </tr>
+      `;
+
+          // totals update
+          principal += remaining;
+          interestTotal += interest;
+          grandTotal += total;
+        });
+
+      });
+
+      // FINAL TOTAL ROW
+      html += `
+    <tr class="total">
+      <td colspan="2">Total</td>
+      <td>₹${principal.toFixed(2)}</td>
+      <td>₹${interestTotal.toFixed(2)}</td>
+      <td>₹${grandTotal.toFixed(2)}</td>
+      <td></td>
+    </tr>
+  `;
+
+      html += `</table>`;
+
+      box.innerHTML = html;
+      box.setAttribute("data-open", "overview");
+    }
+    function getRemainingForEntry(e) {
+      let endDateToShow = e.endDate || todayStr;
+      let t = calculate(e.start, endDateToShow);
+      let displayAmount = e.amount;
+      let currentInterest = (displayAmount * e.rate * t.total) / 100;
+      let currentTotal = displayAmount + currentInterest;
+      return currentTotal - e.paid;
+    }
+
+    //
+
+    function showNotes() {
+
+      let box =
+        document.getElementById("output");
+
+      // ✅ toggle close
+      if (
+        box.getAttribute("data-open")
+        === "notes"
+      ) {
+
+        box.innerHTML = "";
+
+        box.setAttribute("data-open", "");
+
+        return;
+      }
+
+      if (!checkLock("notes")) return;
+
+      notesState = "menu";
+
+      let lang =
+        localStorage.getItem("appLang") || "en";
+
+      let t = langData[lang];
+
+      box.setAttribute("data-open", "notes");
+
+      box.innerHTML = `
+    <div class="notes-panel">
+
+      <h3>${t.notesMenu}</h3>
+
+      <button onclick="openAddNote()">
+        ➕ ${t.addNote}
+      </button>
+
+      <button onclick="openSavedNotes()">
+        📂 ${t.viewNotes}
+      </button>
+
+      <button onclick="closeNotesMenu()">
+        ✖️ ${t.close}
+      </button>
+
+    </div>
+  `;
+    }
+    // function backFromNotes() {
+    //   let box = document.getElementById("output");
+
+    //   // always go back to main notes menu
+    //   notesState = "menu";
+
+    //   showNotes();
+    // }
+
+    function backFromNotes() {
+
+      notesState = "menu";
+
+      let lang =
+        localStorage.getItem("appLang") || "en";
+
+      let t = langData[lang];
+
+      let box =
+        document.getElementById("output");
+
+      box.setAttribute("data-open", "notes");
+
+      box.innerHTML = `
+    <div class="notes-panel">
+
+      <h3>${t.notesMenu}</h3>
+
+
+      <button onclick="openAddNote()">
+        ➕ ${t.addNote}
+      </button>
+
+      <button onclick="openSavedNotes()">
+        📂 ${t.viewNotes}
+      </button>
+
+      <button onclick="closeNotesMenu()">
+        ✖️ ${t.close}
+      </button>
+
+    </div>
+  `;
+    }
+    function openAddNote() {
+
+      document.getElementById("output")
+        .setAttribute("data-open", "addNote");
+
+      notesState = "add";
+
+      let lang = localStorage.getItem("appLang") || "en";
+      let t = langData[lang];
+
+      let box = document.getElementById("output");
+
+      let html = `
+ 
+<div class="back-fixed">
+
+  <button
+    class="back-btn"
+    onclick="showNotes()">
+
+    ${t.notesBackBtn}
+
+  </button>
+
+</div>
+
+  <h3>➕ ${t.addNote}</h3>
+
+  <textarea id="newNoteText" placeholder="${t.addNote}..." rows="4" style="width:100%;"></textarea><br><br>
+
+  <button onclick="openCamera()">📷 ${t.camera}</button>
+  <input type="file" id="cameraInput" accept="image/*" capture style="display:none;">
+
+  <button onclick="openGallery()">🖼️ ${t.gallery}</button>
+  <input type="file" id="galleryInput" accept="image/*" style="display:none;"><br><br>
+
+  <button onclick="saveNote()" style="background-color: #4CAF50; margin-bottom: 100px; font-weight: bold; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
+   💾 ${t.save}
+  `;
+
+      box.innerHTML = html;
+    }
+    function openCamera() {
+      document.getElementById("cameraInput").click();
+    }
+
+    function openGallery() {
+      document.getElementById("galleryInput").click();
+    }
+
+
+    function openSavedNotes() {
+
+      document.getElementById("output")
+        .setAttribute("data-open", "savedNotes");
+
+      notesState = "saved";
+
+      let lang = localStorage.getItem("appLang") || "en";
+      let t = langData[lang];
+
+      let box = document.getElementById("output");
+
+      let html = `
+
+<div class="back-fixed">
+
+  <button
+    class="back-btn"
+    onclick="backFromNotes()">
+
+    ${t.notesBackBtn}
+
+  </button>
+
+</div>
+
+
+
+    <h3>📂 ${t.viewNotes}</h3>
+  `;
+
+      if (notes.length === 0) {
+        html += `<p>${t.noNotes || "No notes saved yet."}</p>`;
+      }
+
+      notes.forEach((n, i) => {
+        html += `
+      <div class="card">
+        <b>${formatDate(n.date)}</b><br>
+        ${n.text ? n.text.slice(0, 100) : ""}<br>
+
+        ${n.image ? `
+          <img src="${n.image}" style="width:100%;max-width:200px;border-radius:8px;">
+        ` : ""}
+
+        <br>
+        <button onclick="viewNote(${i})"> ${t.view}</button>
+        <button onclick="editNote(${i})">${t.edit}</button>
+        <button onclick="deleteNote(${i})">${t.remove}</button>
+      </div>
+    `;
+      });
+
+      box.innerHTML = html;
+    }
+    function closeNotesMenu() {
+      let box = document.getElementById("output");
+      box.innerHTML = "";
+      box.setAttribute("data-open", "");
+    }
+
+    function saveNote() {
+
+      let text = document.getElementById("newNoteText").value.trim();
+
+      let camera = document.getElementById("cameraInput");
+      let gallery = document.getElementById("galleryInput");
+
+      let file = camera.files[0] || gallery.files[0];
+
+      if (!text && !file) {
+        alert(t.noteWarning || "Add note or image!");
+        return;
+      }
+
+      let saveData = (img) => {
+        notes.push({
+          text: text,
+          image: img || null,
+          date: todayStr
+        });
+
+        localStorage.setItem("notes", JSON.stringify(notes));
+        showNotes();
+
+        // reset fields
+        document.getElementById("newNoteText").value = "";
+        camera.value = "";
+        gallery.value = "";
+      };
+
+      if (file) {
+        let reader = new FileReader();
+
+        reader.onload = function (e) {
+          saveData(e.target.result);
+        };
+
+        reader.readAsDataURL(file);
+      } else {
+        saveData();
+      }
+    }
+
+
+    function viewNote(index) {
+      document.getElementById("output")
+        .setAttribute("data-open", "viewNote");
+
+      let note = notes[index];
+
+      let lang = localStorage.getItem("appLang") || "en";
+      let t = langData[lang];
+
+
+      let img = note.image
+        ? `<img src="${note.image}"
+        style="width:100%;
+        margin-top:10px;
+        border-radius:8px;">`
+        : "";
+
+      document.getElementById("output").innerHTML = `
+
+<div class="back-fixed">
+
+  <button
+    class="back-btn"
+    onclick="openSavedNotes()">
+
+    ${t.notesBackBtn}
+
+  </button>
+
+</div>
+
+
+    <div class="note-content"
+      style="
+        margin:10px;
+        margin-top:60px;
+        margin-bottom:120px;
+        padding:15px;
+        border-radius:12px;
+        background:white;
+        box-shadow:0 2px 10px rgba(0,0,0,0.15);
+      ">
+
+      <h3>${formatDate(note.date)}</h3>
+
+      <p>${note.text}</p>
+
+      ${img}
+
+    </div>
+  `;
+    }
+    function closeNoteView() {
+      document.getElementById("output").innerHTML = "";
+    }
+
+    function deleteNote(index) {
+
+      if (!confirm("🗑️ Do you want to remove this note?"))
+        return;
+
+      let note = notes[index];
+
+      if (!note) return;
+
+      // ✅ recycle id
+      note.recycleId = crypto.randomUUID();
+
+      // ✅ recycle me bhejo
+      moveToRecycle("note", note);
+
+      // ✅ original se hatao
+      notes.splice(index, 1);
+
+      // ✅ save
+      localStorage.setItem(
+        "notes",
+        JSON.stringify(notes)
+      );
+
+      alert("🗑️ Note moved to recycle");
+
+      showNotes();
+    }
+    function deleteHistory(name, entryIndex, historyIndex) {
+
+      if (!confirm("🗑️ Kya aap history delete karna chahte ho?"))
+        return;
+
+      let user = users.find(u => u.name === name);
+
+      if (!user) return;
+
+      let entry = user.entries[entryIndex];
+
+      if (!entry || !entry.hisabHistory)
+        return;
+
+      let historyItem =
+        entry.hisabHistory[historyIndex];
+
+      if (!historyItem) return;
+
+      // ✅ recycle id
+      historyItem.recycleId =
+        crypto.randomUUID();
+
+      // ✅ recycle me bhejo
+      moveToRecycle("history", {
+        user: name,
+        entryIndex: entryIndex,
+        history: historyItem
+      });
+
+      // ✅ original se remove
+      entry.hisabHistory.splice(
+        historyIndex,
+        1
+      );
+
+      // ✅ save
+      localStorage.setItem(
+        "users",
+        JSON.stringify(users)
+      );
+
+      alert("🗑️ History moved to recycle");
+
+      document.getElementById("output")
+        .setAttribute("data-open", "");
+
+      toggleHisab();
+    }
+
+    function editNote(index) {
+      let note = notes[index];
+      if (note) {
+        let newText = prompt("Edit your note:", note.text);
+        if (newText !== null && newText.trim() !== "") {
+          notes[index].text = newText.trim();
+          localStorage.setItem("notes", JSON.stringify(notes));
+          // showNotes();
+          // viewNote(index); //
+          openSavedNotes(); //  
+        }
+      }
+    }
+
+    // OPEN / CLOSE
+    function openSecurity() {
+      document.getElementById("securityPopup").style.display = "flex";
+
+      let sec = JSON.parse(localStorage.getItem("securityLock")) || {};
+
+      document.getElementById("securityActive").checked = sec.active || false;
+      document.getElementById("lockOverview").checked = sec.overview || false;
+      document.getElementById("lockAdd").checked = sec.add || false;
+      document.getElementById("lockNotes").checked = sec.notes || false;
+      document.getElementById("lockHistory").checked = sec.history || false;
+      document.getElementById("lockMembers").checked = sec.members || false;
+    }
+
+    function closeSecurity() {
+      document.getElementById("securityPopup").style.display = "none";
+    }
+
+
+    // PASSWORD SYSTEM
+    function setOrChangePassword() {
+      let saved = localStorage.getItem("appPass");
+
+      if (!saved) {
+        let p = prompt("Set Password:");
+        if (p) localStorage.setItem("appPass", p);
+        return;
+      }
+
+      let action = prompt("1=Change\n2=Remove\n3=Test");
+
+      if (action === "1") {
+        let old = prompt("Old password:");
+        if (old === saved) {
+          let np = prompt("New password:");
+          localStorage.setItem("appPass", np);
+          alert("Changed!");
+        } else alert("Wrong!");
+      }
+
+      if (action === "2") {
+        let old = prompt("Enter password:");
+        if (old === saved) {
+          localStorage.removeItem("appPass");
+          alert("Removed!");
+        } else alert("Wrong!");
+      }
+
+      if (action === "3") {
+        let t = prompt("Enter password:");
+        alert(t === saved ? "Correct" : "Wrong");
+      }
+    }
+
+
+    // SAVE SECURITY
+    function saveSecurity() {
+      let data = {
+        active: document.getElementById("securityActive").checked,
+        overview: document.getElementById("lockOverview").checked,
+        add: document.getElementById("lockAdd").checked,
+        notes: document.getElementById("lockNotes").checked,
+        history: document.getElementById("lockHistory").checked,
+        members: document.getElementById("lockMembers").checked
+      };
+
+      localStorage.setItem("securityLock", JSON.stringify(data));
+      alert("Saved!");
+      closeSecurity();
+    }
+
+
+    // MAIN CHECK FUNCTION
+    function checkAccess(page) {
+
+      let sec = JSON.parse(localStorage.getItem("securityLock")) || {};
+      let pass = localStorage.getItem("appPass");
+
+      if (!sec.active || !pass) return true;
+      if (!sec[page]) return true;
+
+      let input = prompt("Enter password:");
+      if (input === pass) {
+        return true;
+      } else {
+        alert("Wrong password");
+        return false;
+      }
+    }
+
+
+
+    function checkLock(type) {
+
+      let sec = JSON.parse(localStorage.getItem("securityLock"));
+
+      // 👉 अगर security data नहीं है
+      if (!sec) return true;
+
+      // 👉 security OFF है
+      if (sec.active !== true) return true;
+
+      // 👉 उस page पर lock नहीं है
+      if (sec[type] !== true) return true;
+
+      let pass = localStorage.getItem("appPass");
+
+      // 🔥 MAIN CHANGE
+      if (!pass) {
+        return true;   // ✔ ना alert, ना block
+      }
+
+      let input = prompt("Enter Password:");
+
+      if (input === pass) {
+        return true;
+      } else {
+        alert("❌ Wrong Password");
+        return false;
+      }
+    }
+
+
+    // LANGUAGE DATA
+    const langData = {
+      en: {
+        overview: "Overview",
+        add: "New Entry",
+        notes: "Notes",
+        members: "Members",
+        history: "History",
+        total: "Total",
+        calculator: "Calculator",
+        interest: "Interest",
+        amount: "Principal Amount",
+        date: "Date",
+        ok: "OK",
+        close: "⬅Go back",
+        cancel: "Cancel",
+        save: "Save",
+        settings: "Settings Menu",
+
+        search: "🔍 Search...",
+        notesMenu: "Notes Menu",
+        history: "Hisab History",
+        noData: "No records",
+
+        installment: "Installment No",
+        currentAmount: "Principal Amount",
+        interestRate: "Interest Rate",
+        start: "Start",
+        end: "End",
+        duration: "Duration",
+        dailyInterest: "Daily Interest",
+        totalInterest: "Total Interest",
+        totalAmount: "Total Amount",
+        paid: "Paid",
+        balance: "Balance amount",
+        save: "Save",
+        addDate: "Add Date",
+        continue: "Continue",
+        remove: "Remove",
+        searchBtn: "Search",
+        history: "Hisab History",
+        add: "Add Entry",
+        calcTitle: "Interest Calculator",
+        rate: "Interest Rate %",
+
+        theme: "App Theme",
+        security: "Security",
+        language: "Language",
+        close: "⬅Go back",
+        addDate: "Add Date",
+        continue: "Continue",
+        delete: "Delete",
+        notesMenu: "Notes Menu",
+        addNote: "Add New Note",
+        viewNotes: "View Saved Notes",
+        close: "⬅Go back",
+        mergeKist: " 🔀Merge Kist",
+        edit: "✏️ Edit",
+        name: "Name",
+        amount: "Principal Amount",
+        interestRate: "Interest Rate",
+        start: "Start Date",
+        end: "End Date",
+        membersTitle: "All Members",
+        originalAmount: "Original Amount",
+        remove: "🗑️ Remove",
+        view: "👁️ view",
+        recycleBin: "Recycle Bin",
+        restore: "♻️ Restore",
+        undoDelete: "↩️ Undo Last Delete",
+
+        recycleBin: "🧺 Recycle Bin",
+        recycleBinBtn: "🧺 Recycle Bin",
+        emptyBin: "Empty Bin",
+        addEntry: "Add Entry",
+        name: "Name",
+        amount: "Principal Amount",
+        rate: "Rate(Interest) %",
+        entryDate: "Entry Date :(dd/mm/yyyy)",
+        saveBtn: "Save Now",
+        close: "Close",
+        dateRange: "Date range",
+        days: "Days",
+        startDate: "Start Date:(dd/mm/yyyy)",
+        endDate: "End Date:(dd/mm/yyyy)",
+        enterDays: "Enter Number of days",
+        calculate: "Calculate",
+        close: "Close",
+        noNotes: "No notes saved yet.",
+        camera: "Camera",
+        gallery: "Gallery",
+        save: "Save Now",
+        noteWarning: "Add note or image!",
+        notFound: "Not Found !",
+        menu: "MENU",
+        btnAppInfo: "App Info",
+
+        appAbout:
+          "Ledger Pro is a simple finance and ledger management app.",
+
+        features: "Features",
+        appDetails: "App Details",
+
+        developer: "Developer",
+
+        builtWith: "Built With",
+
+        version: "Version",
+
+        lastUpdate: "Last Update",
+
+        storage: "Storage",
+
+        installable: "Installable",
+
+        languages: "Languages",
+
+        status: "Status",
+
+        shareApp: "Share App",
+        notesSystem: "Notes System",
+        interestCalc: "Interest Calculator",
+        recycleBin: "Recycle Bin",
+        darkMode: "Dark Mode",
+        securityLock: "Security Lock",
+        cameraGallery: "Camera & Gallery Notes",
+        installPwa: "Installable PWA App",
+
+        localStorageText: "Local Storage",
+        pwaSupported: "PWA Supported",
+        runningSmoothly: "Running Smoothly",
+
+        openRepo: "Open Repository",
+
+        madeWith: "Made with ❤️ by Ashish Gurjar",
+
+        appInfo: "App Info",
+        selectHisabDate: "📅 Select Hisab Date",
+        submit: "Submit",
+
+
+        cancel: "Cancel",
+        notesBackBtn: "⬅ Go back",
+        photo: " add Photo",
+        closeEdit: "Close",
+        name: "Name",
+        amount: "Principal Amount",
+        rate: "Interest Rate",
+        startDate: "Start Date",
+        endDate: "End Date",
+        photo: "Photo",
+        save: "Save",
+        selectKist: "Select Kist to Merge",
+
+        merge: "Merge",
+
+        printType: "🖨️ Print Type",
+
+        currentPage: "📄 Current Page",
+
+        fullList: "👤 This User Full List",
+
+        activeEntry: "📚 Active Entry Print",
+
+
+        preview: "Preview",
+
+
+        share: "📤 Share",
+
+
+        savedReports: "💾 Saved Reports",
+
+        viewReport: "📄 View Report",
+
+        saveConfirm: "💾 Save this report?",
+
+        savedSuccess: "💾 Saved Successfully",
+
+        deleteConfirm: "🗑️ Delete report?",
+
+        copied: "📋 Copied to clipboard",
+
+        reportNotFound: "Report not found",
+
+        print: "Print",
+
+        save_p: "💾 Save",
+
+        close_p: "❌ Close",
+
+        cancel_p: "❌ Cancel",
+        btnclose: "⬅️ Close",
+        resetData: "🔄 Reset App Data",
+        recycleSearch:
+          "🔍 Search...",
+
+        restoreAll:
+          "♻️ Restore All",
+        logoutTitle: "🚪 Logout?",
+        logoutYes: "✅ Logout",
+        logoutCancel: "❌ Cancel",
+        logoutBtn: "🚪 Logout",
+        contact: "Contact Number",
+        removePhoto:
+          "Remove Current Photo",
+
+        removePhotoConfirm:
+          "❌ Remove current photo?"
+
+
+
+
+      },
+
+
+
+
+      hi: {
+        removePhoto:
+          "फोटो हटाएँ",
+
+        removePhotoConfirm:
+          "❌ क्या आप फोटो हटाना चाहते हैं?",
+
+        contact: "मोबाइल नंबर",
+        logoutBtn: "🚪 लॉगआउट",
+        logoutTitle: "🚪 लॉगआउट करें?",
+        logoutYes: "✅ लॉगआउट",
+        logoutCancel: "❌ रद्द करें",
+        recycleSearch:
+          "🔍 खोजें...",
+
+        restoreAll:
+          "♻️ सभी वापस लाएं",
+        resetData: "🔄 ऐप डेटा रीसेट करें",
+        save_p: "💾 सेव करें",
+
+        close_p: "❌ बंद करें",
+
+        cancel_p: "❌ रद्द करें",
+        print: "प्रिंट",
+
+        printType: "🖨️ प्रिंट प्रकार",
+
+        currentPage: "📄 वर्तमान पेज",
+
+        fullList: "👤 पूरी सूची",
+
+        activeEntry: "📚 सक्रिय एंट्री",
+
+        close: " बंद करें",
+        btnclose: "⬅️ बंद करें",
+
+        preview: "पूर्वावलोकन",
+
+        save: "💾 सेव करें",
+
+        share: "📤 शेयर करें",
+
+        cancel: "❌ रद्द करें",
+
+        savedReports: "💾 सेव रिपोर्ट",
+
+        viewReport: "📄 रिपोर्ट देखें",
+
+        saveConfirm: "💾 रिपोर्ट सेव करें?",
+
+        savedSuccess: "💾 सफलतापूर्वक सेव हुआ",
+
+        deleteConfirm: "🗑️ रिपोर्ट हटाएँ?",
+
+        copied: "📋 कॉपी हो गया",
+
+        reportNotFound: "रिपोर्ट नहीं मिली",
+
+        closeEdit: "बंद करें",
+
+        photo: " फोटो जोड़ें",
+        notesBackBtn: "⬅ वापस जाए",
+        selectHisabDate: "📅 हिसाब की डेट चुनें",
+        submit: "सबमिट",
+        cancel: "रद्द करें",
+
+        appInfo: "ऐप जानकारी",
+        overview: "ओवरव्यू",
+
+        add: "नई एंट्री",
+        notes: "नोट्स",
+        members: "सदस्य",
+        history: "इतिहास",
+        calculator: "कैलकुलेटर",
+        total: "कुल",
+        interest: "ब्याज",
+        amount: "मूल राशि",
+        date: "तारीख",
+        ok: "ठीक है",
+        close: "⬅ वापस जाए",
+        cancel: "रद्द करें",
+        saveBtn: "सेव करें",
+        settings: "सेटिंग्स",
+        save: "सेव करें",
+
+        search: "🔍 खोजे",
+        membersTitle: "सभी सदस्य",
+        notesMenu: "नोट्स मेनू",
+        history: "हिसाब इतिहास",
+        noData: "कोई हिसाब नहीं",
+
+        installment: "किस्त नंबर",
+        currentAmount: "मूल राशि",
+        interestRate: "ब्याज दर",
+        start: "शुरू",
+        end: "खत्म",
+        duration: "समय",
+        dailyInterest: "रोज ब्याज",
+        totalInterest: "कुल ब्याज",
+        totalAmount: "कुल राशि",
+        paid: "जमा",
+        balance: "बाकी राशि",
+
+        addDate: "हिसाब डेट",
+        continue: "कंटिन्यू",
+        remove: "हटाएं",
+        searchBtn: "खोजें",
+        membersTitle: "सभी सदस्य",
+        history: "हिसाब इतिहास",
+        add: "नई एंट्री",
+        calcTitle: "ब्याज कैलकुलेटर",
+        rate: "ब्याज दर %",
+
+        theme: "ऐप थीम",
+        security: "सिक्योरिटी",
+        language: "भाषा",
+        close: "⬅ वापस जाए",
+
+        addDate: "हिसाब डेट ऐड",
+        continue: "कंटिन्यू",
+        delete: "हटाएं",
+        notesMenu: "📝 नोट्स मेनू",
+        addNote: "➕ नया नोट जोड़ें",
+        viewNotes: "📂 सेव नोट देखें",
+        close: "⬅ वापस जाए",
+        mergeKist: "🔀 किस्त मर्ज",
+        edit: "✏️ संपादित करें",
+        name: "नाम",
+        amount: "मूल राशि",
+        interestRate: "ब्याज दर",
+        start: "शुरू तारीख",
+        end: "खत्म तारीख",
+        remove: "🗑️ हटाएं",
+        view: "👁️ देखें",
+        recycleBin: "रीसायकल बिन",
+        restore: "♻️ वापस लाएं",
+        undoDelete: "↩️ पिछला डिलीट वापस लाएं",
+        recycleBinBtn: "🧺 रीसायकल बिन",
+        emptyBin: "खाली बिन",
+        addEntry: "एंट्री जोड़ें",
+        name: "नाम",
+        amount: "मूल राशि",
+        rate: "ब्याज दर %",
+        entryDate: "एंट्री दिनांक :(dd/mm/yyyy)",
+        saveBtn: "सेव करें",
+        close: "बंद करें",
+        dateRange: "तारीख सीमा",
+        days: "दिन",
+        startDate: "शुरू दिनांक:(दिन/महीना/वर्ष)",
+        endDate: "अंतिम दिनांक:(तारीख/महीना/वर्ष)",
+        enterDays: "दिनों की संख्या दर्ज करें",
+        calculate: "कैलकुलेट करें",
+        close: "बंद करें",
+        noNotes: "अभी कोई नोट सेव नहीं है",
+        camera: "कैमरा",
+
+        gallery: "गैलरी",
+        save: " सेव करें",
+        noteWarning: "नोट या इमेज जोड़ें!",
+        notFound: "नहीं मिला !",
+        menu: "मेन्यू",
+        btnAppInfo: "ऐप जानकारी",
+
+        appAbout:
+          "Ledger Pro एक सरल लेजर और फाइनेंस मैनेजमेंट ऐप है।",
+
+        features: "फीचर्स",
+
+        appDetails: "ऐप जानकारी",
+
+        developer: "डेवलपर",
+
+        builtWith: "बनाया गया",
+
+        version: "वर्जन",
+        lastUpdate: "अंतिम अपडेट",
+
+        storage: "स्टोरेज",
+
+        installable: "इंस्टॉल योग्य",
+
+        languages: "भाषाएँ",
+
+        status: "स्थिति",
+
+        shareApp: "ऐप शेयर करें",
+        notesSystem: "नोट्स सिस्टम",
+        interestCalc: "ब्याज कैलकुलेटर",
+        recycleBin: "रिसायकल बिन",
+        darkMode: "डार्क मोड",
+        securityLock: "सिक्योरिटी लॉक",
+        cameraGallery: "कैमरा और गैलरी नोट्स",
+        installPwa: "इंस्टॉल योग्य PWA ऐप",
+
+        localStorageText: "लोकल स्टोरेज",
+        pwaSupported: "PWA समर्थित",
+        runningSmoothly: "सही तरीके से चल रहा है",
+
+        openRepo: "रिपॉजिटरी खोलें",
+        madeWith: "Made with ❤️ by Ashish Gurjar",
+        name: "नाम",
+        amount: "मूल राशि",
+        rate: "ब्याज दर",
+        startDate: "शुरुआती तारीख",
+        endDate: "अंतिम तारीख",
+        photo: "फोटो",
+        save: "सेव करें",
+        selectKist: "मर्ज करने के लिए किस्त चुनें",
+
+        merge: "मर्ज करें"
+
+
+
+
+
+
+      }
+    };
+
+    // function toggleLangBox(){
+
+    //   let box = document.getElementById("langBox");
+    //   box.style.display = (box.style.display === "block") ? "none" : "block";
+    // }
+    function toggleLangBox() {
+
+      let box = document.getElementById("langBox");
+
+      if (box.style.display === "flex") {
+        box.style.display = "none";
+      } else {
+        box.style.display = "flex";
+      }
+    }
+
+    function applyCalcLanguage() {
+      let lang = localStorage.getItem("appLang") || "en";
+      let t = langData[lang];
+
+      document.getElementById("calcTitle").innerText = t.calcTitle;
+      document.getElementById("c_amount").placeholder = t.amount;
+      document.getElementById("c_rate").placeholder = t.rate;
+    }
+
+
+    function setLang(lang) {
+
+      localStorage.setItem("appLang", lang);
+      applyAllUI();
+
+      let t = langData[lang];
+      // Notes header
+
+
+      document.getElementById("btnAppInfo").innerText =
+        "ℹ️ " + (t.appInfo || "App Info");
+
+      document.getElementById("appInfoTitle").innerText =
+        t.appInfo || "App Info";
+
+
+      let btn = document.getElementById("btnEmptyBin");
+
+      if (btn) {
+        btn.innerText = "🗑️ " + (t.emptyBin || "Empty Bin");
+
+      }
+      document.getElementById("btnMenu").innerText =
+        "☰ " + (t.menu || "MENU");
+
+      if (notesState === "menu") {
+        showNotes();
+      }
+
+      if (notesState === "add") {
+        openAddNote();
+      }
+
+      if (notesState === "saved") {
+        openSavedNotes();
+      }
+      document.getElementById("mergeTitle").innerText =
+        "🔀 " + (t.selectKist || "Select Kist to Merge");
+
+      document.getElementById("mergeBtn").innerText =
+        "✔ " + (t.merge || "Merge");
+
+      document.getElementById("closeMergeBtn").innerText =
+        "❌ " + (t.close || "Close");
+
+      document.getElementById("saveBtn").innerText =
+        t.save || "Save";
+
+      document.getElementById(
+        "closeEditBtn"
+      ).innerText =
+        "❌ " + (
+          t.closeEdit || "Close"
+        );
+
+      document.getElementById(
+        "photoBtn"
+      ).innerText =
+        "📷 " + (
+          t.photo || "Photo"
+        );
+
+
+      document.getElementById(
+        "hisabModalTitle"
+      ).innerText =
+        t.selectHisabDate ||
+        "📅 हिसाब की डेट चुनें";
+
+      document.getElementById(
+        "hisabSubmitBtn"
+      ).innerText =
+        t.submit || "Submit";
+
+      document.getElementById(
+        "hisabCancelBtn"
+      ).innerText =
+        t.cancel || "Cancel";
+
+      setTimeout(() => {
+
+        document
+          .querySelectorAll(".notesBackBtn")
+          .forEach(btn => {
+
+            btn.innerText =
+              t.notesBackBtn ||
+              "⬅ Go Back";
+
+          });
+
+      }, 0);
+
+
+
+      document.getElementById("saveBtn").innerText =
+        t.saveBtn;
+
+      document.getElementById("dateRangeText").innerText =
+        t.dateRange;
+
+      document.getElementById("daysText").innerText =
+        t.days;
+
+      document.getElementById("startDateLabel").innerText =
+        t.startDate;
+
+      document.getElementById("endDateLabel").innerText =
+        t.endDate;
+
+      document.getElementById("daysLabel").innerText =
+        t.days;
+
+      document.getElementById("c_days").placeholder =
+        t.enterDays;
+
+
+      document.getElementById("calcBtn").innerText =
+        t.calculate;
+
+      document.getElementById("calcCloseBtn").innerText =
+        t.close;
+
+      document.getElementById("formTitle").innerText =
+        t.addEntry;
+
+      document.getElementById("name").placeholder =
+        t.name;
+
+      document.getElementById("amount").placeholder =
+        t.amount;
+
+      document.getElementById("rate").placeholder =
+        t.rate;
+
+      document.getElementById("dateLabel").innerText =
+        t.entryDate;
+
+      document.getElementById("saveBtn").innerText =
+        t.save;
+
+      document.getElementById("closeBtn").innerText =
+        t.close;
+
+      document.getElementById("btnRecycleBin").innerText =
+        t.recycleBinBtn || "🗑️ Recycle Bin";
+
+      let notesTitle = document.getElementById("notesTitle");
+      if (notesTitle) notesTitle.innerText = t.notesMenu;
+
+      // Buttons
+      let add = document.getElementById("btnNotesAdd");
+      if (add) add.innerText = "➕ " + t.addNote;
+
+      let name
+      let view = document.getElementById("btnNotesView");
+      if (view) view.innerText = "📂 " + t.viewNotes;
+
+      let close = document.getElementById("btnNotesClose");
+      if (close) close.innerText = "✖️ " + t.close;
+
+      let memberTitle = document.getElementById("membersTitle");
+      if (memberTitle) memberTitle.innerText = t.membersTitle;
+
+      let marge = document.getElementById("btnMarge");
+      if (marge) marge.innerText = "🔀 " + t.mergeKist;
+
+      let addBtns = document.querySelectorAll(".btnAddDate");
+      addBtns.forEach(btn => btn.innerText = t.addDate);
+
+      let c = document.querySelectorAll(".btnContinue");
+      c.forEach(btn => btn.innerText = t.continue);
+
+      let e = document.querySelectorAll(".btnEdit");
+      e.forEach(btn => btn.innerText = t.edit);
+
+
+
+      let d = document.querySelectorAll(".btnDelete");
+      d.forEach(btn => btn.innerText = t.delete);
+
+      let theme = document.getElementById("btnTheme");
+      if (theme) theme.innerText = "🎨 " + t.theme;
+
+      let sec = document.getElementById("btnSecurity");
+      if (sec) sec.innerText = "🔐 " + t.security;
+
+      let langBtn = document.getElementById("btnLanguage");
+      if (langBtn) langBtn.innerText = "🌐 " + t.language;
+
+      // close button (optional if you give id)
+      let closeBtn = document.getElementById("btnClose");
+      if (closeBtn) closeBtn.innerText = " " + t.btnclose;
+
+      document.querySelector(".side-menu h3").innerText = "⚙ " + t.settings;
+
+      document.getElementById("btnAdd").innerText = "➕👶 " + t.add;
+      document.getElementById("btnOverview").innerText = "📊 " + t.overview;
+      document.getElementById("btnHistory").innerText = "📅 " + t.history;
+      document.getElementById("btnCalc").innerText = "🧮 " + t.calculator;
+      document.getElementById("btnNotes").innerText = "📝 " + t.notes;
+      document.getElementById("btnMembers").innerText = "👥 " + t.members;
+
+      // ✅ safe dropdown close
+
+      let box = document.getElementById("langBox");
+      if (box) box.style.display = "none";
+
+      let s = document.getElementById("searchName");
+      if (s) s.placeholder = t.search;
+
+      let b = document.getElementById("btnSearch");
+      if (b) b.innerText = t.searchBtn;
+
+
+
+      applyEditLang();
+    }
+
+    function applyAllUI() {
+
+      let lang = localStorage.getItem("appLang") || "en";
+      let t = langData[lang];
+
+      // 🔥 1. Interest calculator update
+      applyCalcLanguage();
+      applyLanguage();
+
+      // 🔥 2. अगर user list खुली है तो reload करो
+      showAll();   // या openUser() जिस screen पर हो
+
+    }
+    window.onload = function () {
+      let savedLang = localStorage.getItem("appLang") || "en";
+      setLang(savedLang);
+      checkFirstLanguage();
+      loadProfile();
+
+
+    };
+
+    function openMergePanel(name) {
+
+      let user = users.find(u => u.name === name);
+      if (!user) return;
+
+      let html = "";
+      user.entries.forEach((e, i) => {
+
+        let isActive = !e.completed;
+
+        let borderStyle = isActive
+          ? "border-left:5px solid #22c55e;"
+          : "border-left:5px solid #ccc;";
+
+        html += `
+    <div style="
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:8px 0;
+      padding:6px;
+      background:#f1f5f9;
+      border-radius:8px;
+      ${borderStyle}
+      opacity:${isActive ? "1" : "0.5"};
+    ">
+      
+      ${isActive ? `
+        <input type="checkbox"
+          class="mergeBox"
+          data-index="${i}"
+          data-user="${name}"
+          style="width:18px;height:18px;">
+      ` : `
+        <span style="width:18px;"></span>
+      `}
+
+      <div>
+        <b>🟢 Kist ${e.kistNo || (i + 1)}</b><br>
+        💰 ₹${e.amount}
+      </div>
+
+    </div>
+  `;
+      });
+
+      document.getElementById("mergeList").innerHTML = html;
+      document.getElementById("mergeBoxPanel").style.display = "flex";
+    }
+    function mergeSelected() {
+
+      let selected = document.querySelectorAll(".mergeBox:checked");
+
+      if (selected.length < 2) {
+        alert("⚠️ कम से कम 2 kist select karo!");
+        return;
+      }
+
+      let userName = selected[0].dataset.user;
+      let user = users.find(u => u.name === userName);
+
+      let total = 0;
+      let paid = 0;
+      let rate = 0;
+
+
+      let kistList = [];
+
+      selected.forEach(cb => {
+
+        let index = parseInt(cb.dataset.index);
+        let userName = cb.dataset.user;
+
+        let user = users.find(u => u.name === userName);
+        if (!user) return;
+
+        let e = user.entries[index];
+        if (!e || e.completed) return;   // ✅ important
+
+        kistList.push(e.kistNo || (index + 1));
+
+        let calc = calculate(e.start, todayStr);
+        let interest = (e.amount * e.rate * calc.total) / 100;
+
+        total += e.amount + interest;
+        paid += e.paid;
+        rate = e.rate;
+
+        e.completed = true;
+      });
+
+      let remaining = total - paid;
+
+      user.entries.push({
+        amount: remaining,
+        originalAmount: remaining,
+        rate: rate,
+        start: todayStr,
+        endDate: null,
+        paid: 0,
+        hisabHistory: [],
+        completed: false,
+
+        // 👇 यही main change
+        kistNo: kistList.join(" + ") + " = MERGED",
+
+        status: "🔀 Merged"
+      });
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      closeMergePanel();
+
+      alert("✅ Merge ho gaya!");
+      closeMergePanel();
+      openUser(userName);
+    }
+    function closeMergePanel() {
+      document.getElementById("mergeBoxPanel").style.display = "none";
+    }
+
+    //////////////////////////////////////////////////////////////////////////
+
+    function openEditMenu(user, index) {
+
+      editUser = user;
+      editIndex = index;
+
+      document.getElementById("editMenu").style.display = "flex";
+
+      // popup reset
+      document.getElementById("editBoxArea").innerHTML = "";
+
+      applyEditLang();
+    }
+
+    function closeEditMenu() {
+
+      document.getElementById("editMenu").style.display = "none";
+
+      // clear edit area
+      document.getElementById("editBoxArea").innerHTML = "";
+    }
+
+    function applyEditLang() {
+
+      let lang = localStorage.getItem("appLang") || "en";
+      let t = langData[lang];
+
+
+      document.querySelector("#editMenu h3").innerText = "✏️ " + t.edit;
+
+      let buttons = document.querySelectorAll("#editMainButtons button");
+
+
+      if (buttons[0]) buttons[0].innerText = "🔀 " + (t.mergeKist || "Merge");
+      if (buttons[1]) buttons[1].innerText = "👤 " + (t.name || "Name Edit");
+      if (buttons[2]) buttons[2].innerText = "💰 " + t.amount;
+      if (buttons[3]) buttons[3].innerText = "📊 " + t.interestRate;
+      if (buttons[4]) buttons[4].innerText = "📅 " + t.start;
+      if (buttons[5]) buttons[5].innerText = "📅 " + t.end;
+      if (buttons[6]) buttons[6].innerText = "🎬📷 " + (t.photo || "Photo");
+      if (buttons[7]) buttons[7].innerText = "📞 " + (t.contact || "Contact");
+    }
+    function showEditBox(type) {
+
+      let lang =
+        localStorage.getItem("appLang") || "en";
+
+      let t = langData[lang];
+
+
+      document.querySelectorAll("#editMainButtons button")
+        .forEach(btn => btn.classList.remove("activeEdit"));
+
+      event.target.classList.add("activeEdit");
+
+      let user = users.find(u => u.name === editUser);
+
+      let e = user.entries[editIndex];
+
+      let html = "";
+
+      if (type === "name") {
+
+        html = `
+
+<label class="editLabel">
+  👤 ${t.name || "Name"}
+  <span class="downArrow">▼</span>
+</label>
+      <input type="text"
+      id="editNameInput"
+      value="${editUser}">
+
+      <button    id="saveBtn" class ="saveBtn" onclick="saveEditName()">
+         ${t.save || "Save"}
+      </button>
+    `;
+      }
+
+      // AMOUNT
+      else if (type === "amount") {
+
+        html = `
+  <label class="editLabel">
+  💰 ${t.amount || "Principal Amount"}
+    <span class="downArrow">▼</span>
+</label>
+  </label>
+      <input type="number"
+      id="editAmountInput"
+      value="${e.amount}">
+
+      <button    id="saveBtn" class ="saveBtn" onclick="saveEditAmount()">
+          ${t.save || "Save"}
+      </button>
+    `;
+      }
+
+      // RATE
+      else if (type === "rate") {
+
+        html = `
+     <label class="editLabel">
+  📊 ${t.rate || "Interest Rate"}
+
+    <span class="downArrow">▼</span>
+</label>
+  </label>
+      <input type="number"
+      id="editRateInput"
+      value="${e.rate}">
+
+      <button    id="saveBtn" class ="saveBtn" onclick="saveEditRate()">
+         ${t.save || "Save"}
+      </button>
+    `;
+      }
+
+      // START DATE
+      else if (type === "start") {
+
+        html = `
+  <label class="editLabel">
+  📅 ${t.startDate || "Start Date"}
+    <span class="downArrow">▼</span>
+</label>
+  </label>
+
+      <input type="date"
+      id="editStartInput"
+      value="${e.startDate}">
+
+      <button    id="saveBtn" class ="saveBtn" onclick="saveEditStart()">
+       ${t.save || "Save"}
+      </button>
+    `;
+      }
+
+      // END DATE
+      else if (type === "end") {
+
+        html = `
+    <label class="editLabel">
+  📅 ${t.endDate || "End Date"}
+    <span class="downArrow">▼</span>
+</label>
+  </label>
+
+      <input type="date"
+      id="editEndInput"
+      value="${e.endDate}">
+
+      <button    id="saveBtn" class ="saveBtn" onclick="saveEditEnd()">
+          ${t.save || "Save"}
+      </button>
+    `;
+      }
+
+      // CONTACT
+      else if (type === "contact") {
+
+        html = `
+
+<label class="editLabel">
+
+📞 ${t.contact || "Contact Number"}
+
+<span class="downArrow">▼</span>
+
+</label>
+
+<input
+type="tel"
+id="editContactInput"
+value="${e.phone || ""}">
+
+<button
+id="saveBtn"
+class="saveBtn"
+onclick="saveEditContact()">
+
+${t.save || "Save"}
+
+</button>
+
+`;
+
+      }
+      // PHOTO
+      else if (type === "photo") {
+        // html = `
+
+        // <label class="editLabel">
+
+        // 📷 ${t.photo || "Photo"}
+
+        // <span class="downArrow">▼</span>
+
+        // </label>
+
+        // <input
+        //   type="file"
+        //   accept="image/*"
+        //   id="photoInput">
+
+        // <br><br>
+
+        // <button
+        //   id="saveBtn"
+        //   class="saveBtn"
+        //   onclick="saveUserPhoto()">
+
+
+        //   ${t.save || "Save"}
+
+        // </button>
+
+        // <button
+        //   class="saveBtn"
+        //   style="background:red;margin-top:10px;"
+        //   onclick="removeUserPhoto()">
+
+        // ${t.removePhoto || "Remove Photo"}
+
+        // </button>
+
+        // `;
+
+        html = `
+
+<label class="editLabel">
+
+📷 ${t.photo || "Photo"}
+
+<span class="downArrow">▼</span>
+
+</label>
+
+<input
+  type="file"
+  accept="image/*"
+  id="photoInput">
+
+<br><br>
+
+<button
+  id="saveBtn"
+  class="saveBtn"
+  onclick="saveUserPhoto()">
+
+  ${t.save || "Save"}
+
+</button>
+
+<button
+  type="button"
+  class="saveBtn"
+  style="background:red;margin-top:10px;"
+  onclick="removeUserPhoto()">
+
+  ❌ ${t.removePhoto || "Remove Photo"}
+
+</button>
+
+`;
+        //         html = `
+
+        // <label class="editLab
+        // el">
+
+        // 📷 ${t.photo || "Photo"}
+
+        // <span class="downArrow">▼</span>
+
+        // </label>
+
+        // <input
+        //   type="file"
+        //   accept="image/*"
+        //   id="photoInput">
+
+        // <button
+        //   id="saveBtn"
+        //   class="saveBtn"
+        //   onclick="saveUserPhoto()">
+
+        //   ${t.save || "Save"}
+
+        // </button>
+
+        // `;
+
+      }
+
+      document.getElementById("editBoxArea").innerHTML = html;
+    }
+    function saveEditValue(type) {
+
+      let user = users.find(u => u.name === editUser);
+
+      if (!user) return;
+
+      let entry = user.entries[editIndex];
+
+      let value = document.getElementById("editInput").value;
+
+      if (type === "name") {
+
+        user.originalName = value;
+        user.name = value.toLowerCase();
+
+      }
+
+      else if (type === "amount") {
+
+        entry.amount = parseFloat(value);
+        entry.originalAmount = parseFloat(value);
+
+      }
+
+      else if (type === "rate") {
+
+        entry.rate = parseFloat(value);
+
+      }
+
+      else if (type === "start") {
+
+        entry.start = value;
+
+      }
+
+      else if (type === "end") {
+
+        entry.endDate = value;
+
+      }
+      else if (type === "photo") {
+
+        entry.photo = value;
+
+      }
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("Updated Successfully!");
+
+      showAll();
+
+      closeEditMenu();
+    }
+
+
+
+    function saveEditName() {
+
+      let newName =
+        document.getElementById("editNameInput").value.trim();
+
+      // ❌ EMPTY CHECK WITH ALERT
+      if (newName === "") {
+        alert("❌ Name empty nahi ho sakta!");
+        return;
+      }
+
+      let user = users.find(u => u.name === editUser);
+
+      if (!user) {
+        alert("❌ User not found!");
+        return;
+      }
+
+      user.name = newName.toLowerCase();
+      user.originalName = newName;
+
+      editUser = newName.toLowerCase();
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      showAll();
+      openUser(editUser);
+
+      alert("✅ Name Updated Successfully");
+    }
+
+    function saveEditAmount() {
+
+      let input = document.getElementById("editAmountInput").value.trim();
+      let value = parseFloat(input);
+
+      // ❌ EMPTY / INVALID CHECK
+      if (input === "" || isNaN(value)) {
+        alert("❌ Valid amount enter karo!");
+        return;
+      }
+
+      if (value <= 0) {
+        alert("❌ Amount 0 se bada hona chahiye!");
+        return;
+      }
+
+      let user = users.find(u => u.name === editUser);
+
+      if (!user) {
+        alert("❌ User not found!");
+        return;
+      }
+
+      user.entries[editIndex].amount = value;
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      showAll();
+
+      alert("✅ Amount Updated");
+    }
+
+
+    function saveEditRate() {
+
+      let input = document.getElementById("editRateInput").value.trim();
+      let value = parseFloat(input);
+
+      // ❌ EMPTY / INVALID CHECK
+      if (input === "" || isNaN(value)) {
+        alert("❌ Valid interest rate enter karo!");
+        return;
+      }
+
+      if (value <= 0) {
+        alert("❌ Rate 0 se bada hona chahiye!");
+        return;
+      }
+
+      let user = users.find(u => u.name === editUser);
+
+      if (!user) {
+        alert("❌ User not found!");
+        return;
+      }
+
+      user.entries[editIndex].rate = value;
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      showAll();
+
+      alert("✅ Rate Updated");
+    }
+
+
+
+    function saveEditStart() {
+
+      let value = document.getElementById("editStartInput").value;
+
+      // ❌ EMPTY CHECK WITH ALERT
+      if (!value) {
+        alert("❌ Start date select karo!");
+        return;
+      }
+
+      let user = users.find(u => u.name === editUser);
+
+      if (!user) {
+        alert("❌ User not found!");
+        return;
+      }
+
+      user.entries[editIndex].start = value;
+
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      showAll();
+
+      alert("✅ Start Date Updated");
+    }
+    function saveEditEnd() {
+
+      let value = document.getElementById("editEndInput").value;
+
+      // ❌ EMPTY CHECK
+      if (!value) {
+        alert("❌ End date select karo!");
+        return;
+      }
+
+      let user = users.find(u => u.name === editUser);
+
+      if (!user) {
+        alert("❌ User not found!");
+        return;
+      }
+
+      let start = user.entries[editIndex].start;
+
+      // ❌ LOGIC CHECK (important)
+      if (start && new Date(value) < new Date(start)) {
+        alert("❌ End date start date se chhoti nahi ho sakti!");
+        return;
+      }
+
+      user.entries[editIndex].endDate = value;
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      showAll();
+
+
+
+      alert("✅ End Date Updated");
+    }
+    //     function saveEditContact() {
+
+    // //       let users = JSON.parse(
+    // //   localStorage.getItem("users")
+    // // ) || [];
+
+    //   let input =
+    //     document.getElementById(
+    //       "editContactInput"
+    //     ).value.trim();
+
+    //   let user =
+    //     users.find(
+    //       u => u.name === editUser
+    //     );
+
+    //   if (!user) {
+
+    //     alert("❌ User not found!");
+
+    //     return;
+    //   }
+
+    //   // ✅ EMPTY = REMOVE NUMBER
+    //   if(input === ""){
+
+    //     user.entries[editIndex].phone = "";
+
+    //     user.phone = "";
+
+    //     localStorage.setItem(
+    //       "users",
+    //       JSON.stringify(users)
+    //     );
+
+    //     showAll();
+
+    //     openUser(editUser);
+    //     alert("✅ Number Removed");
+
+    //     return;
+    //   }
+
+    //       // ❌ ONLY NUMBER CHECK
+    //       if (isNaN(input)) {
+
+    //         alert(
+    //           "❌ Sirf number enter karo!"
+    //         );
+
+    //         return;
+    //       }
+
+    //       // ❌ LENGTH CHECK
+    //       if (input.length < 10) {
+
+    //         alert(
+    //           "❌ Valid mobile number enter karo!"
+    //         );
+
+    //         return;
+    //       }
+
+    //       // let user =
+    //       //   users.find(
+    //       //     u => u.name === editUser
+    //       //   );
+
+    //       if (!user) {
+
+    //         alert(
+    //           "❌ User not found!"
+    //         );
+
+    //         return;
+    //       }
+
+    //       user.entries[editIndex].phone =
+    //         input;
+
+    //         user.phone = input;
+
+    //       localStorage.setItem(
+    //         "users",
+    //         JSON.stringify(users)
+    //       );
+
+    //       showAll();
+
+    //       alert(
+    //         "✅ Contact Updated"
+    //       );
+    //     }
+
+    function saveEditContact() {
+
+      let input =
+        document.getElementById(
+          "editContactInput"
+        ).value.trim();
+
+      let user =
+        users.find(
+          u => u.name === editUser
+        );
+
+      if (!user) {
+
+        alert("❌ User not found!");
+
+        return;
+      }
+
+      // ✅ EMPTY = REMOVE NUMBER
+      if (input === "") {
+
+        user.entries[editIndex].phone = "";
+
+        user.phone = "";
+
+        localStorage.setItem(
+          "users",
+          JSON.stringify(users)
+        );
+
+        forceOpenUser = true;
+
+        openUser(editUser);
+
+        alert("✅ Number Removed");
+
+        return;
+      }
+
+      // ❌ ONLY NUMBER CHECK
+      if (isNaN(input)) {
+
+        alert(
+          "❌ Sirf number enter karo!"
+        );
+
+        return;
+      }
+
+      // ❌ LENGTH CHECK
+      if (input.length < 10) {
+
+        alert(
+          "❌ Valid mobile number enter karo!"
+        );
+
+        return;
+      }
+
+      // ✅ SAVE NUMBER
+      user.entries[editIndex].phone =
+        input;
+
+      user.phone = input;
+
+      localStorage.setItem(
+        "users",
+        JSON.stringify(users)
+      );
+
+      forceOpenUser = true;
+
+      openUser(editUser);
+
+      alert(
+        "✅ Contact Updated"
+      );
+
+    }
+
+    function saveUserPhoto() {
+
+      let file =
+        document.getElementById(
+          "photoInput"
+        ).files[0];
+
+      let user =
+        users.find(
+          u => u.name === editUser
+        );
+
+      if (!user) {
+
+        alert("❌ User not found!");
+
+        return;
+      }
+
+      // ✅ NO PHOTO = REMOVE PHOTO
+      if (!file) {
+
+        user.photo = "";
+
+        localStorage.setItem(
+          "users",
+          JSON.stringify(users)
+        );
+
+        forceOpenUser = true;
+
+        openUser(editUser);
+
+        alert("✅ Photo Removed");
+
+        return;
+      }
+
+      let reader = new FileReader();
+
+      reader.onload = function (e) {
+
+        user.photo = e.target.result;
+
+        localStorage.setItem(
+          "users",
+          JSON.stringify(users)
+        );
+
+        forceOpenUser = true;
+
+        openUser(editUser);
+
+        alert("✅ Photo Saved");
+
+      };
+
+      reader.readAsDataURL(file);
+
+    }
+
+    function removeUserPhoto() {
+
+      let lang =
+        localStorage.getItem("appLang") || "en";
+
+      let t = langData[lang];
+
+      let ok = confirm(
+        t.removePhotoConfirm ||
+        "Remove current photo?"
+      );
+
+      if (!ok) return;
+
+      let user =
+        users.find(
+          u => u.name === editUser
+        );
+
+      if (!user) return;
+
+      user.photo = "";
+
+      localStorage.setItem(
+
+        "users",
+        JSON.stringify(users)
+      );
+
+      forceOpenUser = true;
+
+      openUser(editUser);
+
+      // alert("✅ Photo Removed");
+    }
+    // }
+    //     function saveUserPhoto() {
+
+    //       let file =
+    //         document.getElementById("photoInput")
+    //           .files[0];
+
+    //       if (!file) {
+
+    //         alert("Select Photo");
+    //         return;
+
+    //       }
+
+    //       let reader = new FileReader();
+
+    //       reader.onload = function (e) {
+
+    //         let user =
+    //           users.find(u => u.name === editUser);
+
+    //         if (!user) return;
+
+    //         user.photo = e.target.result;
+
+    //         localStorage.setItem(
+    //           "users",
+    //           JSON.stringify(users)
+    //         );
+
+    //         alert("✅ Photo Saved");
+
+    //         //  openUser(editUser);
+
+    //         showAll();
+
+    //       };
+
+    //       reader.readAsDataURL(file);
+
+    //     }
+
+
+
+    function permanentDelete(id) {
+
+      if (!confirm("⚠️ Permanently delete?"))
+        return;
+
+      let recycle = getRecycle();
+
+      let index =
+        recycle.findIndex(r => r.id === id);
+
+      if (index === -1) return;
+
+      recycle.splice(index, 1);
+
+      localStorage.setItem(
+        "recycle",
+        JSON.stringify(recycle)
+      );
+
+      alert("🗑️ Permanently deleted!");
+
+      openRecycleBin(true);
+    }
+
+    // let lastDeleted = null;
+    function deleteEntry(name, index) {
+
+      if (!confirm("⚠️ Delete entry?")) return;
+
+      let user = users.find(u => u.name === name);
+      if (!user) return;
+
+      let entry = user.entries[index];
+      if (!entry) return;
+
+      // 🔥 FIX: always ensure unique identity
+      entry.recycleId = entry.recycleId || crypto.randomUUID();
+
+      moveToRecycle("entry", {
+        id: entry.recycleId,
+        user: name,
+        entry: structuredClone(entry)
+      });
+
+      user.entries.splice(index, 1);
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("🗑️ Moved to recycle");
+
+      openUser(name);
+    }
+    function undoDelete() {
+
+      let recycle = getRecycle();
+
+      if (!recycle.length) {
+        alert("Nothing to undo");
+        return;
+      }
+
+      // 🔥 FIFO = FIRST ITEM
+      let item = recycle.shift();
+
+      if (!item) return;
+
+      // ================= ENTRY =================
+      if (item.type === "entry") {
+
+        let user = users.find(u => u.name === item.data.user);
+
+        if (user) {
+
+          let entry = item.data.entry;
+
+          entry.deleted = false;
+          delete entry.deletedAt;
+
+          let exists = user.entries.find(e => e.recycleId === entry.recycleId);
+
+          if (!exists) {
+            user.entries.push(entry);
+          }
+        }
+      }
+
+      // ================= NOTE =================
+      else if (item.type === "note") {
+        notes.push(item.data);
+      }
+
+      // ================= USER =================
+      else if (item.type === "user") {
+        users.push(item.data);
+      }
+
+      // ================= HISTORY =================
+      else if (item.type === "history") {
+
+        let user = users.find(u => u.name === item.data.user);
+
+        if (user) {
+          let entry = user.entries[item.data.entryIndex];
+          if (entry) {
+            entry.hisabHistory.push(item.data.history);
+          }
+        }
+      }
+
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("notes", JSON.stringify(notes));
+      localStorage.setItem("recycle", JSON.stringify(recycle));
+
+      alert("♻️ First deleted restored (LIFO)");
+
+      openRecycleBin(true);
+    }
+
+
+
+    // 
+    function openRecycleBin(refresh = false) {
+
+      let popup = document.getElementById("recyclePopup");
+
+      if (!refresh && popup.style.display === "flex") {
+        popup.style.display = "none";
+        return;
+      }
+
+      let recycleData = getRecycle();
+
+      // 🔥 SAFE SORT (latest first)
+      function getTime(item) {
+        let t = item.date || item.deletedAt || item.createdAt;
+        if (!t) return 0;
+        let time = new Date(t).getTime();
+        return isNaN(time) ? 0 : time;
+      }
+
+      recycleData.sort((a, b) => getTime(b) - getTime(a));
+
+      let lang = localStorage.getItem("appLang") || "en";
+      let t = langData[lang];
+
+      let deletedCount = 0;
+
+      let title = document.getElementById("recycleTitle");
+
+      let html = `
+<input
+type="text"
+id="recycleSearch"
+placeholder="${t.recycleSearch}"
+onkeyup="filterRecycleBin()" />
+
+<br><br>
+
+
+    <button onclick="undoDelete()">
+      ${t.undoDelete || "↩️ Undo Last Delete"}
+    </button>
+
+  <button
+onclick="restoreAllDeleted()">
+
+${t.restoreAll}
+
+</button>
+
+    <button onclick="emptyRecycleBin()" id="btnEmptyBin">
+      🗑️ ${t.emptyBin || "Empty Bin"}
+    </button>
+
+    <br><br>
+  `;
+
+      // =========================
+      // 🔥 SINGLE LOOP FIX (IMPORTANT)
+      // =========================
+      recycleData.forEach(item => {
+
+        // ================= ENTRY =================
+        if (item.type === "entry") {
+
+          let e = item.data.entry;
+          deletedCount++;
+
+          html += `
+        <div class="card">
+
+            📌 Entry<br><br>
+          👤 ${item.data.user}<br>
+          💰 ₹${e.amount}<br><br>
+
+          🕒 Deleted:
+          ${item.date ? new Date(item.date).toLocaleString("en-IN", {
+            dateStyle: "medium",
+            timeStyle: "short"
+          }) : "Unknown"}
+
+          <br><br>
+
+          <button onclick="restoreRecycle('${item.id}')">♻️ Restore</button>
+          <button onclick="permanentDelete('${item.id}')">❌ Delete</button>
+        </div>
+      `;
+        }
+
+        // ================= NOTE =================
+        else if (item.type === "note") {
+
+          let n = item.data;
+          deletedCount++;
+
+          html += `
+        <div class="card">
+          📝 Note<br>
+          ${n.text || ""}<br><br>
+
+          🕒 Deleted:
+          ${item.date ? new Date(item.date).toLocaleString("en-IN") : "Unknown"}
+
+          <br><br>
+
+          <button onclick="restoreRecycle('${item.id}')">♻️ Restore</button>
+          <button onclick="permanentDelete('${item.id}')">❌ Delete</button>
+        </div>
+      `;
+        }
+
+        // ================= HISTORY =================
+        else if (item.type === "history") {
+
+          if (!item.data || !item.data.history) return;
+
+          let h = item.data.history;
+          deletedCount++;
+
+          html += `
+        <div class="card">
+          📅 History<br>
+          👤 ${item.data.user || ""}<br>
+          ${h.text || ""}<br><br>
+
+          🕒 Deleted:
+          ${item.date ? new Date(item.date).toLocaleString("en-IN") : "Unknown"}
+
+          <br><br>
+
+          <button onclick="restoreRecycle('${item.id}')">♻️ Restore</button>
+          <button onclick="permanentDelete('${item.id}')">❌ Delete</button>
+        </div>
+      `;
+        }
+
+        // ================= USER =================
+        else if (item.type === "user") {
+
+          let u = item.data;
+          deletedCount++;
+
+          html += `
+        <div class="card">
+          👤 Member<br>
+          ${u.originalName || u.name}<br><br>
+
+          🕒 Deleted:
+          ${item.date ? new Date(item.date).toLocaleString("en-IN") : "Unknown"}
+
+          <br><br>
+
+          <button onclick="restoreRecycle('${item.id}')">♻️ Restore</button>
+          <button onclick="permanentDelete('${item.id}')">❌ Delete</button>
+        </div>
+      `;
+        }
+
+      });
+
+      // ================= TITLE =================
+      if (title) {
+        title.textContent =
+          (t.recycleBin || "🗑️ Recycle Bin") + " (" + deletedCount + ")";
+      }
+
+      document.getElementById("recycleContent").innerHTML = html;
+
+      popup.style.display = "flex";
+
+      let btn = document.getElementById("btnEmptyBin");
+      if (btn) {
+        btn.innerText = "🗑️ " + (t.emptyBin || "Empty Bin");
+      }
+    }
+
+
+
+
+    function filterRecycleBin() {
+      let val = document.getElementById("recycleSearch").value.toLowerCase();
+      let cards = document.querySelectorAll("#recycleContent .card");
+
+      cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        card.style.display = text.includes(val) ? "block" : "none";
+      });
+    }
+
+
+
+    function restoreAllDeleted() {
+
+      if (!confirm("♻️ Restore ALL items?")) return;
+
+      let recycle = getRecycle();
+
+      // copy safely
+      let items = [...recycle];
+
+      items.forEach(item => {
+
+        let index = recycle.findIndex(r => r.id === item.id);
+        if (index === -1) return;
+
+        let data = recycle[index];
+
+        // ==== ENTRY ====
+        if (data.type === "entry") {
+          let user = users.find(u => u.name === data.data.user);
+          if (user) {
+            user.entries.push(data.data.entry);
+          }
+        }
+
+        // ==== NOTE ====
+        else if (data.type === "note") {
+          notes.push(data.data);
+        }
+
+        // ==== USER ====
+        else if (data.type === "user") {
+          users.push(data.data);
+        }
+
+        // ==== HISTORY ====
+        else if (data.type === "history") {
+          let user = users.find(u => u.name === data.data.user);
+          if (user) {
+            let entry = user.entries[data.data.entryIndex];
+            if (entry) {
+              entry.hisabHistory.push(data.data.history);
+            }
+          }
+        }
+
+        // remove from recycle
+        recycle.splice(index, 1);
+      });
+
+      // save ONCE
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("notes", JSON.stringify(notes));
+      localStorage.setItem("recycle", JSON.stringify(recycle));
+
+      alert("♻️ All restored!");
+
+      openRecycleBin(true);
+      showAll();
+
+      showNotes();
+
+    }
+    function closeRecycleBin() {
+
+      document.getElementById("recyclePopup")
+        .style.display = "none";
+    }
+
+
+    function emptyRecycleBin() {
+
+      if (!confirm("⚠️ Delete all permanently?")) return;
+
+      localStorage.removeItem("recycle");
+
+      alert("🗑️ Recycle bin cleared");
+
+      openRecycleBin(true);
+    }
+
+
+
+
+
+
+
+
+
+
+
+    function restoreRecycle(id) {
+
+      if (!confirm("♻️ Restore this item?"))
+        return;
+
+      let recycle = getRecycle();
+
+      let index =
+        recycle.findIndex(r => r.id === id);
+
+      if (index === -1) return;
+
+      let item = recycle[index];
+
+      // 🟢 ENTRY
+      if (item.type === "entry") {
+
+        let user =
+          users.find(u => u.name === item.data.user);
+
+        if (user) {
+          // remove duplicate safety
+          let exists = user.entries.find(e => e.recycleId === item.data.entry.recycleId);
+
+          if (!exists) {
+            user.entries.push(item.data.entry);
+          }
+        }
+      }
+
+      //     item.data.entry.deleted = false;
+      //     delete item.data.entry.deletedAt;
+
+      //     user.entries.push(item.data.entry);
+      //   }
+      // }
+
+      // 🟡 NOTE
+      else if (item.type === "note") {
+
+        item.data.deleted = false;
+        delete item.data.deletedAt;
+
+        notes.push(item.data);
+      }
+
+      // 🔵 USER
+      else if (item.type === "user") {
+
+        item.data.deleted = false;
+        delete item.data.deletedAt;
+
+        users.push(item.data);
+      }
+
+      // 🟣 HISTORY
+      else if (item.type === "history") {
+
+        let user =
+          users.find(u => u.name === item.data.user);
+
+        if (user) {
+
+          let entry =
+            user.entries[item.data.entryIndex];
+
+          if (entry) {
+
+            item.data.history.deleted = false;
+            delete item.data.history.deletedAt;
+
+            entry.hisabHistory.push(
+              item.data.history
+            );
+          }
+        }
+      }
+
+      // ❌ recycle se remove
+      recycle.splice(index, 1);
+
+      localStorage.setItem(
+        "users",
+        JSON.stringify(users)
+      );
+
+      localStorage.setItem(
+        "notes",
+        JSON.stringify(notes)
+      );
+
+      localStorage.setItem(
+        "recycle",
+        JSON.stringify(recycle)
+      );
+
+      // alert("♻️ Restored");
+
+      openRecycleBin(true);
+
+      showAll();
+
+      showNotes();
+
+    }
+
+
+
+
+    function openAppInfo() {
+
+      let lang =
+        localStorage.getItem("appLang") || "en";
+
+      let t = langData[lang];
+
+      document.getElementById("appInfoContent")
+        .innerHTML = `
+
+    <div style="
+      line-height:1.8;
+      margin-bottom:40px;
+    ">
+
+      <h2 style="text-align:center;">
+        📱 Ledger Pro
+      </h2>
+
+      <p style="text-align:center;">
+        ${t.appAbout}
+      </p>
+
+      <hr>
+
+      <h3>✨ ${t.features}</h3>
+
+      <p>📒 ${t.notesSystem}</p>
+      <p>💰 ${t.interestCalc}</p>
+      <p>🗑️ ${t.recycleBin}</p>
+      <p>🌐 ${t.languages}</p>
+      <p>🌙 ${t.darkMode}</p>
+      <p>🔐 ${t.securityLock}</p>
+     <p>📷 ${t.cameraGallery}</p>
+
+<p>📱 ${t.installPwa}</p>
+      <hr>
+
+      <h3>ℹ️ ${t.appDetails}</h3>
+
+      <p><b>👨‍💻 ${t.developer}:</b>
+      Ashish Gurjar</p>
+
+      <p><b>⚙️ ${t.builtWith}:</b>
+      HTML, CSS, JavaScript</p>
+
+      <p><b>📦 ${t.version}:</b>
+      1.0</p>
+
+      <p><b>📅 ${t.lastUpdate}:</b>
+      ${new Date().toLocaleDateString()}</p>
+
+      <p><b>💾 ${t.storage}:</b>
+      Local Storage</p>
+
+      <p><b>📱 ${t.installable}:</b>
+      PWA Supported</p>
+
+      <p><b>🌐 ${t.languages}:</b>
+      Hindi / English</p>
+
+      <p><b>⚡ ${t.status}:</b>
+      Running Smoothly</p>
+
+      <p>
+        <b>🔗 GitHub:</b><br>
+
+       <a href="https://github.com/AshishGurjar9"
+target="_blank"
+class="github-link">
+
+Open Repository
+
+</a>
+      </p>
+
+      <button class="share-btn" onclick="shareApp()">
+📤 Share App
+</button>
+
+      <p style="
+        text-align:center;
+        opacity:0.7;
+        margin-top:20px;
+      ">
+
+        Made with ❤️ by Ashish Gurjar
+
+      </p>
+
+    </div>
+  `;
+
+      document.getElementById("appInfoPopup")
+        .style.display = "flex";
+    }
+
+
+    function closeAppInfo() {
+
+      document.getElementById("appInfoPopup")
+        .style.display = "none";
+    }
+
+    function shareApp() {
+
+      if (navigator.share) {
+
+        navigator.share({
+
+          title: "Ledger Pro",
+
+          text:
+            "Try my Ledger Pro App",
+
+          url: location.href
+
+        });
+
+      } else {
+
+        alert("Sharing not supported");
+
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    function openSavedReports() {
+
+      savedReports = JSON.parse(localStorage.getItem("savedReports")) || [];
+
+      showStorage();
+
+      document.getElementById("storagePopup").style.display = "flex";
+    }
+
+
+    function closeStorage() {
+      document.getElementById("storagePopup").style.display = "none";
+    }
+
+    function openPrintMenu() {
+
+      document.getElementById("printMenu")
+        .style.display = "flex";
+
+
+    }
+
+    function closePrintMenu() {
+
+      document.getElementById("printMenu")
+        .style.display = "none";
+
+
+    }
+
+
+    let selectedType = "";
+    let previewData = "";
+
+    // 🖨️ STEP 1
+    function openPrintOptions(type) {
+      let lang =
+        localStorage.getItem("appLang") || "en";
+
+      let t = langData[lang];
+
+      selectedType = type;
+
+      // 📄 CURRENT
+      if (type === "current") {
+
+        let output = document.getElementById("output");
+
+        let clone = output.cloneNode(true);
+
+        // remove invisible cards
+        clone.querySelectorAll(".card").forEach(card => {
+
+          let style = window.getComputedStyle(card);
+
+          if (style.display === "none" || style.visibility === "hidden") {
+            card.remove();
+          }
+
+        });
+
+        previewData = clone.innerHTML;
+      }
+
+      // 👤 USER
+      else if (type === "user") {
+
+        let output = document.getElementById("output");
+
+        let clone = output.cloneNode(true);
+
+        // clone.querySelectorAll("button").forEach(btn => btn.remove());
+
+        previewData = clone.innerHTML;
+      }
+
+
+
+      else if (type === "active") {
+
+        let output = document.getElementById("output").cloneNode(true);
+
+        output.querySelectorAll(".card").forEach(card => {
+
+          let text = card.innerText;
+
+          // ❌ remove unwanted entries
+          if (
+            text.includes("पूरा पैसा जमा हो चुका है") ||
+            text.includes("Deleted Entry") ||
+            text.includes("पैसा जमा नहीं किया पूरा जोड़कर आगे बढ़ाया") ||
+            text.includes("₹") && text.includes("जमा किया")   // 👈 IMPORTANT ADD
+          ) {
+            card.remove();
+          }
+
+        });
+
+        previewData = output.innerHTML;
+      }
+      // ❌ hide print menu
+      // document.getElementById("printMenu").style.display = "none";
+
+
+      // 👁️ show action menu
+      document.getElementById("actionMenu").style.display = "flex";
+
+      // 🏷️ title
+      document.getElementById("previewTitle").innerText =
+        type === "current" ? "📄 Current Page Preview" :
+          type === "user" ? "👤 Full List Preview" :
+            "📚 Active Entry Preview";
+
+      // ⭐ IMPORTANT: SHOW PREVIEW HERE
+      document.getElementById("previewBox").innerHTML = previewData;
+
+    }
+
+
+    // 🟢 STEP 2
+    function doAction(action) {
+
+      let lang =
+        localStorage.getItem("appLang") || "en";
+
+      let t = langData[lang];
+
+      let content = previewData;
+      let title = selectedType;
+
+      if (action === "save") {
+        if (!confirm("💾 Save this report?")) return;
+        saveReport(title, content);
+        alert("💾 Saved Successfully");
+
+      }
+
+      else if (action === "share") {
+
+        navigator.share?.({
+          title: title,
+          text: content
+        });
+
+      }
+
+      else if (action === "cancel") {
+
+        closeActionMenu();
+        return;
+      }
+
+      closeActionMenu();
+
+    }
+    function closeActionMenu() {
+      document.getElementById("actionMenu").style.display = "none";
+    }
+
+
+    function saveReport(title, html) {
+
+
+
+      let savedReports =
+        JSON.parse(localStorage.getItem("savedReports")) || [];
+      let temp = document.createElement("div");
+
+      temp.innerHTML = html;
+
+      // 🔥 REMOVE ALL BUTTONS
+      temp.querySelectorAll("button").forEach(btn => {
+        btn.remove();
+      });
+
+      // 🔥 REMOVE INPUTS
+      temp.querySelectorAll("input").forEach(inp => {
+        inp.remove();
+      });
+
+      // 🔥 REMOVE TEXTAREA
+      temp.querySelectorAll("textarea").forEach(t => {
+        t.remove();
+      });
+
+      html = temp.innerHTML;
+
+      let userName = currentOpenUser || "User";
+
+      // 🔥 First letter capital
+      userName =
+        userName.charAt(0).toUpperCase() +
+        userName.slice(1);
+
+      let readableTitle = "";
+
+      // 📚 Active
+      if (title === "active") {
+
+        readableTitle =
+          `📚 ${userName}: Active Entries`;
+
+      }
+
+      // 👤 All List
+      else if (title === "user") {
+
+        readableTitle =
+          `👤 ${userName}: All List`;
+
+      }
+
+      // 📄 Current
+      else if (title === "current") {
+
+        readableTitle =
+          `📄 ${userName}: Current Page`;
+
+      }
+
+      // ✏️ Custom
+      else {
+
+        readableTitle = title;
+
+      }
+
+      savedReports.unshift({
+
+        id: crypto.randomUUID(),
+
+        title: readableTitle,
+
+        type: title,
+
+        html: `
+      <div class="pdf-report">
+
+        <h2>${readableTitle}</h2>
+
+        <hr>
+
+        ${html}
+
+      </div>
+    `,
+
+        user: userName,
+
+        // 🔥 readable date
+        date: new Date().toLocaleString("en-IN", {
+
+          dateStyle: "medium",
+          timeStyle: "short"
+
+        })
+
+      });
+
+      localStorage.setItem(
+        "savedReports",
+        JSON.stringify(savedReports)
+      );
+
+      // alert("✅ Report Saved");
+
+      // 🔥 refresh storage
+      showStorage();
+    }
+    function saveCurrentReport() {
+
+
+      document
+        .getElementById("reportPopup")
+        .style.display = "block";
+
+    }
+
+    function confirmSaveReport() {
+
+      let title =
+        document.getElementById("reportTitle").value.trim();
+
+      if (!title) {
+        alert("Enter title");
+        return;
+      }
+
+      let html = getCleanContent("current");
+
+      saveReport(title, html);
+
+      closeReportPopup();
+
+    }
+
+    function showStorage() {
+
+      savedReports = JSON.parse(localStorage.getItem("savedReports")) || [];
+
+      let box =
+        document.getElementById("storageList");
+
+      if (!box) return;
+
+      box.innerHTML = "";
+
+      savedReports.forEach((r, i) => {
+
+        box.innerHTML += `
+  <div class="reportItem">
+
+    <div class="date">
+      📅 ${new Date(r.date).toLocaleString("en-IN")}
+    </div>
+
+    <div class="title">
+      📄 ${r.title}
+    </div>
+
+    <div class="actions">
+
+    <button class="pdfviewBtn"  onclick="viewReport(${i})">👁️ view </button>
+    <button class="pdfshareBtn" onclick="shareReport(${i})">📤 Share</button>
+    <button class="pdfremoveBtn" onclick="deleteReport(${i})">🗑️ Remove </button>
+
+    </div>
+
+  </div>
+
+`;
+
+      });
+
+    }
+
+
+    function viewReport(index) {
+
+      savedReports = JSON.parse(localStorage.getItem("savedReports")) || [];
+
+      let report = savedReports[index];
+
+      if (!report) {
+        alert("Report not found");
+        return;
+      }
+
+      let box = document.getElementById("reportPreviewBox");
+
+      box.innerHTML = report.html;
+
+      document.getElementById("reportViewPopup").style.display = "flex";
+    }
+
+    function closeReportView() {
+      document.getElementById("reportViewPopup").style.display = "none";
+    }
+
+    function getCleanContent(type) {
+
+      let data = "";
+
+      // 📄 Current Page
+      if (type === "current") {
+        data = document.getElementById("output").innerHTML;
+      }
+
+      // 👤 Full User List
+      else if (type === "user") {
+        data = getUserFullList();
+      }
+
+      // 📚 Active Entries
+      else if (type === "active") {
+        data = getActiveEntries();
+      }
+
+      return `
+    <div style="font-family: Arial; padding:20px;">
+      ${data}
+    </div>
+  `;
+
+    }
+
+
+    function deleteReport(index) {
+
+      if (!confirm("🗑️ Delete report?")) return;
+
+      savedReports = JSON.parse(localStorage.getItem("savedReports")) || [];
+
+      savedReports.splice(index, 1);
+
+      localStorage.setItem("savedReports", JSON.stringify(savedReports));
+
+      showStorage();
+    }
+
+    function shareReport(index) {
+
+      savedReports = JSON.parse(localStorage.getItem("savedReports")) || [];
+
+      let report = savedReports[index];
+
+      if (!report) {
+        alert("Report not found");
+        return;
+      }
+
+      let text =
+        `📄 ${report.title}\n\n` +
+        `📌 Open this report in app`;
+
+      if (navigator.share) {
+
+        navigator.share({
+          title: report.title,
+          text: text,
+          url: location.href   // 🔥 IMPORTANT: link add
+        });
+
+      } else {
+
+        navigator.clipboard.writeText(text + "\n" + location.href);
+        alert("📋 Copied to clipboard");
+      }
+    }
+
+    async function generatePDF(htmlContent, fileName) {
+
+      let temp = document.createElement("div");
+
+      temp.innerHTML = htmlContent;
+
+      temp.style.padding = "20px";
+      temp.style.background = "#fff";
+      temp.style.color = "#000";
+
+      document.body.appendChild(temp);
+
+      const canvas = await html2canvas(temp);
+
+      const imgData = canvas.toDataURL("image/png");
+
+      const { jsPDF } = window.jspdf;
+
+      const pdf = new jsPDF("p", "mm", "a4");
+
+      let width = 190;
+      let height =
+        (canvas.height * width) / canvas.width;
+
+      pdf.addImage(imgData, "PNG", 10, 10, width, height);
+
+      let pdfBlob = pdf.output("datauristring");
+
+      document.body.removeChild(temp);
+
+      return pdfBlob;
+    }
+
+    function resetAppData() {
+
+      let lang =
+        localStorage.getItem(
+          "appLang"
+        ) || "en";
+
+      // ✅ first confirm
+      let first =
+        confirm(
+
+          lang === "hi"
+
+            ? "⚠️ क्या आप ऐप डेटा रीसेट करना चाहते हैं?"
+
+            : "⚠️ Do you want to reset app data?"
+        );
+
+      if (!first) return;
+
+      // ✅ second confirm
+      let second =
+        confirm(
+
+          lang === "hi"
+
+            ? "🚨 सभी डेटा हमेशा के लिए हट जाएगा!\n\nक्या आप पक्का रीसेट करना चाहते हैं?"
+
+            : "🚨 All data will be permanently deleted!\n\nAre you sure?"
+        );
+
+      if (!second) return;
+
+      // ✅ save language
+      let savedLang =
+        localStorage.getItem(
+          "appLang"
+        );
+
+      // ✅ clear app
+      localStorage.clear();
+
+      // ✅ restore language
+      // localStorage.setItem(
+      //   "appLang",
+      //   savedLang
+      // );
+
+      alert(
+
+        lang === "hi"
+
+          ? "✅ ऐप डेटा रीसेट हो गया"
+
+          : "✅ App data reset successfully"
+      );
+
+      location.reload();
+    }
+
+
+    //     function checkFirstLanguage(){
+
+    //   let lang =
+    //   localStorage.getItem(
+    //     "appLang"
+    //   );
+
+    //   if(!lang){
+
+    //     document.getElementById(
+    //       "languagePopup"
+    //     ).style.display = "flex";
+
+    //   }else{
+
+    //     applyLanguage();
+    //   }
+    // }
+
+    function checkFirstLanguage(lang) {
+
+      // ✅ user selected language save
+      if (lang) {
+
+        localStorage.setItem(
+          "appLang",
+          lang
+        );
+
+        document.getElementById(
+          "languagePopup"
+        ).style.display = "none";
+
+        applyLanguage();
+
+        return;
+      }
+
+      // ✅ first open check
+      let savedLang =
+        localStorage.getItem(
+          "appLang"
+        );
+
+      if (!savedLang) {
+
+        document.getElementById(
+          "languagePopup"
+        ).style.display = "flex";
+
+      }
+
+      else {
+
+        applyLanguage();
+
+      }
+    }
+
+    function openLogoutPopup() {
+
+      document.getElementById(
+        "logoutPopup"
+      ).style.display =
+        "flex";
+    }
+
+    function closeLogoutPopup() {
+
+      document.getElementById(
+        "logoutPopup"
+      ).style.display =
+        "none";
+    }
+
+    function confirmLogout() {
+
+      localStorage.removeItem(
+        "loggedInUser"
+      );
+
+      location.href =
+        "login.html";
+    }
+
+
+    // function loadProfile(){
+
+    //   let user =
+    //   JSON.parse(
+    //     localStorage.getItem(
+    //       "ledgerCurrentUser"
+    //     )
+    //   );
+
+    //   if(!user) return;
+
+    //     let name = user.name;
+
+    //    let finalName = user.name
+    //     .split(" ")
+    //     .map(word =>
+    //       word.charAt(0).toUpperCase() +
+    //       word.slice(1).toLowerCase()
+    //     )
+    //     .join(" ");
+
+
+
+    //   document.getElementById(
+    //     "profileName"
+    //   ).innerText = user.name;
+
+
+    //   document.getElementById(
+    //     "profileEmail"
+    //   ).innerText = user.email;
+
+    //}
+
+    // function loadProfile() {
+
+    //   let user = JSON.parse(
+    //     localStorage.getItem("ledgerCurrentUser")
+    //   );
+
+
+    //   console.log(user);
+
+    //   let finalName = user.name
+    //     .split(" ")
+    //     .map(word =>
+    //       word.charAt(0).toUpperCase() +
+    //       word.slice(1).toLowerCase()
+    //     )
+    //     .join(" ");
+
+    //   console.log(finalName);
+
+    //   document.getElementById("profileName")
+    //     .innerText = finalName;
+
+    //  document.getElementById(
+    //     "profileEmail"
+    //   ).innerText = user.email;
+
+    // }
+
+    function toggleMembersBox_side() {
+
+      let box =
+        document.getElementById(
+          "allMembersBox_side"
+        );
+
+      if (box.style.display === "none") {
+
+        box.style.display = "block";
+
+        loadAllMembersContact_side();
+
+      } else {
+
+        box.style.display = "none";
+      }
+    }
+
+
+    function loadAllMembersContact_side() {
+
+      let box =
+        document.getElementById(
+          "allMembersBox_side"
+        );
+
+      let users =
+        JSON.parse(
+          localStorage.getItem("users")
+        ) || [];
+
+      let html = "";
+
+      users.forEach(u => {
+
+        html += `
+
+    <div class="memberCard_side"
+    onclick="openUser('${u.name}')">
+
+      <img src="${u.photo ||
+          'https://cdn-icons-png.flaticon.com/512/149/149071.png'
+          }">
+
+      <div>
+
+        <b>
+        👤 ${u.originalName || u.name}
+        </b>
+
+        <br>
+
+        <small>
+        📞 ${u.phone || "No Number"}
+        </small>
+
+      </div>
+
+    </div>
+
+    `;
+      });
+
+      box.innerHTML = html;
+    }
+
+
+
+    function loadProfile() {
+
+      let user = JSON.parse(
+        localStorage.getItem(
+          "ledgerCurrentUser"
+        )
+      );
+
+      if (!user) return;
+
+      let finalName = user.name
+        .split(" ")
+        .map(word =>
+          word.charAt(0).toUpperCase() +
+          word.slice(1).toLowerCase()
+        )
+        .join(" ");
+
+
+      document.getElementById(
+        "profileName"
+      ).innerText = finalName;
+
+      document.getElementById(
+        "profileEmail"
+      ).innerText = user.email;
+      // 🔥 Initials
+
+      let initials = finalName
+        .split(" ")
+        .map(word => word.charAt(0))
+        .join("")
+        .toUpperCase();
+
+      document.getElementById(
+        "profileInitial"
+      ).innerText = initials;
+
+    }
+    function applyLanguage() {
+
+      let lang =
+        localStorage.getItem("appLang") || "en";
+
+      let t = langData[lang];
+
+      // SAFE SETTER
+      function setText(id, value) {
+
+        let el = document.getElementById(id);
+
+        if (el) {
+          el.innerText = value;
+        }
+
+      }
+
+      // 🖨️ PRINT
+      setText("printTypeText", t.printType);
+
+      setText("currentBtn", t.currentPage);
+
+      setText("fullListBtn", t.fullList);
+
+      setText("activeBtn", t.activeEntry);
+
+
+      setText(
+        "logoutTitle",
+        t.logoutTitle
+      );
+
+      setText(
+        "logoutYesBtn",
+        t.logoutYes
+      );
+
+      setText(
+        "logoutCancelBtn",
+        t.logoutCancel
+      );
+
+
+      setText(
+        "logoutBtn",
+        t.logoutBtn
+      );
+
+      // ⚡ ACTION
+      setText("printMenuCloseBtn", t.close_p);
+
+      setText("actionSaveBtn", t.save_p);
+
+      setText("actionCancelBtn", t.cancel_p);
+
+      setText("storageCloseBtn", t.close_p);
+
+      setText("reportViewCloseBtn", t.close_p);
+
+      setText("shareBtn", t.share);
+
+
+      // 💾 STORAGE
+      setText("savedReportsText", t.savedReports);
+
+      setText("resetBtn", t.resetData);
+      let recycleSearch =
+        document.getElementById(
+          "recycleSearch"
+        );
+
+      if (recycleSearch) {
+
+        recycleSearch.placeholder =
+          t.recycleSearch;
+      }
+
+      let restoreBtn =
+        document.getElementById(
+          "restoreAllBtn"
+        );
+
+
+      if (restoreBtn) {
+
+        restoreBtn.innerHTML =
+          t.restoreAll;
+      }
+      // 📄 VIEW
+      setText("viewReportText", t.viewReport);
+
+      setText(
+        "openSavedReportsBtn",
+        t.savedReports
+      );
+    }
+
+    window.onload = function () {
+
+      checkFirstLanguage();
+      applyLanguage();
+      applyAllUI();
+      loadProfile();
+    };
+
+
+    const result_nor =
+      document.getElementById("result_nor");
+
+    const history_nor =
+      document.getElementById("history_nor");
+
+    const preview_nor =
+      document.getElementById("preview_nor");
+
+    // function appendValue_nor(value){
+
+    //     if(value === "AC"){
+    //         clearDisplay_nor();
+    //         return;
+    //     }
+
+    //     if(result_nor.value === "0"){
+    //         result_nor.value = "";
+    //     }
+
+    //     result_nor.value += value;
+
+    //     updatePreview_nor();
+    // }
+
+
+
+    function appendValue_nor(value) {
+
+      if (value === "AC") {
+        clearDisplay_nor();
+        return;
+      }
+
+      if (result_nor.value === "0") {
+        result_nor.value = "";
+      }
+
+      let current = result_nor.value;
+      let lastChar = current.slice(-1);
+
+      let operators = ['+', '-', '*', '/'];
+
+      // 👉 Agar last me operator hai aur new bhi operator hai
+      if (operators.includes(lastChar) &&
+        operators.includes(value)) {
+
+        // replace last operator (REAL CALCULATOR BEHAVIOR)
+        result_nor.value =
+          current.slice(0, -1) + value;
+
+        updatePreview_nor();
+        return;
+      }
+
+      result_nor.value += value;
+
+      updatePreview_nor();
+    }
+    function clearDisplay_nor() {
+
+      result_nor.value = "0";
+
+      history_nor.innerHTML = "";
+
+      preview_nor.innerHTML = "0";
+    }
+
+    function deleteLast_nor() {
+
+      result_nor.value =
+        result_nor.value.slice(0, -1);
+
+      if (result_nor.value === "") {
+        result_nor.value = "0";
+      }
+
+      updatePreview_nor();
+    }
+
+    function calculate_nor() {
+
+      try {
+
+        let expression =
+          result_nor.value;
+
+        history_nor.innerHTML =
+          expression + " =";
+
+        expression =
+          expression.replace(
+            /(\d+(\.\d+)?)%/g,
+            '($1/100)');
+
+        let answer =
+          eval(expression);
+
+        result_nor.value =
+          parseFloat(answer.toFixed(10));
+
+        preview_nor.innerHTML = "";
+
+      }
+
+      catch {
+
+        result_nor.value = "Error";
+      }
+    }
+
+
+    function openCalculator_norm() {
+
+      document.getElementById(
+        "calculatorPopup_norm"
+      ).style.display = "flex";
+
+      // background scroll ON
+      document.body.style.overflow = "auto";
+
+
+    }
+
+    function closeCalculator_norm() {
+
+      document.getElementById(
+        "calculatorPopup_norm"
+      ).style.display = "none";
+
+      document.body.style.overflow = "auto";
+
+    }
+
+    function updatePreview_nor() {
+
+      try {
+
+        let expression =
+          result_nor.value;
+
+        let answer =
+          eval(expression);
+
+        if (!isNaN(answer)) {
+
+          preview_nor.innerHTML =
+            parseFloat(answer.toFixed(10));
+        }
+
+      }
+
+      catch {
+
+        preview_nor.innerHTML = "";
+      }
+    }
+
+
+    let calcBox =
+      document.getElementById(
+        "calcResizeBox"
+      );
+
+    let scale = 1;
+
+    calcBox.addEventListener(
+      "wheel",
+      (e) => {
+
+        e.preventDefault();
+
+        if (e.ctrlKey) {
+
+          if (e.deltaY < 0) {
+
+            scale += 0.1;
+
+          } else {
+
+
+
+            scale -= 0.1;
+
+          }
+
+          if (scale < 0.3)
+            scale = 0.3;
+
+          if (scale > 3)
+            scale = 3;
+
+          calcBox.style.transform =
+            `scale(${scale})`;
+
+        }
+
+      });
+
+
+    // MOVE
+
+    let move = false;
+
+    let x = 0;
+
+    let y = 0;
+
+    calcBox.onmousedown = (e) => {
+
+      move = true;
+
+      x =
+        e.clientX -
+        calcBox.offsetLeft;
+
+      y =
+        e.clientY -
+        calcBox.offsetTop;
+
+    };
+
+    document.onmousemove = (e) => {
+
+      if (!move)
+        return;
+
+      calcBox.style.left =
+        (e.clientX - x) + "px";
+
+      calcBox.style.top =
+        (e.clientY - y) + "px";
+
+    };
+
+    document.onmouseup = () => {
+
+      move = false;
+
+    };
+
+    document.addEventListener("click", function (e) {
+  let menu = document.getElementById("sideMenu");
+  let btn = document.getElementById("btnMenu");
+
+  let isOpen = menu.style.left === "0px";
+
+  // agar menu open hai aur click menu ya button ke bahar hua
+  if (isOpen && !menu.contains(e.target) && e.target !== btn) {
+    menu.style.left = "-260px";
+  }
+});
+
+    // applyLanguage();
+    // applyAllUI();
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+
+</html>
