@@ -538,11 +538,11 @@ body {
     .side-menu {
       position: fixed;
       top: 0;
-      /* left: -260px;
-      width: 240px; */
-      left: -100%;
+      left: -260px;
+      width: 240px;
+      /* left: -100%;
 width: 235px;
-max-width: 80%;
+max-width: 80%; */
       height: 100%;
       background: #0ea5e9;
       color: white;
@@ -555,12 +555,12 @@ max-width: 80%;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior:contain;
     }
-
+/* 
     @media (max-width: 600px) {
   .side-menu {
     width: 85%;
-  }
-}
+  } */
+/* } */
 
     .side-menu h3 {
       margin-top: 0;
@@ -1956,7 +1956,122 @@ width:100%;
   margin-bottom: 6px;
   padding: 10px 0;
 }
+
+
+
+
+/* ===== FINAL RESPONSIVE FIX (DO NOT EDIT ABOVE) ===== */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* HEADER FIX */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  z-index: 99999;
+}
+
+/* MENU BUTTON */
+.menu-btn {
+  font-size: 24px;
+  margin-left: auto;
+}
+
+/* SIDE MENU RESPONSIVE */
+.side-menu {
+  width: 80%;
+  max-width: 260px;
+}
+
+/* BUTTON RESPONSIVE */
+body > button {
+  width: auto;
+  max-width: 100%;
+}
+
+/* POPUPS FIX */
+.popup-content,
+.recycle-box,
+.storage-popup-box,
+.print-box,
+.modal-box {
+  width: 95%;
+  max-width: 500px;
+}
+
+/* CALCULATOR FIX */
+#calcResizeBox {
+  width: min(95vw, 370px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+  body {
+    padding: 8px;
+  }
+
+  body > button {
+    width: 100%;
+  }
+
+  .app-header img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .app-header h1 {
+    font-size: 18px;
+  }
+
+}
+
+/* LARGE SCREEN */
+@media (min-width: 1200px) {
+
+  body {
+    max-width: 1400px;
+    margin: auto;
+  }
+
+}
+
+
+body.menu-open {
+  overflow: hidden;
+}
+
+
+.side-menu.open {
+  left: 0px !important;
+}
   </style>
+
+
 
 </head>
 
@@ -3015,16 +3130,43 @@ cursor:pointer;
       box.setAttribute("data-open", "hisab");
     }
 
-    function toggleMenu() {
-      let menu = document.getElementById("sideMenu");
+    // function toggleMenu() {
+    //   let menu = document.getElementById("sideMenu");
 
-      if (menu.style.left === "0px") {
-        menu.style.left = "-260px";
-      } else {
-        menu.style.left = "0px";
-      }
-    }
+    //   if (menu.style.left === "0px") {
+    //     menu.style.left = "-260px";
+    //   } else {
+    //     menu.style.left = "0px";
+    //   }
+    // }
 
+
+//     function toggleMenu() {
+//   let menu = document.getElementById("sideMenu");
+
+//   if (menu.classList.contains("open")) {
+//     menu.classList.remove("open");
+//     menu.style.left = "-260px";
+//   } else {
+//     menu.classList.add("open");
+//     menu.style.left = "0px";
+//   }
+
+// }
+
+function toggleMenu() {
+  let menu = document.getElementById("sideMenu");
+
+  if (menu.classList.contains("open")) {
+    menu.classList.remove("open");
+    menu.style.left = "-260px";
+    document.body.classList.remove("menu-open");
+  } else {
+    menu.classList.add("open");
+    menu.style.left = "0px";
+    document.body.classList.add("menu-open");
+  }
+}
     function closeMenu() {
       document.getElementById("sideMenu").style.left = "-260px";
     }
@@ -7692,18 +7834,44 @@ Open Repository
 
     };
 
-    document.addEventListener("click", function (e) {
+//     document.addEventListener("click", function (e) {
+//   let menu = document.getElementById("sideMenu");
+//   let btn = document.getElementById("btnMenu");
+
+//   let isOpen = menu.style.left === "0px";
+
+//   // agar menu open hai aur click menu ya button ke bahar hua
+//   if (isOpen && !menu.contains(e.target) && e.target !== btn) {
+//     menu.style.left = "-260px";
+//   }
+// });
+
+// document.addEventListener("click", function (e) {
+//   let menu = document.getElementById("sideMenu");
+//   let btn = document.getElementById("btnMenu");
+
+//   // safer check
+//   let isOpen = menu.style.left === "0px" || menu.classList.contains("open");
+
+//   if (isOpen && !menu.contains(e.target) && e.target !== btn) {
+//     menu.style.left = "-260px";
+//     menu.classList.remove("open");
+//   }
+// });
+
+
+document.addEventListener("click", function (e) {
   let menu = document.getElementById("sideMenu");
   let btn = document.getElementById("btnMenu");
 
-  let isOpen = menu.style.left === "0px";
+  let isOpen = menu.classList.contains("open");
 
-  // agar menu open hai aur click menu ya button ke bahar hua
+  // ignore click on button OR inside menu
   if (isOpen && !menu.contains(e.target) && e.target !== btn) {
+    menu.classList.remove("open");
     menu.style.left = "-260px";
   }
 });
-
     // applyLanguage();
     // applyAllUI();
   </script>
