@@ -7,22 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ledger Pro Final</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
 
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    body {
+      margin: 0;
+      padding: 15px;
+    }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  margin: 0;
-  padding: 15px;
-}
     #splash {
       position: fixed;
       top: 0;
@@ -51,20 +51,21 @@ body {
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-  * {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+    }
 
-body {
-  margin: 0;
-  padding: 15px;
-}
+    body {
+      margin: 0;
+      padding: 15px;
+    }
 
     .main-content {
       position: relative;
@@ -496,34 +497,56 @@ body {
       font-size: 14px;
       cursor: pointer;
     }
+.notes-panel{
 
-    .notes-panel button {
-      padding: 10px 14px;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      margin: 6px 4px;
-      cursor: pointer;
-      background: #0ea5e9;
-      color: white;
-      margin-bottom: 100px;
-    }
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
 
-    .notes-panel button:hover {
-      transform: scale(1.05);
-    }
+.notes-panel button {
 
-    .notes-panel .close-btn {
-      background: #de5f6b;
-    }
+  flex:1 1 140px;
 
-    .notes-panel .add-btn {
-      background: #65d28d;
-    }
+  max-width:180px;
 
-    .notes-panel .view-btn {
-      background: #a0865a;
-    }
+  padding: 10px 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  background: #0ea5e9;
+
+  color: white;
+
+  margin:0;
+}
+
+.notes-panel button:hover {
+
+  transform: scale(1.05);
+}
+
+.notes-panel .close-btn {
+
+  background: #de5f6b;
+}
+
+.notes-panel .add-btn {
+
+  background: #65d28d;
+}
+
+.notes-panel .view-btn {
+
+  background: #a0865a;
+}
 
     body.dark {
       background: #111;
@@ -553,14 +576,15 @@ max-width: 80%; */
 
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
-      overscroll-behavior:contain;
+      overscroll-behavior: contain;
     }
-/* 
+
+    /* 
     @media (max-width: 600px) {
   .side-menu {
     width: 85%;
   } */
-/* } */
+    /* } */
 
     .side-menu h3 {
       margin-top: 0;
@@ -1881,195 +1905,375 @@ width:100%;
 
 
 
-.side_menu_header{
-  position: sticky;
-  top: 0;
-  z-index: 9999;
+    .side_menu_header {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
 
-  padding: 12px 14px;
+      padding: 12px 14px;
 
-  background: #ffffff;
+      background: #ffffff;
 
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-}
-.side_menu_header h3{
-  margin: 0;
-  font-size: 15px;
-  font-weight: bold;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    }
 
-  color: #333;   /* IMPORTANT */
+    .side_menu_header h3 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: bold;
 
+      color: #333;
+      /* IMPORTANT */
+
+      display: block;
+    }
+
+    .profileSection {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 8px;
+    }
+
+    .profileIcon {
+      width: 52px;
+      height: 52px;
+
+      border-radius: 50%;
+      background: #2563eb;
+
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 24px;
+
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+    }
+
+    .profileInfo {
+      flex: 1;
+    }
+
+    #profileName {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    #profileEmail {
+      font-size: 13px;
+      color: #666;
+      /* FIXED (pehle white tha) */
+      margin-top: 3px;
+    }
+
+    #profileEmail {
+      color: #666;
+    }
+
+    .profileSection {
+      margin-bottom: 6px;
+      padding: 10px 0;
+    }
+
+
+
+
+    /* ===== FINAL RESPONSIVE FIX (DO NOT EDIT ABOVE) ===== */
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* HEADER FIX */
+    .app-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 10px;
+      gap: 10px;
+      flex-wrap: wrap;
+
+      z-index: 99999;
+    }
+
+    /* MENU BUTTON */
+    .menu-btn {
+      font-size: 24px;
+      margin-left: auto;
+    }
+
+    /* SIDE MENU RESPONSIVE */
+    .side-menu {
+      width: 80%;
+      max-width: 260px;
+    }
+
+    /* BUTTON RESPONSIVE */
+    body>button {
+      width: auto;
+      max-width: 100%;
+    }
+
+    /* POPUPS FIX */
+    .popup-content,
+    .recycle-box,
+    .storage-popup-box,
+    .print-box,
+    .modal-box {
+      width: 95%;
+      max-width: 500px;
+    }
+
+    /* CALCULATOR FIX */
+    #calcResizeBox {
+      width: min(95vw, 370px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+      body {
+        padding: 8px;
+      }
+
+      body>button {
+        width: 100%;
+      }
+
+      .app-header img {
+        width: 38px;
+        height: 38px;
+      }
+
+      .app-header h1 {
+        font-size: 18px;
+      }
+
+    }
+
+    /* LARGE SCREEN */
+    @media (min-width: 1200px) {
+
+      body {
+        max-width: 1400px;
+        margin: auto;
+      }
+
+    }
+
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+
+    .side-menu.open {
+      left: 0px !important;
+    }
+
+
+    /* #installBtn {
+  position: relative;
+  z-index: 1000000;
+} */
+
+    .app-header {
+      z-index: 10000;
+    }
+
+    #installBtn {
+      position: relative;
+      z-index: 10001;
+    }
+
+    /* #installBtn{
   display: block;
-}
+  margin: 10px auto;
+  position: relative;
+  z-index: 9999;
+  
+} */
 
-.profileSection{
-  display: flex;
-  align-items: center;
-  gap: 12px;
 
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  margin-bottom: 8px;
-}
+    body {
+      padding-top: 80px;
+      /* IMPORTANT FIX */
+    }
 
-   .profileIcon{
-  width: 52px;
-  height: 52px;
 
-  border-radius: 50%;
-  background: #2563eb;
-
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 24px;
-
-  box-shadow: 0 4px 10px rgba(37,99,235,0.3);
-}
-
-  .profileInfo{
-  flex: 1;
-}
-
-#profileName{
-  font-size: 16px;
-  font-weight: 600;
-  color: #111;
-}
-
-#profileEmail{
-  font-size: 13px;
-  color: #666; /* FIXED (pehle white tha) */
-  margin-top: 3px;
-}
-
-#profileEmail{
-  color: #666;
-}
-
-.profileSection{
-  margin-bottom: 6px;
-  padding: 10px 0;
-}
+    #calcResizeBox {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: min(95vw, 370px);
+      max-height: 90vh;
+      touch-action: none;
+    }
 
 
 
 
-/* ===== FINAL RESPONSIVE FIX (DO NOT EDIT ABOVE) ===== */
+    .app-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
 
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
 
-* {
-  box-sizing: border-box;
-}
+      padding: 10px 12px;
 
-/* HEADER FIX */
-.app-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+      z-index: 10000;
+      /* background: white; */
+    }
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    .menu-btn {
+      flex-shrink: 0;
+      white-space: nowrap;
+      margin-left: auto;
+    }
 
-  padding: 10px;
-  gap: 10px;
-  flex-wrap: wrap;
+    #installBtn {
+      position: relative;
+      z-index: 10001;
+      display: inline-block;
+    }
 
-  z-index: 99999;
-}
+    body {
+      padding-top: 80px;
+    }
 
-/* MENU BUTTON */
-.menu-btn {
-  font-size: 24px;
-  margin-left: auto;
-}
+    /* MOBILE FIX */
+@media (max-width: 768px) {
 
-/* SIDE MENU RESPONSIVE */
-.side-menu {
-  width: 80%;
-  max-width: 260px;
-}
-
-/* BUTTON RESPONSIVE */
-body > button {
-  width: auto;
-  max-width: 100%;
-}
-
-/* POPUPS FIX */
-.popup-content,
-.recycle-box,
-.storage-popup-box,
-.print-box,
-.modal-box {
-  width: 95%;
-  max-width: 500px;
-}
-
-/* CALCULATOR FIX */
-#calcResizeBox {
-  width: min(95vw, 370px);
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* MOBILE */
-@media (max-width: 700px) {
-
-  body {
-    padding: 8px;
+  #installBtn{
+    margin-top: 8px;
   }
 
-  body > button {
-    width: 100%;
-  }
-
-  .app-header img {
-    width: 38px;
-    height: 38px;
-  }
-
-  .app-header h1 {
-    font-size: 18px;
+  #btnAdd,
+  #btnOverview,
+  #btnHistory,
+  #btnCalc,
+  #btnNotes,
+  #btnMembers{
+    margin-top: 10px;
   }
 
 }
 
-/* LARGE SCREEN */
-@media (min-width: 1200px) {
+@media (max-width:768px){
 
-  body {
-    max-width: 1400px;
-    margin: auto;
+  .app-header{
+    margin-bottom: 12px;
   }
 
 }
 
 
-body.menu-open {
-  overflow: hidden;
+
+
+.notes-btns{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  justify-content:center;
+
+  gap:10px;
+
+  margin-top:15px;
+}
+
+.notes-btns button{
+
+  flex:1 1 140px;
+
+  max-width:180px;
+
+  margin:0;
 }
 
 
-.side-menu.open {
-  left: 0px !important;
+
+button{
+
+  max-width:100%;
+
+  word-wrap:break-word;
+}
+img{
+  max-width:100%;
+  height:auto;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+}
+
+button{
+  width:100%;
+  max-width:100%;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  max-width:100%;
+}
+
+.card{
+  width:100%;
+}
+
+@media (min-width:768px){
+
+  button{
+    width:auto;
+  }
 }
   </style>
+
 
 
 
@@ -2193,7 +2397,7 @@ style="display:none;">
 
   </div>
 
-  
+
   <div id="recyclePopup" class="recycle-popup">
 
     <div class="recycle-box">
@@ -2294,6 +2498,7 @@ style="display:none;">
 
   </div>
 
+ 
   <div style="text-align:center; margin-bottom:12px;">
     <button id="installBtn" onclick="installApp()"
       style="display:none; background:#0ea5e9; padding:10px 18px; border-radius:12px;">Install App</button>
@@ -3141,35 +3346,45 @@ cursor:pointer;
     // }
 
 
-//     function toggleMenu() {
-//   let menu = document.getElementById("sideMenu");
+    //     function toggleMenu() {
+    //   let menu = document.getElementById("sideMenu");
 
-//   if (menu.classList.contains("open")) {
-//     menu.classList.remove("open");
-//     menu.style.left = "-260px";
-//   } else {
-//     menu.classList.add("open");
-//     menu.style.left = "0px";
-//   }
+    //   if (menu.classList.contains("open")) {
+    //     menu.classList.remove("open");
+    //     menu.style.left = "-260px";
+    //   } else {
+    //     menu.classList.add("open");
+    //     menu.style.left = "0px";
+    //   }
 
-// }
-
+    // }
 function toggleMenu() {
-  let menu = document.getElementById("sideMenu");
 
-  if (menu.classList.contains("open")) {
-    menu.classList.remove("open");
-    menu.style.left = "-260px";
-    document.body.classList.remove("menu-open");
-  } else {
-    menu.classList.add("open");
-    menu.style.left = "0px";
+  let menu =
+    document.getElementById("sideMenu");
+
+  menu.classList.toggle("open");
+
+  if(menu.classList.contains("open")){
+
     document.body.classList.add("menu-open");
+
+  }else{
+
+    document.body.classList.remove("menu-open");
   }
 }
-    function closeMenu() {
-      document.getElementById("sideMenu").style.left = "-260px";
-    }
+
+
+function closeMenu() {
+
+  let menu =
+    document.getElementById("sideMenu");
+
+  menu.classList.remove("open");
+
+  document.body.classList.remove("menu-open");
+}
     function formatDate(d) {
       let dt = new Date(d);
       let day = String(dt.getDate()).padStart(2, '0');
@@ -3915,10 +4130,31 @@ ${historyHTML}<br><br>
 
       box.setAttribute("data-open", "notes");
 
-      box.innerHTML = `
-    <div class="notes-panel">
+  //     box.innerHTML = `
+  //   <div class="notes-panel">
 
-      <h3>${t.notesMenu}</h3>
+  //     <h3>${t.notesMenu}</h3>
+
+  //     <button onclick="openAddNote()">
+  //       ➕ ${t.addNote}
+  //     </button>
+
+  //     <button onclick="openSavedNotes()">
+  //       📂 ${t.viewNotes}
+  //     </button>
+
+  //     <button onclick="closeNotesMenu()">
+  //       ✖️ ${t.close}
+  //     </button>
+
+  //   </div>
+  // `;
+  box.innerHTML = `
+  <div class="notes-panel">
+
+    <h3>${t.notesMenu}</h3>
+
+    <div class="notes-btns">
 
       <button onclick="openAddNote()">
         ➕ ${t.addNote}
@@ -3933,7 +4169,9 @@ ${historyHTML}<br><br>
       </button>
 
     </div>
-  `;
+
+  </div>
+`;
     }
     // function backFromNotes() {
     //   let box = document.getElementById("output");
@@ -5101,14 +5339,7 @@ ${historyHTML}<br><br>
       showAll();   // या openUser() जिस screen पर हो
 
     }
-    window.onload = function () {
-      let savedLang = localStorage.getItem("appLang") || "en";
-      setLang(savedLang);
-      checkFirstLanguage();
-      loadProfile();
-
-
-    };
+   
 
     function openMergePanel(name) {
 
@@ -6016,47 +6247,7 @@ ${t.save || "Save"}
 
       // alert("✅ Photo Removed");
     }
-    // }
-    //     function saveUserPhoto() {
-
-    //       let file =
-    //         document.getElementById("photoInput")
-    //           .files[0];
-
-    //       if (!file) {
-
-    //         alert("Select Photo");
-    //         return;
-
-    //       }
-
-    //       let reader = new FileReader();
-
-    //       reader.onload = function (e) {
-
-    //         let user =
-    //           users.find(u => u.name === editUser);
-
-    //         if (!user) return;
-
-    //         user.photo = e.target.result;
-
-    //         localStorage.setItem(
-    //           "users",
-    //           JSON.stringify(users)
-    //         );
-
-    //         alert("✅ Photo Saved");
-
-    //         //  openUser(editUser);
-
-    //         showAll();
-
-    //       };
-
-    //       reader.readAsDataURL(file);
-
-    //     }
+   
 
 
 
@@ -7316,68 +7507,7 @@ Open Repository
     }
 
 
-    // function loadProfile(){
-
-    //   let user =
-    //   JSON.parse(
-    //     localStorage.getItem(
-    //       "ledgerCurrentUser"
-    //     )
-    //   );
-
-    //   if(!user) return;
-
-    //     let name = user.name;
-
-    //    let finalName = user.name
-    //     .split(" ")
-    //     .map(word =>
-    //       word.charAt(0).toUpperCase() +
-    //       word.slice(1).toLowerCase()
-    //     )
-    //     .join(" ");
-
-
-
-    //   document.getElementById(
-    //     "profileName"
-    //   ).innerText = user.name;
-
-
-    //   document.getElementById(
-    //     "profileEmail"
-    //   ).innerText = user.email;
-
-    //}
-
-    // function loadProfile() {
-
-    //   let user = JSON.parse(
-    //     localStorage.getItem("ledgerCurrentUser")
-    //   );
-
-
-    //   console.log(user);
-
-    //   let finalName = user.name
-    //     .split(" ")
-    //     .map(word =>
-    //       word.charAt(0).toUpperCase() +
-    //       word.slice(1).toLowerCase()
-    //     )
-    //     .join(" ");
-
-    //   console.log(finalName);
-
-    //   document.getElementById("profileName")
-    //     .innerText = finalName;
-
-    //  document.getElementById(
-    //     "profileEmail"
-    //   ).innerText = user.email;
-
-    // }
-
+  
     function toggleMembersBox_side() {
 
       let box =
@@ -7584,13 +7714,37 @@ Open Repository
       );
     }
 
+   
+    
     window.onload = function () {
 
-      checkFirstLanguage();
-      applyLanguage();
-      applyAllUI();
-      loadProfile();
-    };
+  let savedLang =
+    localStorage.getItem("appLang") || "en";
+
+  setLang(savedLang);
+
+  checkFirstLanguage();
+
+  applyLanguage();
+
+  applyAllUI();
+
+  loadProfile();
+
+  // 🔥 IMPORTANT FIX
+  let output =
+    document.getElementById("output");
+
+  if(output){
+
+    output.innerHTML = "";
+
+    output.setAttribute(
+      "data-open",
+      ""
+    );
+  }
+};
 
 
     const result_nor =
@@ -7750,125 +7904,103 @@ Open Repository
         preview_nor.innerHTML = "";
       }
     }
+    let calcBox = document.getElementById("calcResizeBox");
+
+    // default size (chhota)
+    let scale = 0.6;
+
+    // position
+    let posX = 0;
+    let posY = 0;
+
+    // drag control
+    let startX = 0;
+    let startY = 0;
+    let dragging = false;
 
 
-    let calcBox =
-      document.getElementById(
-        "calcResizeBox"
-      );
-
-    let scale = 1;
-
-    calcBox.addEventListener(
-      "wheel",
-      (e) => {
-
-        e.preventDefault();
-
-        if (e.ctrlKey) {
-
-          if (e.deltaY < 0) {
-
-            scale += 0.1;
-
-          } else {
+    // 🔥 UPDATE FUNCTION (MAIN FIX)
+    function updateBox() {
+      calcBox.style.transform =
+        `translate(calc(-50% + ${posX}px), calc(-50% + ${posY}px)) scale(${scale})`;
+    }
 
 
+    // 🔥 ZOOM (Ctrl + wheel desktop)
+    calcBox.addEventListener("wheel", (e) => {
+      if (!e.ctrlKey) return;
 
-            scale -= 0.1;
+      e.preventDefault();
 
-          }
+      scale += e.deltaY < 0 ? 0.1 : -0.1;
 
-          if (scale < 0.3)
-            scale = 0.3;
+      if (scale < 0.4) scale = 0.4;
+      if (scale > 1.5) scale = 1.5;
 
-          if (scale > 3)
-            scale = 3;
-
-          calcBox.style.transform =
-            `scale(${scale})`;
-
-        }
-
-      });
+      updateBox();
+    });
 
 
-    // MOVE
+    // 🔥 START DRAG (mouse + touch)
+    calcBox.addEventListener("mousedown", startDrag);
+    calcBox.addEventListener("touchstart", startDrag, { passive: false });
 
-    let move = false;
+    function startDrag(e) {
+      dragging = true;
 
-    let x = 0;
+      let x = e.touches ? e.touches[0].clientX : e.clientX;
+      let y = e.touches ? e.touches[0].clientY : e.clientY;
 
-    let y = 0;
-
-    calcBox.onmousedown = (e) => {
-
-      move = true;
-
-      x =
-        e.clientX -
-        calcBox.offsetLeft;
-
-      y =
-        e.clientY -
-        calcBox.offsetTop;
-
-    };
-
-    document.onmousemove = (e) => {
-
-      if (!move)
-        return;
-
-      calcBox.style.left =
-        (e.clientX - x) + "px";
-
-      calcBox.style.top =
-        (e.clientY - y) + "px";
-
-    };
-
-    document.onmouseup = () => {
-
-      move = false;
-
-    };
-
-//     document.addEventListener("click", function (e) {
-//   let menu = document.getElementById("sideMenu");
-//   let btn = document.getElementById("btnMenu");
-
-//   let isOpen = menu.style.left === "0px";
-
-//   // agar menu open hai aur click menu ya button ke bahar hua
-//   if (isOpen && !menu.contains(e.target) && e.target !== btn) {
-//     menu.style.left = "-260px";
-//   }
-// });
-
-// document.addEventListener("click", function (e) {
-//   let menu = document.getElementById("sideMenu");
-//   let btn = document.getElementById("btnMenu");
-
-//   // safer check
-//   let isOpen = menu.style.left === "0px" || menu.classList.contains("open");
-
-//   if (isOpen && !menu.contains(e.target) && e.target !== btn) {
-//     menu.style.left = "-260px";
-//     menu.classList.remove("open");
-//   }
-// });
+      startX = x - posX;
+      startY = y - posY;
+    }
 
 
-document.addEventListener("click", function (e) {
-  let menu = document.getElementById("sideMenu");
-  let btn = document.getElementById("btnMenu");
+    // 🔥 MOVE DRAG
+    document.addEventListener("mousemove", moveDrag);
+    document.addEventListener("touchmove", moveDrag, { passive: false });
 
-  let isOpen = menu.classList.contains("open");
+    function moveDrag(e) {
+      if (!dragging) return;
 
-  // ignore click on button OR inside menu
-  if (isOpen && !menu.contains(e.target) && e.target !== btn) {
+      let x = e.touches ? e.touches[0].clientX : e.clientX;
+      let y = e.touches ? e.touches[0].clientY : e.clientY;
+
+      posX = x - startX;
+      posY = y - startY;
+
+      updateBox();
+    }
+
+
+    // 🔥 STOP DRAG
+    document.addEventListener("mouseup", stopDrag);
+    document.addEventListener("touchend", stopDrag);
+
+    function stopDrag() {
+      dragging = false;
+    }
+
+   document.addEventListener("click", function (e) {
+
+  let menu =
+    document.getElementById("sideMenu");
+
+  let btn =
+    document.getElementById("btnMenu");
+
+  let isOpen =
+    menu.classList.contains("open");
+
+  // 🔥 click outside only
+  if (
+    isOpen &&
+    !menu.contains(e.target) &&
+    !btn.contains(e.target)
+  ) {
+
     menu.classList.remove("open");
+
     menu.style.left = "-260px";
   }
 });
