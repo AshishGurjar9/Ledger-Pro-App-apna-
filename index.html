@@ -1243,19 +1243,7 @@ max-width: 80%; */
 
     }
 
-    /* .print-box button {
-
-  display: block;
-
-  width: 100%;
-
-  margin: 8px 0;
-
-  padding: 12px;
-
-  font-weight: bold;
-
-} */
+    
 
     .print-box button {
 
@@ -2410,8 +2398,44 @@ scroll-behavior:smooth;
 
 display:none;
 }
-  </style>
 
+
+
+
+
+.menu-btn {
+  font-size: 20px;      
+  padding: 10px 16px;   
+  border-radius: 10px;
+  min-width: 80px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+
+.menu-btn span,
+.menu-btn {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-btn {
+    font-size: 22px;
+    padding: 12px 18px;
+  }
+}
+  </style>
 
 
 
@@ -2484,21 +2508,7 @@ display:none;
     </button>
     <button id="openSavedReportsBtn" onclick="openSavedReports()">
     </button>
-    <!-- <button onclick="resetAppData()" id="resetBtn">
-      🗑️ Reset App Data
-    </button> -->
-    <!-- <button
-id="btnAllContacts_side"
-onclick="toggleMembersBox_side()">
-
-  <div
-id="allMembersBox_side"
-style="display:none;">
-
-</div>
-👥 All Members Contect no.
-
-</button> -->
+   
    <button id="btnAllContacts_side" onclick="toggleMembersBox_side()"></button>
 
     <div id="allMembersBox_side" style="display:none;">
@@ -2669,19 +2679,11 @@ style="display:none;">
 
         <label id="startDateLabel" for="c_start"></label>
 
-        <!-- <input id="c_start" type="date"><br> -->
-         <input
-id="c_start"
-type="date"
-onclick="this.showPicker()"><br>
+        <input id="c_start" type="date"><br>
 
         <label id="endDateLabel" for="c_end"></label>
 
-        <!-- <input id="c_end" type="date"><br> -->
-         <input
-id="c_end"
-type="date"
-onclick="this.showPicker()"><br>
+        <input id="c_end" type="date"><br>
 
       </div>
 
@@ -2745,44 +2747,6 @@ onclick="this.showPicker()"><br>
   <div id="securityPopup" class="sec-popup">
     <div class="sec-box">
 
-      <!-- <h3>🔐 Security Settings</h3>
-
-      <button onclick="setOrChangePassword()">🔑 Set / Change Password</button>
-
-      <h4>📌 Lock Options</h4>
-
-      <div class="sec-row">
-        <input type="checkbox" id="securityActive">
-        <label>🔐 Security Active</label>
-      </div>
-
-      <div class="sec-row">
-        <input type="checkbox" id="lockOverview">
-        <label>📊 Overview</label>
-      </div>
-
-      <div class="sec-row">
-        <input type="checkbox" id="lockAdd">
-        <label>➕ New Add</label>
-      </div>
-
-      <div class="sec-row">
-        <input type="checkbox" id="lockNotes">
-        <label>📝 Notes</label>
-      </div>
-
-      <div class="sec-row">
-        <input type="checkbox" id="lockHistory">
-        <label>📅 History</label>
-      </div>
-
-      <div class="sec-row">
-        <input type="checkbox" id="lockMembers">
-        <label>👥 Members</label>
-      </div>
-
-      <button onclick="saveSecurity()">💾 Save</button>
-      <button onclick="closeSecurity()">❌ Close</button> -->
       <h3 id="securityTitle"></h3>
 
 <button id="securityPasswordBtn"
@@ -3790,15 +3754,8 @@ function closeMenu() {
         return;
       }
     }
-    // function deleteUser(name) {
-    //   if (confirm(" ⚠️Delete user ?")) {
-    //     users = users.filter(u => u.name !== name);
-    //     localStorage.setItem("users", JSON.stringify(users));
-    //     alert(name + "✅ User delete हो गया!");
-    //     showAll();
-    //     document.getElementById("output").innerHTML = "";
-    //   }
-    // }
+    
+    //
     function deleteUser(name) {
 
       if (!confirm("⚠️ Kya aap user delete karna chahte ho?"))
@@ -5057,7 +5014,30 @@ lockHistory:"📅 History",
 
 lockMembers:"👥 Members",
 allMembersContact: "👥 All Members Contact No.",
-txtNormalCalculator: "Normal Calculator"
+txtNormalCalculator: "Normal Calculator",
+membersManagement:"Members Management",
+overviewDashboard:"Overview Dashboard",
+hisabHistory:"Hisab History",
+smartSearch:"Smart Search",
+savedReports:"Saved Reports",
+printSupport:"Print Support",
+shareData:"Share Data",
+contactManagement:"Contact Management",
+editEntries:"Edit Entries",
+mergeKist:"Merge Kist",
+normalCalculator:"Normal Calculator",
+photoAttachment:"Photo Attachment",
+autoSave:"Auto Save",
+offlineSupport:"Offline Support",
+themeCustomization:"Theme Customization",
+mobileFriendlyUI:"Mobile Friendly UI",
+fastPerformance:"Fast Performance",
+dataResetOption:"Data Reset Option",
+localDataStorage:"Local Data Storage",
+interestHistoryTracking:"Interest History Tracking",
+appType:"App Type",
+mode:"Mode",
+platform:"Platform"
 
 
 
@@ -5068,6 +5048,51 @@ txtNormalCalculator: "Normal Calculator"
 
 
       hi: {
+        appType:"ऐप टाइप",
+mode:"मोड",
+platform:"प्लेटफॉर्म",
+
+
+membersManagement:"मेंबर्स मैनेजमेंट",
+
+overviewDashboard:"ओवरव्यू डैशबोर्ड",
+
+hisabHistory:"हिसाब हिस्ट्री",
+
+smartSearch:"स्मार्ट खोज",
+
+savedReports:"सेव्ड रिपोर्ट्स",
+
+printSupport:"प्रिंट सपोर्ट",
+
+shareData:"डेटा शेयर",
+
+contactManagement:"संपर्क प्रबंधन",
+
+editEntries:"एंट्री एडिट",
+
+mergeKist:"किस्त मिलाएं",
+
+normalCalculator:"नॉर्मल कैलकुलेटर",
+
+photoAttachment:"फोटो अटैचमेंट",
+
+autoSave:"ऑटो सेव",
+
+offlineSupport:"ऑफलाइन सपोर्ट",
+
+themeCustomization:"थीम कस्टमाइजेशन",
+
+mobileFriendlyUI:"मोबाइल फ्रेंडली UI",
+
+fastPerformance:"तेज परफॉर्मेंस",
+
+dataResetOption:"डेटा रीसेट विकल्प",
+
+localDataStorage:"लोकल डेटा स्टोरेज",
+
+interestHistoryTracking:"ब्याज हिस्ट्री ट्रैकिंग",
+
         txtNormalCalculator: "साधारण कैलकुलेटर",
         allMembersContact: "👥 सभी सदस्यों के नंबर",
         securitySettings:"🔐 सुरक्षा सेटिंग्स",
@@ -6139,99 +6164,8 @@ ${t.save || "Save"}
 
       alert("✅ End Date Updated");
     }
-    //     function saveEditContact() {
-
-    // //       let users = JSON.parse(
-    // //   localStorage.getItem("users")
-    // // ) || [];
-
-    //   let input =
-    //     document.getElementById(
-    //       "editContactInput"
-    //     ).value.trim();
-
-    //   let user =
-    //     users.find(
-    //       u => u.name === editUser
-    //     );
-
-    //   if (!user) {
-
-    //     alert("❌ User not found!");
-
-    //     return;
-    //   }
-
-    //   // ✅ EMPTY = REMOVE NUMBER
-    //   if(input === ""){
-
-    //     user.entries[editIndex].phone = "";
-
-    //     user.phone = "";
-
-    //     localStorage.setItem(
-    //       "users",
-    //       JSON.stringify(users)
-    //     );
-
-    //     showAll();
-
-    //     openUser(editUser);
-    //     alert("✅ Number Removed");
-
-    //     return;
-    //   }
-
-    //       // ❌ ONLY NUMBER CHECK
-    //       if (isNaN(input)) {
-
-    //         alert(
-    //           "❌ Sirf number enter karo!"
-    //         );
-
-    //         return;
-    //       }
-
-    //       // ❌ LENGTH CHECK
-    //       if (input.length < 10) {
-
-    //         alert(
-    //           "❌ Valid mobile number enter karo!"
-    //         );
-
-    //         return;
-    //       }
-
-    //       // let user =
-    //       //   users.find(
-    //       //     u => u.name === editUser
-    //       //   );
-
-    //       if (!user) {
-
-    //         alert(
-    //           "❌ User not found!"
-    //         );
-
-    //         return;
-    //       }
-
-    //       user.entries[editIndex].phone =
-    //         input;
-
-    //         user.phone = input;
-
-    //       localStorage.setItem(
-    //         "users",
-    //         JSON.stringify(users)
-    //       );
-
-    //       showAll();
-
-    //       alert(
-    //         "✅ Contact Updated"
-    //       );
-    //     }
+    
+   
 
     function saveEditContact() {
 
@@ -6950,6 +6884,7 @@ ${t.restoreAll}
       <hr>
 
       <h3>✨ ${t.features}</h3>
+<p>🎨 ${t.themeCustomization}</p>
 
       <p>📒 ${t.notesSystem}</p>
       <p>💰 ${t.interestCalc}</p>
@@ -6958,6 +6893,60 @@ ${t.restoreAll}
       <p>🌙 ${t.darkMode}</p>
       <p>🔐 ${t.securityLock}</p>
      <p>📷 ${t.cameraGallery}</p>
+     <p>📒 ${t.notesSystem}</p>
+
+<p>💰 ${t.interestCalc}</p>
+
+<p>🗑️ ${t.recycleBin}</p>
+
+<p>🌐 ${t.languages}</p>
+
+<p>🌙 ${t.darkMode}</p>
+
+<p>🔐 ${t.securityLock}</p>
+
+<p>📷 ${t.cameraGallery}</p>
+
+<p>📱 ${t.installPwa}</p>
+
+<p>👥 ${t.membersManagement}</p>
+
+<p>📊 ${t.overviewDashboard}</p>
+
+<p>📅 ${t.hisabHistory}</p>
+
+<p>🔍 ${t.smartSearch}</p>
+
+<p>💾 ${t.savedReports}</p>
+
+<p>🖨️ ${t.printSupport}</p>
+
+<p>📤 ${t.shareData}</p>
+
+<p>📞 ${t.contactManagement}</p>
+
+<p>✏️ ${t.editEntries}</p>
+
+<p>🔀 ${t.mergeKist}</p>
+
+<p>🧮 ${t.normalCalculator}</p>
+
+<p>📷 ${t.photoAttachment}</p>
+
+<p>💾 ${t.autoSave}</p>
+
+<p>📶 ${t.offlineSupport}</p>
+
+
+<p>📱 ${t.mobileFriendlyUI}</p>
+
+<p>⚡ ${t.fastPerformance}</p>
+
+<p>🔄 ${t.dataResetOption}</p>
+
+<p>📁 ${t.localDataStorage}</p>
+
+<p>📈 ${t.interestHistoryTracking}</p>
 
 <p>📱 ${t.installPwa}</p>
       <hr>
@@ -6971,7 +6960,7 @@ ${t.restoreAll}
       HTML, CSS, JavaScript</p>
 
       <p><b>📦 ${t.version}:</b>
-      1.0</p>
+      1.3</p>
 
       <p><b>📅 ${t.lastUpdate}:</b>
       ${new Date().toLocaleDateString()}</p>
@@ -6987,6 +6976,12 @@ ${t.restoreAll}
 
       <p><b>⚡ ${t.status}:</b>
       Running Smoothly</p>
+
+<p><b>🧾 ${t.appType}:</b> Ledger / Finance Management</p>
+
+<p><b>🔄 ${t.mode}:</b> Offline + Online Support</p>
+
+<p><b>📱 ${t.platform}:</b> Mobile + Desktop Web App</p>
 
       <p>
         <b>🔗 GitHub:</b><br>
@@ -7160,11 +7155,8 @@ Open Repository
 
         previewData = output.innerHTML;
       }
-      // ❌ hide print menu
-      // document.getElementById("printMenu").style.display = "none";
+      // 
 
-
-      // 👁️ show action menu
       document.getElementById("actionMenu").style.display = "flex";
 
       // 🏷️ title
@@ -7584,24 +7576,7 @@ Open Repository
     }
 
 
-    //     function checkFirstLanguage(){
-
-    //   let lang =
-    //   localStorage.getItem(
-    //     "appLang"
-    //   );
-
-    //   if(!lang){
-
-    //     document.getElementById(
-    //       "languagePopup"
-    //     ).style.display = "flex";
-
-    //   }else{
-
-    //     applyLanguage();
-    //   }
-    // }
+   
 
     function checkFirstLanguage(lang) {
 
@@ -7906,7 +7881,47 @@ setText("txtNormalCalculator", t.txtNormalCalculator);
       );
     }
 
-   
+   function checkSixMonthDue(users){
+
+  let now = new Date();
+
+  users.forEach(user => {
+
+    let start = new Date(user.startDate);
+
+    let diffMonths =
+      (now - start) / (1000*60*60*24*30);
+
+    if(diffMonths >= 6){
+
+      sendNotification(
+        "⚠️ Kist Due Alert",
+        user.name + " ki kist 6 mahine se purani ho gayi hai"
+      );
+
+    }
+
+  });
+
+}
+
+window.onload = function(){
+
+  checkSixMonthDue(users);
+
+}
+function sendNotification(title, body){
+
+  if(Notification.permission === "granted"){
+
+    new Notification(title, {
+      body: body,
+      icon: "./icon.png"
+    });
+
+  }
+
+}
     
     window.onload = function () {
 
@@ -7948,23 +7963,7 @@ setText("txtNormalCalculator", t.txtNormalCalculator);
     const preview_nor =
       document.getElementById("preview_nor");
 
-    // function appendValue_nor(value){
-
-    //     if(value === "AC"){
-    //         clearDisplay_nor();
-    //         return;
-    //     }
-
-    //     if(result_nor.value === "0"){
-    //         result_nor.value = "";
-    //     }
-
-    //     result_nor.value += value;
-
-    //     updatePreview_nor();
-    // }
-
-
+    
 
     function appendValue_nor(value) {
 
@@ -8177,33 +8176,11 @@ setText("txtNormalCalculator", t.txtNormalCalculator);
     document.addEventListener("mouseup", stopDrag);
     document.addEventListener("touchend", stopDrag);
 
+
     function stopDrag() {
       dragging = false;
     }
 
-//    document.addEventListener("click", function (e) {
-
-//   let menu =
-//     document.getElementById("sideMenu");
-
-//   let btn =
-//     document.getElementById("btnMenu");
-
-//   let isOpen =
-//     menu.classList.contains("open");
-
-//   // 🔥 click outside only
-//   if (
-//     isOpen &&
-//     !menu.contains(e.target) &&
-//     !btn.contains(e.target)
-//   ) {
-
-//     menu.classList.remove("open");
-
-//     menu.style.left = "-260px";
-//   }
-// });
 document.addEventListener(
 "click",
 function(e){
