@@ -972,6 +972,7 @@ max-width: 80%; */
       z-index: 999999;
     }
 
+
     .recycle-box {
       width: 90%;
       max-width: 420px;
@@ -2289,6 +2290,126 @@ img{
 #installBtn{
   margin-top:8px;
 }
+
+
+/* ===== RECYCLE BIN ===== */
+
+#recyclePopup{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.5);
+
+  display:none;
+  align-items:center;
+  justify-content:center;
+
+  z-index:99999;
+}
+
+#recyclePopup .popup-content{
+
+  width:95%;
+  max-width:500px;
+
+  max-height:90vh;
+  overflow-y:auto;
+
+  background:white;
+
+  border-radius:16px;
+
+  padding:16px;
+
+  box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* TITLE */
+#recycleTitle{
+  margin-top:0;
+  text-align:center;
+}
+
+/* SEARCH */
+#recycleSearch{
+  width:100%;
+  padding:10px;
+
+  border-radius:10px;
+  border:1px solid #ccc;
+
+  font-size:14px;
+}
+
+/* CARD */
+#recycleContent .card{
+
+  background:#dadbdd;
+
+  border-radius:12px;
+
+  padding:12px;
+
+  margin-bottom:12px;
+
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+
+  line-height:1.6;
+}
+
+/* BUTTONS */
+#recycleContent button{
+
+  margin-top:8px;
+  margin-right:6px;
+
+  padding:8px 12px;
+
+  border:none;
+  border-radius:8px;
+
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:480px){
+
+  #recyclePopup .popup-content{
+    width:96%;
+    padding:12px;
+  }
+
+  #recycleContent .card{
+    font-size:14px;
+  }
+
+}
+
+.side-menu{
+
+overflow-y:auto;
+
+height:100vh;
+
+
+-webkit-overflow-scrolling:touch;
+
+overscroll-behavior:contain;
+
+touch-action:pan-y;
+
+}
+.side-menu{
+
+scrollbar-width:thin;
+
+scroll-behavior:smooth;
+
+}
+.side-menu::-webkit-scrollbar{
+
+display:none;
+}
   </style>
 
 
@@ -2353,7 +2474,7 @@ img{
 
       <div id="langBox" class="lang-box">
         <button onclick="setLang('en')">🇬🇧 English</button>
-        <button onclick="setLang('hi')">🇮🇳 Hindi</button>
+        <button onclick="setLang('hi')">🇮🇳 हिंदी </button>
       </div>
     </div>
 
@@ -2378,22 +2499,16 @@ style="display:none;">
 👥 All Members Contect no.
 
 </button> -->
-    <button id="btnAllContacts_side" onclick="toggleMembersBox_side()">
-
-      👥 All Members Contact No.
-
-    </button>
+   <button id="btnAllContacts_side" onclick="toggleMembersBox_side()"></button>
 
     <div id="allMembersBox_side" style="display:none;">
 
 
     </div>
 
-    <button id="btnCalculatorNor_side" onclick="openCalculator_norm()">
-
-      🧮 Normal Calculator
-
-    </button>
+   <button id="btnCalculatorNor_side" onclick="openCalculator_norm()">
+  🧮 <span id="txtNormalCalculator">Normal Calculator</span>
+</button>
     <button onclick="openAppInfo()" id="btnAppInfo">
 
       ℹ️ App Info
@@ -2622,7 +2737,7 @@ style="display:none;">
   <div id="securityPopup" class="sec-popup">
     <div class="sec-box">
 
-      <h3>🔐 Security Settings</h3>
+      <!-- <h3>🔐 Security Settings</h3>
 
       <button onclick="setOrChangePassword()">🔑 Set / Change Password</button>
 
@@ -2659,7 +2774,52 @@ style="display:none;">
       </div>
 
       <button onclick="saveSecurity()">💾 Save</button>
-      <button onclick="closeSecurity()">❌ Close</button>
+      <button onclick="closeSecurity()">❌ Close</button> -->
+      <h3 id="securityTitle"></h3>
+
+<button id="securityPasswordBtn"
+onclick="setOrChangePassword()">
+</button>
+
+<h4 id="lockOptionsTitle"></h4>
+
+<div class="sec-row">
+  <input type="checkbox" id="securityActive">
+  <label id="securityActiveText"></label>
+</div>
+
+<div class="sec-row">
+  <input type="checkbox" id="lockOverview">
+  <label id="lockOverviewText"></label>
+</div>
+
+<div class="sec-row">
+  <input type="checkbox" id="lockAdd">
+  <label id="lockAddText"></label>
+</div>
+
+<div class="sec-row">
+  <input type="checkbox" id="lockNotes">
+  <label id="lockNotesText"></label>
+</div>
+
+<div class="sec-row">
+  <input type="checkbox" id="lockHistory">
+  <label id="lockHistoryText"></label>
+</div>
+
+<div class="sec-row">
+  <input type="checkbox" id="lockMembers">
+  <label id="lockMembersText"></label>
+</div>
+
+<button id="securitySaveBtn"
+onclick="saveSecurity()">
+</button>
+
+<button id="securityCloseBtn"
+onclick="closeSecurity()">
+</button>
 
     </div>
   </div>
@@ -4590,6 +4750,7 @@ ${historyHTML}<br><br>
         let t = prompt("Enter password:");
         alert(t === saved ? "Correct" : "Wrong");
       }
+
     }
 
 
@@ -4869,7 +5030,26 @@ ${historyHTML}<br><br>
           "Remove Current Photo",
 
         removePhotoConfirm:
-          "❌ Remove current photo?"
+          "❌ Remove current photo?",
+          securitySettings:"🔐 Security Settings",
+
+setPassword:"🔑 Set / Change Password",
+
+lockOptions:"📌 Lock Options",
+
+securityActive:"🔐 Security Active",
+
+lockOverview:"📊 Overview",
+
+lockAdd:"➕ New Add",
+
+lockNotes:"📝 Notes",
+
+lockHistory:"📅 History",
+
+lockMembers:"👥 Members",
+allMembersContact: "👥 All Members Contact No.",
+txtNormalCalculator: "Normal Calculator"
 
 
 
@@ -4880,6 +5060,25 @@ ${historyHTML}<br><br>
 
 
       hi: {
+        txtNormalCalculator: "साधारण कैलकुलेटर",
+        allMembersContact: "👥 सभी सदस्यों के नंबर",
+        securitySettings:"🔐 सुरक्षा सेटिंग्स",
+
+setPassword:"🔑 पासवर्ड सेट / बदलें",
+
+lockOptions:"📌 लॉक विकल्प",
+
+securityActive:"🔐 सुरक्षा चालू",
+
+lockOverview:"📊 ओवरव्यू",
+
+lockAdd:"➕ नई एंट्री",
+
+lockNotes:"📝 नोट्स",
+
+lockHistory:"📅 हिसाब हिस्ट्री",
+
+lockMembers:"👥 सदस्य",
         removePhoto:
           "फोटो हटाएँ",
 
@@ -5670,43 +5869,7 @@ ${t.save || "Save"}
       }
       // PHOTO
       else if (type === "photo") {
-        // html = `
-
-        // <label class="editLabel">
-
-        // 📷 ${t.photo || "Photo"}
-
-        // <span class="downArrow">▼</span>
-
-        // </label>
-
-        // <input
-        //   type="file"
-        //   accept="image/*"
-        //   id="photoInput">
-
-        // <br><br>
-
-        // <button
-        //   id="saveBtn"
-        //   class="saveBtn"
-        //   onclick="saveUserPhoto()">
-
-
-        //   ${t.save || "Save"}
-
-        // </button>
-
-        // <button
-        //   class="saveBtn"
-        //   style="background:red;margin-top:10px;"
-        //   onclick="removeUserPhoto()">
-
-        // ${t.removePhoto || "Remove Photo"}
-
-        // </button>
-
-        // `;
+       
 
         html = `
 
@@ -5745,32 +5908,7 @@ ${t.save || "Save"}
 </button>
 
 `;
-        //         html = `
-
-        // <label class="editLab
-        // el">
-
-        // 📷 ${t.photo || "Photo"}
-
-        // <span class="downArrow">▼</span>
-
-        // </label>
-
-        // <input
-        //   type="file"
-        //   accept="image/*"
-        //   id="photoInput">
-
-        // <button
-        //   id="saveBtn"
-        //   class="saveBtn"
-        //   onclick="saveUserPhoto()">
-
-        //   ${t.save || "Save"}
-
-        // </button>
-
-        // `;
+      
 
       }
 
@@ -7682,6 +7820,35 @@ Open Repository
         t.logoutBtn
       );
 
+setText("securityTitle", t.securitySettings);
+
+setText("securityPasswordBtn", t.setPassword);
+
+setText("lockOptionsTitle", t.lockOptions);
+
+setText("securityActiveText", t.securityActive);
+
+setText("lockOverviewText", t.lockOverview);
+
+setText("lockAddText", t.lockAdd);
+
+setText("lockNotesText", t.lockNotes);
+
+setText("lockHistoryText", t.lockHistory);
+
+setText("lockMembersText", t.lockMembers);
+
+setText("securitySaveBtn", t.save);
+
+setText("securityCloseBtn", t.close);
+
+setText(
+  "btnAllContacts_side",
+  t.allMembersContact
+);
+
+setText("txtNormalCalculator", t.txtNormalCalculator);
+
       // ⚡ ACTION
       setText("printMenuCloseBtn", t.close_p);
 
@@ -7975,7 +8142,15 @@ Open Repository
 
     // 🔥 MOVE DRAG
     document.addEventListener("mousemove", moveDrag);
-    document.addEventListener("touchmove", moveDrag, { passive: false });
+    document.addEventListener("touchmove", function(e){
+
+  // 2 finger = zoom
+  if(e.touches.length === 2) return;
+
+  // 1 finger = drag
+  moveDrag(e);
+
+}, { passive:false });
 
     function moveDrag(e) {
       if (!dragging) return;
@@ -7998,28 +8173,97 @@ Open Repository
       dragging = false;
     }
 
-   document.addEventListener("click", function (e) {
+//    document.addEventListener("click", function (e) {
 
-  let menu =
-    document.getElementById("sideMenu");
+//   let menu =
+//     document.getElementById("sideMenu");
 
-  let btn =
-    document.getElementById("btnMenu");
+//   let btn =
+//     document.getElementById("btnMenu");
 
-  let isOpen =
-    menu.classList.contains("open");
+//   let isOpen =
+//     menu.classList.contains("open");
 
-  // 🔥 click outside only
-  if (
-    isOpen &&
-    !menu.contains(e.target) &&
-    !btn.contains(e.target)
-  ) {
+//   // 🔥 click outside only
+//   if (
+//     isOpen &&
+//     !menu.contains(e.target) &&
+//     !btn.contains(e.target)
+//   ) {
 
-    menu.classList.remove("open");
+//     menu.classList.remove("open");
 
-    menu.style.left = "-260px";
-  }
+//     menu.style.left = "-260px";
+//   }
+// });
+document.addEventListener(
+"click",
+function(e){
+
+let menu=
+document.getElementById(
+"sideMenu"
+);
+
+let btn=
+document.getElementById(
+"btnMenu"
+);
+
+let logout=
+document.getElementById(
+"logoutPopup"
+);
+
+let appInfo=
+document.getElementById(
+"appInfoPopup"
+);
+
+let recycle=
+document.getElementById(
+"recyclePopup"
+);
+
+let security=
+document.getElementById(
+"securityPopup"
+);
+
+let isOpen=
+menu.classList.contains(
+"open"
+);
+
+if(
+
+isOpen &&
+
+
+!menu.contains(e.target)&&
+
+!btn.contains(e.target)&&
+
+!logout.contains(e.target)&&
+
+!appInfo.contains(e.target)&&
+
+!recycle.contains(e.target)&&
+
+!security.contains(e.target)
+
+){
+
+menu.classList.remove(
+"open"
+);
+
+document.body.classList.remove(
+"menu-open"
+);
+
+}
+
 });
     // applyLanguage();
     // applyAllUI();
