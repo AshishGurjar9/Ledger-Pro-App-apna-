@@ -53,7 +53,7 @@
     }
 
     .logo img {
-      width: 85px;
+      width: 100px;
       height: 85px;
       border-radius: 20px;
       object-fit: cover;
@@ -225,39 +225,39 @@
 
 
 
-    .popup{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.6);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
 
-.popup-box{
-  background:white;
-  padding:25px;
-  border-radius:20px;
-  text-align:center;
-  width:90%;
-  max-width:320px;
-}
+    .popup-box {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 320px;
+    }
 
-.popup-box button{
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:12px;
-  background:#2563eb;
-  color:white;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-}
+    .popup-box button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -267,7 +267,7 @@
 
     <div class="logo">
 
-      <img src="icon.png">
+      <img src="icon1.png">
 
       <h1>Ledger Pro</h1>
 
@@ -417,21 +417,19 @@
         🚀 Create Account
 
       </button>
-<div class="extra">
+      <div class="extra">
 
-  <span id="already_acco">
-    Already have account?
-  </span>
+        <span id="already_acco">
+          Already have account?
+        </span>
 
-  <span
-  onclick="showLogin()"
-  id="login_now">
+        <span onclick="showLogin()" id="login_now">
 
-    Login
+          Login
 
-  </span>
+        </span>
 
-</div>
+      </div>
 
     </div>
 
@@ -456,45 +454,42 @@
   font-family:Arial;
   z-index:9999;
 ">
-<h1 id="welcomeText"
-style="font-size:28px;"></h1>
+    <h1 id="welcomeText" style="font-size:28px;"></h1>
 
-<p
-id="welcomeSubText"
-style="margin-top:10px; font-size:16px;">
+    <p id="welcomeSubText" style="margin-top:10px; font-size:16px;">
 
-  Welcome to Ledger Pro 🚀
+      Welcome to Ledger Pro 🚀
 
-</p>
+    </p>
   </div>
 
   <div id="languagePopup" class="popup">
 
-  <div class="popup-box">
+    <div class="popup-box">
 
-    <h2>
-      🌐 Choose Language
-    </h2>
+      <h2>
+        🌐 Choose Language
+      </h2>
 
-    <br>
+      <br>
 
-    <button onclick="checkFirstLanguage('en')">
+      <button onclick="checkFirstLanguage('en')">
 
-      🇬🇧 English
+        🇬🇧 English
 
-    </button>
+      </button>
 
-    <br><br>
+      <br><br>
 
-    <button onclick="checkFirstLanguage('hi')">
+      <button onclick="checkFirstLanguage('hi')">
 
-      🇮🇳 हिंदी
+        🇮🇳 हिंदी
 
-    </button>
+      </button>
+
+    </div>
 
   </div>
-
-</div>
 
   <script>
 
@@ -518,27 +513,31 @@ style="margin-top:10px; font-size:16px;">
         secure: "Secure Finance Manager",
         google: "🔴 Google Login",
         fullName: "Full Name",
-email: "Email",
-password: "Password",
-confirmPassword: "Confirm Password",
-recoveryWord: "Recovery Word",
-recoveryPlaceholder:
-"Favorite Name / Book Name / Recovery Word",
-alreadyAccount:
-"Already have account?",
-login: "Login",
-emailNotFound: "❌ Email not found",
-wrongPassword: "❌ Wrong Password",
-loginSuccess: "✅ Login Successful",
-welcomeText: "Welcome to Ledger Pro 🚀",
-radhe: "RADHE RADHE"
+        email: "Email",
+        password: "Password",
+        confirmPassword: "Confirm Password",
+        recoveryWord: "Recovery Word",
+        recoveryPlaceholder:
+          "Favorite Name / Book Name / Recovery Word",
+        alreadyAccount:
+          "Already have account?",
+        login: "Login",
+        emailNotFound: "❌ Email not found",
+        wrongPassword: "❌ Wrong Password",
+        validEmail:
+"❌ Enter Valid Email",
+        loginSuccess: "✅ Login Successful",
+        welcomeText: "Welcome to Ledger Pro 🚀",
+
+        radhe: "RADHE RADHE"
 
       },
 
       hi: {
-
+validEmail:
+"❌ सही ईमेल दर्ज करें",
         welcomeText: "लेजर प्रो में आपका स्वागत है 🚀",
-radhe: "राधे राधे",
+        radhe: "राधे राधे",
         login: "लॉगिन",
         signup: "साइन अप",
         email: "ईमेल",
@@ -554,19 +553,19 @@ radhe: "राधे राधे",
         secure: "सुरक्षित वित्त प्रबंधक",
         google: "🔴 गूगल लॉगिन",
         fullName: "पूरा नाम",
-email: "ईमेल",
-password: "पासवर्ड",
-confirmPassword: "पासवर्ड पुष्टि करें",
-recoveryWord: "रिकवरी वर्ड",
-recoveryPlaceholder:
-"पसंदीदा नाम / किताब का नाम / रिकवरी वर्ड",
-alreadyAccount:
+        email: "ईमेल",
+        password: "पासवर्ड",
+        confirmPassword: "पासवर्ड पुष्टि करें",
+        recoveryWord: "रिकवरी वर्ड",
+        recoveryPlaceholder:
+          "पसंदीदा नाम / किताब का नाम / रिकवरी वर्ड",
+        alreadyAccount:
 
-"पहले से अकाउंट है?",
-login: "लॉगिन",
-emailNotFound: "❌ ईमेल नहीं मिला",
-wrongPassword: "❌ गलत पासवर्ड",
-loginSuccess: "✅ लॉगिन सफल",
+          "पहले से अकाउंट है?",
+        login: "लॉगिन",
+        emailNotFound: "❌ ईमेल नहीं मिला",
+        wrongPassword: "❌ गलत पासवर्ड",
+        loginSuccess: "✅ लॉगिन सफल",
 
       }
 
@@ -702,7 +701,7 @@ loginSuccess: "✅ लॉगिन सफल",
         !name ||
         !email ||
         !password ||
-        !confirm || 
+        !confirm ||
         !recovery
 
       ) {
@@ -714,6 +713,28 @@ loginSuccess: "✅ लॉगिन सफल",
           "red";
 
         return;
+      }
+      let emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(email)) {
+
+        let lang =
+localStorage.getItem(
+"appLang"
+) || "en";
+
+let t =
+langData[lang];
+
+message.innerHTML =
+t.validEmail;
+
+message.style.color =
+"red";
+
+return;
+
       }
 
       if (password !== confirm) {
@@ -767,15 +788,15 @@ loginSuccess: "✅ लॉगिन सफल",
         "true"
       );
 
-     localStorage.setItem(
-  "ledgerCurrentUser",
-  JSON.stringify({
-    name: name,
-    email: email,
-    password: password,
-    recovery: recovery
-  })
-);
+      localStorage.setItem(
+        "ledgerCurrentUser",
+        JSON.stringify({
+          name: name,
+          email: email,
+          password: password,
+          recovery: recovery
+        })
+      );
       message.innerHTML =
         "✅ Account Created";
 
@@ -792,145 +813,145 @@ loginSuccess: "✅ लॉगिन सफल",
 
 
 
-function loginUser(){
+    function loginUser() {
 
-  let lang =
-  localStorage.getItem(
-    "appLang"
-  ) || "en";
+      let lang =
+        localStorage.getItem(
+          "appLang"
+        ) || "en";
 
-  let t = langData[lang];
+      let t = langData[lang];
 
-  let email =
-  document.getElementById(
-    "loginEmail"
-  ).value.trim().toLowerCase();
+      let email =
+        document.getElementById(
+          "loginEmail"
+        ).value.trim().toLowerCase();
 
-  let password =
-  document.getElementById(
-    "loginPassword"
-  ).value.trim();
+      let password =
+        document.getElementById(
+          "loginPassword"
+        ).value.trim();
 
-  let message =
-  document.getElementById(
-    "message"
-  );
+      let message =
+        document.getElementById(
+          "message"
+        );
 
-  let users = JSON.parse(
-    localStorage.getItem(
-      "ledgerUsers"
-    )
-  ) || [];
+      let users = JSON.parse(
+        localStorage.getItem(
+          "ledgerUsers"
+        )
+      ) || [];
 
-  // 🔍 email check
-  let user = users.find(
-    u => u.email === email
-  );
+      // 🔍 email check
+      let user = users.find(
+        u => u.email === email
+      );
 
-  // ❌ email not found
-  if(!user){
+      // ❌ email not found
+      if (!user) {
 
-    message.innerHTML =
-    t.emailNotFound;
+        message.innerHTML =
+          t.emailNotFound;
 
-    message.style.color =
-    "red";
+        message.style.color =
+          "red";
 
-    return;
-  }
+        return;
+      }
 
-  // ❌ wrong password
-  if(user.password !== password){
+      // ❌ wrong password
+      if (user.password !== password) {
 
-    message.innerHTML =
-    t.wrongPassword;
+        message.innerHTML =
+          t.wrongPassword;
 
-    message.style.color =
-    "red";
+        message.style.color =
+          "red";
 
-    return;
-  }
+        return;
+      }
 
-  // ✅ login success
-  localStorage.setItem(
-    "ledgerLoggedIn",
-    "true"
-  );
+      // ✅ login success
+      localStorage.setItem(
+        "ledgerLoggedIn",
+        "true"
+      );
 
-  localStorage.setItem(
-    "ledgerCurrentUser",
-    JSON.stringify(user)
-  );
+      localStorage.setItem(
+        "ledgerCurrentUser",
+        JSON.stringify(user)
+      );
 
-  message.innerHTML =
-  t.loginSuccess;
+      message.innerHTML =
+        t.loginSuccess;
 
-  message.style.color =
-  "green";
+      message.style.color =
+        "green";
 
-  setTimeout(()=>{
+      setTimeout(() => {
 
-    location.href =
-    "index.html";
+        location.href =
+          "index.html";
 
-  },1000);
+      }, 1000);
 
-}
-    function forgotPassword(){
+    }
+    function forgotPassword() {
 
-  let email =
-  prompt("Enter Email");
+      let email =
+        prompt("Enter Email");
 
-  if(!email) return;
+      if (!email) return;
 
-  let users =
-  JSON.parse(
-    localStorage.getItem(
-      "ledgerUsers"
-    )
-  ) || [];
+      let users =
+        JSON.parse(
+          localStorage.getItem(
+            "ledgerUsers"
+          )
+        ) || [];
 
-  let user =
-  users.find(
-    u => u.email === email.toLowerCase()
-  );
+      let user =
+        users.find(
+          u => u.email === email.toLowerCase()
+        );
 
-  if(!user){
+      if (!user) {
 
-    alert("No account found");
-    return;
-  }
+        alert("No account found");
+        return;
+      }
 
-  let answer =
-  prompt(
-    "Enter Recovery Word"
-  );
+      let answer =
+        prompt(
+          "Enter Recovery Word"
+        );
 
-  if(answer === user.recovery){
+      if (answer === user.recovery) {
 
-    let newPass =
-    prompt(
-      "Enter New Password"
-    );
+        let newPass =
+          prompt(
+            "Enter New Password"
+          );
 
-    user.password = newPass;
+        user.password = newPass;
 
-    localStorage.setItem(
-      "ledgerUsers",
-      JSON.stringify(users)
-    );
+        localStorage.setItem(
+          "ledgerUsers",
+          JSON.stringify(users)
+        );
 
-    alert(
-      "Password Updated"
-    );
+        alert(
+          "Password Updated"
+        );
 
-  } else {
+      } else {
 
-    alert(
-      "Wrong Recovery Word"
-    );
-  }
-}
+        alert(
+          "Wrong Recovery Word"
+        );
+      }
+    }
 
     function googleLogin() {
 
@@ -949,50 +970,50 @@ function loginUser(){
         "Already Logged In"
       );
     }
-function showWelcome(name) {
+    function showWelcome(name) {
 
-  let lang =
-  localStorage.getItem(
-    "appLang"
-  ) || "en";
+      let lang =
+        localStorage.getItem(
+          "appLang"
+        ) || "en";
 
-  let t = langData[lang];
+      let t = langData[lang];
 
-  let screen =
-  document.getElementById(
-    "welcomeScreen"
-  );
+      let screen =
+        document.getElementById(
+          "welcomeScreen"
+        );
 
-  let text =
-  document.getElementById(
-    "welcomeText"
-  );
+      let text =
+        document.getElementById(
+          "welcomeText"
+        );
 
-  let sub =
-  document.getElementById(
-    "welcomeSubText"
-  );
+      let sub =
+        document.getElementById(
+          "welcomeSubText"
+        );
 
-  text.innerHTML =
-  t.radhe +
-  " <br>" +
-  name +
-  " 👋";
+      text.innerHTML =
+        t.radhe +
+        " <br>" +
+        name +
+        " 👋";
 
-  sub.innerText =
-  t.welcomeText;
+      sub.innerText =
+        t.welcomeText;
 
-  screen.style.display =
-  "flex";
+      screen.style.display =
+        "flex";
 
-  setTimeout(() => {
+      setTimeout(() => {
 
-    window.location.href =
-    "index.html";
+        window.location.href =
+          "index.html";
 
-  }, 3000);
+      }, 3000);
 
-}
+    }
 
 
     function applyLanguage() {
@@ -1049,101 +1070,267 @@ function showWelcome(name) {
       document.getElementById("forgotText")
         .innerText = t.forgot;
 
-        document.getElementById(
-  "full_name"
-).innerText =
-t.fullName;
+      document.getElementById(
+        "full_name"
+      ).innerText =
+        t.fullName;
 
-document.getElementById(
-  "email_1"
-).innerText =
-t.email;
+      document.getElementById(
+        "email_1"
+      ).innerText =
+        t.email;
 
-document.getElementById(
-  "password_sin"
-).innerText =
-t.password;
+      document.getElementById(
+        "password_sin"
+      ).innerText =
+        t.password;
 
-document.getElementById(
-  "confirm_pass"
-).innerText =
-t.confirmPassword;
+      document.getElementById(
+        "confirm_pass"
+      ).innerText =
+        t.confirmPassword;
 
-document.getElementById(
-  "recovery_w"
-).innerText =
-t.recoveryWord;
+      document.getElementById(
+        "recovery_w"
+      ).innerText =
+        t.recoveryWord;
 
-document.getElementById(
-  "signupRecovery"
-).placeholder =
-t.recoveryPlaceholder;
+      document.getElementById(
+        "signupRecovery"
+      ).placeholder =
+        t.recoveryPlaceholder;
 
- document.getElementById(
-  "already_acco"
-).innerText =
-t.alreadyAccount;
+      document.getElementById(
+        "already_acco"
+      ).innerText =
+        t.alreadyAccount;
 
-document.getElementById(
-  "login_now"
-).innerText =
-t.login;
+      document.getElementById(
+        "login_now"
+      ).innerText =
+        t.login;
 
-document.getElementById(
-  "login_now"
-).innerText =
-t.login;
+      document.getElementById(
+        "login_now"
+      ).innerText =
+        t.login;
 
 
     }
 
-    function checkFirstLanguage(lang){
+    function checkFirstLanguage(lang) {
 
-  // ✅ language selected
-  if(lang){
+      // ✅ language selected
+      if (lang) {
 
-    localStorage.setItem(
-      "appLang",
-      lang
-    );
+        localStorage.setItem(
+          "appLang",
+          lang
+        );
 
-    document.getElementById(
-      "languagePopup"
-    ).style.display = "none";
+        document.getElementById(
+          "languagePopup"
+        ).style.display = "none";
 
-    applyLanguage();
+        applyLanguage();
 
-    return;
-  }
+        return;
+      }
 
-  // ✅ first check
-  let savedLang =
-  localStorage.getItem(
-    "appLang"
-  );
+      // ✅ first check
+      let savedLang =
+        localStorage.getItem(
+          "appLang"
+        );
 
-  if(!savedLang){
+      if (!savedLang) {
 
-    document.getElementById(
-      "languagePopup"
-    ).style.display = "flex";
+        document.getElementById(
+          "languagePopup"
+        ).style.display = "flex";
 
-  }
+      }
 
-  else{
+      else {
 
-    applyLanguage();
+        applyLanguage();
 
-  }
-}
-  window.onload = function(){
+      }
+    }
+    window.onload = function () {
 
-  checkFirstLanguage();
-  applyLanguage();
+      checkFirstLanguage();
+      applyLanguage();
 
-};
-  </script>
+    };
+
+    
+
+/* style=  "color: white; padding: 15px; margin: 5px; font-weight: bold;" edit button */
+/* style="background-color: #2196F3; color: white; padding: 15px; margin: 5px; font-weight: bold;" addbutton */
+ /* style="background-color:   #08af0d;; color: white; padding: 15px; margin: 5px; font-weight: bold;" continue button  */
+  /* style="background-color:#555;  color:white;  padding:15px;  margin:5px;  font-weight:bold;"  print buutton */
+          /* style="background-color: #f44336; color: white; padding: 15px; margin: 5px; font-weight: bold;"   delet button */
+  /* style="background:#ffe0e0;padding:10px;border-radius:8px;margin:5px;">   delet entry */
+ 
+
+//   .btnAddDate,
+// .btnEdit,
+// .btnContinue,
+// .btnPrint,
+// .btnDelete{
+
+// padding:14px;
+
+// margin:5px;
+
+// font-weight:bold;
+
+// border:none;
+
+// border-radius:10px;
+
+// min-width:140px;
+//                         // 100%  width mobil me 
+// min-height:55px;
+
+// font-size:16px;
+
+// display:inline-flex;
+
+// align-items:center;
+
+// justify-content:center;
+
+// white-space:nowrap;
+
+// }
+
+// .card button{
+
+// vertical-align:middle;
+
+// }
+
+// @media(max-width:600px){
+
+// .btnAddDate,
+// .btnEdit,
+// .btnContinue,
+// .btnPrint,
+// .btnDelete{
+
+// width:100%;
+
+// margin:4px 0;
+
+// }
+
+// } */
+
+
+// .btnAddDate,
+// .btnEdit,
+// .btnContinue,
+// .btnPrint{
+
+// width:calc(45% - 10px);
+
+// padding:14px;
+
+// margin:5px;
+
+// font-size:15px;
+
+// min-height:55px;
+
+// box-sizing:border-box;
+
+// }
+
+// .btnDelete{
+
+// width:calc(100% - 10px);
+
+// padding:14px;
+
+// margin:5px;
+
+// font-size:15px;
+
+// min-height:55px;
+
+// box-sizing:border-box;
+
+// }
+
+// .btnAddDate,
+// .btnEdit,
+// .btnContinue,
+// .btnPrint,
+// .btnDelete{
+
+// padding:15px;
+
+// margin:5px;
+
+// font-weight:bold;
+
+// border:none;
+
+// border-radius:8px;
+
+// min-height:55px;
+
+// box-sizing:border-box;
+
+// }
+
+// /* 📱 Mobile */
+
+// @media(max-width:700px){
+
+// .btnAddDate,
+// .btnEdit,
+// .btnContinue,
+// .btnPrint{
+
+// width:calc(50% - 10px);
+
+// }
+
+// .btnDelete{
+
+// width:100%;
+
+// }
+
+// }
+
+// /* 💻 Laptop */
+
+// @media(min-width:701px){
+
+// .btnAddDate,
+// .btnEdit,
+// .btnContinue,
+// .btnPrint,
+// .btnDelete{
+
+// width:auto;
+
+// display:inline-block;
+
+// }
+
+// }
+ </script>
+
 
 </body>
 
 </html>
+
+
+
+

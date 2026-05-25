@@ -23,22 +23,6 @@
       padding: 15px;
     }
 
-    #splash {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, #0ea5e9, #0284c7);
-      display: flex;
-      justify-content: center;
-
-      align-items: center;
-      flex-direction: column;
-      overflow-x: hidden;
-      z-index: 9999;
-
-    }
 
     .app-header {
       position: fixed;
@@ -72,42 +56,85 @@
       z-index: 1;
     }
 
-    #splash h2 {
-      color: #f59e0b;
-      margin-top: 15px;
-      font-size: 20px;
-      font-weight: bold;
-      text-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
-    }
 
-    #splash h2 {
-      color: #f59e0b;
-      margin-top: 15px;
-      font-size: 20px;
-      letter-spacing: 1px;
-      animation: fadeIn 1.5s ease-in-out;
-    }
+     #splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-    @keyframes zoom {
-      from {
-        transform: scale(0.9);
-      }
+  background: linear-gradient(to bottom, #0ea5e9, #0284c7);
 
-      to {
-        transform: scale(1.1);
-      }
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
+  overflow-x: hidden;
+  z-index: 9999;
+}
 
-      to {
-        opacity: 1;
-      }
-    }
+/* single clean h2 */
+#splash h2 {
 
+   font-weight:700;
+  color:#ff6a00;
+
+  text-shadow: 0 0 6px rgba(255, 106, 0, 0.6);
+
+  animation: softFire 2s ease-in-out infinite;
+
+}
+
+@keyframes softFire {
+  0% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+
+}
+
+/* only keep used animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* logo */
+#splash img {
+  width: 90px;
+  height: 90px;
+}
+
+/* Radhe Radhe text */
+#splash h2 {
+  color: #f59e0b;
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  text-shadow: 0 0 8px rgba(245, 158, 11, 3);
+}
+
+/* loading text */
+.loading {
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 1px;
+}
 
     button {
       cursor: pointer;
@@ -309,6 +336,7 @@
       text-align: center;
       border: 1px solid #ddd;
     }
+    
 
     th {
       background: #007bff;
@@ -319,7 +347,12 @@
       background: #f1f1f1;
     }
 
+    .td-over{
+      color: #222222;
+    }
+
     .total {
+      color: #000;
       background: #eee;
       font-weight: bold;
     }
@@ -351,6 +384,7 @@
     .popup-content h3 {
       margin-bottom: 15px;
       text-align: center;
+      color: #000;
     }
 
     .save-btn {
@@ -548,15 +582,6 @@
   background: #a0865a;
 }
 
-    body.dark {
-      background: #111;
-      color: white;
-    }
-
-    body.dim {
-      background: #cfd8dc;
-      color: #222;
-    }
 
     .side-menu {
       position: fixed;
@@ -780,6 +805,7 @@ max-width: 80%; */
       background: #fff;
       padding: 20px;
       width: 90%;
+      color: #000;
       max-width: 360px;
       border-radius: 15px;
     }
@@ -805,6 +831,18 @@ max-width: 80%; */
       border-radius: 10px;
       background: #0ea5e9;
       color: white;
+    }
+
+
+    .security-save{
+      background-color: #05e25d !important;
+      color: #000 !important;
+      font-weight: bold;
+    }
+    .security-close{
+      background-color: rgb(242, 48, 48)!important;
+      color: #000 !important;
+      font-weight: bold;
     }
 
     .lang-dropdown {
@@ -834,6 +872,8 @@ max-width: 80%; */
       position: fixed;
       top: 0;
       left: 0;
+      /* color: #000; */
+      color: #222;
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.6);
@@ -913,6 +953,7 @@ max-width: 80%; */
     .editLabel {
       margin-top: 12px;
       display: block;
+      color: #000;
       margin-bottom: 6px;
       font-size: 15px;
       font-weight: 600;
@@ -955,99 +996,16 @@ max-width: 80%; */
     }
 
 
-
-
-
     #output {
       padding-bottom: 120px;
     }
 
-    .recycle-popup {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999999;
-    }
-
-
-    .recycle-box {
-      width: 90%;
-      max-width: 420px;
-      max-height: 80vh;
-      background: white;
-      border-radius: 16px;
-      padding: 15px;
-
-      display: flex;
-      flex-direction: column;
-
-      overflow: hidden;
-      /* 🔥 IMPORTANT FIX */
-    }
-
-    .recycle-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      margin-bottom: 10px;
-
-      position: sticky;
-      top: 0;
-      background: white;
-      z-index: 10;
-
-      border-bottom: 1px solid #ddd;
-    }
-
-    .recycle-head button {
-      background: red;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 8px;
-    }
-
-    /* 🔥 ONLY CONTENT SCROLL */
-    #recycleContent {
-      flex: 1;
-      overflow-y: auto;
-      padding-right: 5px;
-    }
-
-
-
-
-
-    .recycle-box {
-      width: 90%;
-      max-width: 420px;
-
-      max-height: 80vh;
-
-      overflow-y: auto;
-
-      background: white;
-
-      border-radius: 16px;
-
-      padding: 15px;
-
-      box-sizing: border-box;
-    }
-
-    .recycle-box {
-      -webkit-overflow-scrolling: touch;
-    }
-
-
-
 
     .share-btn {
-      width: 100%;
+      width: 95%;
+      display: block;
+      margin: 0 auto;
+     
       padding: 12px 15px;
       border: none;
       border-radius: 12px;
@@ -1125,6 +1083,7 @@ max-width: 80%; */
       width: 90%;
       max-width: 320px;
       padding: 20px;
+      color: #000;
       border-radius: 12px;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -1231,6 +1190,7 @@ max-width: 80%; */
     .print-box {
 
       background: white;
+      color: #000;
 
       padding: 20px;
 
@@ -1278,147 +1238,6 @@ max-width: 80%; */
 
 
 
-
-
-    #storagePopup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 99999;
-
-      /* display: flex;    🔥 ADD THIS */
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* .storage-popup-box {
-  background: #fff;
-  width: 90%;
-
-  max-width: 500px;
-  max-height: 80vh;
-  overflow-y: auto;
-
-  border-radius: 12px;
-  padding: 15px;
-
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-} */
-
-    .storage-popup-box {
-      background: #fff;
-      width: 92%;
-      max-width: 600px;
-      max-height: 85vh;
-      overflow-y: auto;
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    #reportViewPopup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 99999;
-
-      display: flex;
-      /* 🔥 ADD THIS */
-      justify-content: center;
-      align-items: center;
-    }
-
-
-
-
-    .reportItem {
-      background: #b4abab;
-      color: black;
-      border-radius: 12px;
-      padding: 12px;
-      margin: 10px 0;
-
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    /* Date */
-    .reportItem .date {
-      font-size: 13px;
-      color: #666;
-    }
-
-    /* Title/Text */
-    .reportItem .title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #222;
-    }
-
-    /* Button row */
-    .reportItem .actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    /* Buttons */
-    .reportItem button {
-      flex: 1;
-      padding: 8px;
-      border: none;
-      border-radius: 8px;
-
-      font-size: 14px;
-      font-weight: 500;
-
-      cursor: pointer;
-      color: black;
-    }
-
-    .reportItem .pdfviewBtn {
-      background: #387ee7;
-
-    }
-
-    .reportItem .pdfshareBtn {
-      background: #c37c11;
-    }
-
-    .reportItem .pdfremoveBtn {
-      background: #d55452;
-    }
-
-
-    .pdf-report {
-      font-family: Arial;
-      padding: 20px;
-      background: white;
-      color: black;
-    }
-
-    .pdf-report img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    .pdf-report .card {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-    }
 
 
 
@@ -2280,98 +2099,6 @@ img{
 }
 
 
-/* ===== RECYCLE BIN ===== */
-
-#recyclePopup{
-  position:fixed;
-  inset:0;
-
-  background:rgba(0,0,0,0.5);
-
-  display:none;
-  align-items:center;
-  justify-content:center;
-
-  z-index:99999;
-}
-
-#recyclePopup .popup-content{
-
-  width:95%;
-  max-width:500px;
-
-  max-height:90vh;
-  overflow-y:auto;
-
-  background:white;
-
-  border-radius:16px;
-
-  padding:16px;
-
-  box-shadow:0 5px 20px rgba(0,0,0,0.3);
-}
-
-/* TITLE */
-#recycleTitle{
-  margin-top:0;
-  text-align:center;
-}
-
-/* SEARCH */
-#recycleSearch{
-  width:100%;
-  padding:10px;
-
-  border-radius:10px;
-  border:1px solid #ccc;
-
-  font-size:14px;
-}
-
-/* CARD */
-#recycleContent .card{
-
-  background:#dadbdd;
-
-  border-radius:12px;
-
-  padding:12px;
-
-  margin-bottom:12px;
-
-  box-shadow:0 2px 6px rgba(0,0,0,0.08);
-
-  line-height:1.6;
-}
-
-/* BUTTONS */
-#recycleContent button{
-
-  margin-top:8px;
-  margin-right:6px;
-
-  padding:8px 12px;
-
-  border:none;
-  border-radius:8px;
-
-  cursor:pointer;
-}
-
-/* MOBILE */
-@media(max-width:480px){
-
-  #recyclePopup .popup-content{
-    width:96%;
-    padding:12px;
-  }
-
-  #recycleContent .card{
-    font-size:14px;
-  }
-
-}
 
 .side-menu{
 
@@ -2726,17 +2453,959 @@ display:none;
   display:block;
   height:80px;
 }
+
+.app-info-header{
+
+  position: sticky;
+ color: bl;
+  top: 0;
+
+  
+  background: white;
+
+  text-align: center;
+
+  /* padding: 12px; */
+
+  z-index: 10;
+
+  /* border-bottom: 1px solid #ddd; */
+}
+
+.appInfo-box{
+
+  color: #222222;
+
+width:90%;
+
+max-width:420px;
+
+max-height:80vh;
+
+background:white;
+
+border-radius:16px;
+
+padding:15px;
+
+display:flex;
+
+flex-direction:column;
+
+overflow:hidden;
+
+}
+
+.appInfo-head{
+
+  color: #222222;
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:10px;
+
+border-bottom:1px solid #ddd;
+
+padding-bottom:8px;
+
+}
+
+#appInfoContent{
+
+flex:1;
+
+color: #222222 !important;
+overflow-y:auto;
+
+padding-right:5px;
+
+-webkit-overflow-scrolling:touch;
+
+}
+
+ .appInfo-head button {
+      background: red;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+
+    /* ===== RECYCLE POPUP ===== */
+
+.recycle-popup{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,0.55);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+padding:12px;
+
+z-index:999999;
+
+backdrop-filter:blur(3px);
+
+box-sizing:border-box;
+
+}
+
+/* ===== BOX ===== */
+
+.recycle-box{
+
+width:92%;
+
+max-width:430px;
+
+max-height:85vh;
+
+background:white;
+
+border-radius:22px;
+
+padding:18px;
+
+display:flex;
+
+flex-direction:column;
+
+overflow:hidden;
+
+box-sizing:border-box;
+
+box-shadow:
+
+0 10px 35px rgba(0,0,0,.18);
+
+border:1px solid #ececec;
+
+}
+
+/* ===== HEADER ===== */
+
+.recycle-head{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding-bottom:12px;
+
+margin-bottom:12px;
+
+border-bottom:1px solid #eee;
+
+background:white;
+
+position:sticky;
+
+top:0;
+
+z-index:10;
+
+}
+
+.recycle-head h3{
+
+margin:0;
+
+font-size:20px;
+
+font-weight:700;
+
+color:#222;
+
+}
+
+/* CLOSE BUTTON */
+
+.recycle-head button{
+
+border:none;
+
+background:#ff4444;
+
+color:white;
+
+width:40px;
+
+height:40px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:16px;
+
+font-weight:bold;
+
+transition:.2s;
+
+box-shadow:
+
+0 3px 8px rgba(0,0,0,.15);
+
+}
+
+.recycle-head button:hover{
+
+background:#dd1a17;
+
+transform:scale(1.05);
+
+}
+
+.recycle-head button:active{
+
+transform:scale(.92);
+
+}
+
+/* ===== CONTENT ===== */
+
+#recycleContent{
+
+flex:1;
+
+overflow-y:auto;
+
+padding-right:6px;
+
+line-height:1.6;
+
+-webkit-overflow-scrolling:touch;
+
+}
+
+/* SCROLLBAR */
+
+#recycleContent::-webkit-scrollbar{
+
+width:6px;
+
+}
+
+#recycleContent::-webkit-scrollbar-thumb{
+
+background:#c5c5c5;
+
+border-radius:50px;
+
+}
+
+/* SEARCH */
+
+#recycleSearch{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+outline:none;
+
+font-size:14px;
+
+border-radius:14px;
+
+background:#f5f5f5;
+
+box-sizing:border-box;
+
+box-shadow:
+
+inset 2px 2px 5px #d1d1d1,
+
+inset -2px -2px 5px #ffffff;
+
+}
+
+
+
+
+
+
+
+
+
+.recycle-action-btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+.recycle-action-btn:active{
+
+transform:scale(.95);
+
+}
+
+/* CARD */
+
+#recycleContent .card{
+
+background:#b7b7b8;
+
+padding:14px;
+
+border-radius:16px;
+
+margin-bottom:12px;
+
+box-shadow:
+
+0 2px 8px rgba(0,0,0,.08);
+
+word-wrap:break-word;
+
+}
+
+/* CARD BUTTON */
+
+#recycleContent button{
+
+padding:8px 12px;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+margin-top:8px;
+
+margin-right:6px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+.recycle-box{
+
+width:96%;
+
+padding:14px;
+
+border-radius:18px;
+
+max-height:88vh;
+
+}
+
+.recycle-head h3{
+
+font-size:18px;
+
+}
+
+.recycle-action-btn{
+
+width:100%;
+
+margin:5px 0;
+
+}
+
+}
+
+.recycle-btn-row{
+
+display:flex;
+
+gap:8px;
+
+margin-top:10px;
+}
+
+.recycle-action-btn{
+
+flex:1;
+
+padding:10px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+color:white;
+
+font-weight:600;
+
+margin:0;
+
+}
+
+.undo-btn{
+
+background:#f59e0b;
+
+}
+
+.restore-btn{
+
+background:#22c55e;
+
+}
+
+.delete-btn{
+
+background:#ef4444;
+
+}
+
+
+/* FULL seved report POPUP ka mamla*/
+
+
+    .reportItem {
+      
+      /* background: #b4abab; */
+       background: #c3bfbf;
+      color: black;
+      border-radius: 12px;
+      padding: 12px;
+      margin: 10px 0;
+
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Date */
+    .reportItem .date {
+      font-size: 13px;
+      color: #444242;
+    }
+
+    /* Title/Text */
+    .reportItem .title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    
+
+    .reportItem .pdfviewBtn {
+      background: #387ee7;
+
+    }
+
+    .reportItem .pdfshareBtn {
+      background: #c37c11;
+    }
+
+    .reportItem .pdfremoveBtn {
+      background: #d55452;
+    }
+
+
+    .pdf-report {
+      font-family: Arial;
+      padding: 20px;
+      background: white;
+      color: black;
+    }
+
+    .pdf-report img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .pdf-report .card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+
+
+#storagePopup,
+#reportViewPopup{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,0.6);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+padding:10px;
+
+box-sizing:border-box;
+
+}
+
+
+/* CONTENT SCROLL ONLY */
+
+#storageList,
+#reportPreviewBox{
+
+flex:1;
+
+overflow-y:auto;
+
+padding:10px;
+
+}
+
+/* CLOSE BUTTON FIX */
+
+.storage-popup-box button{
+
+margin:10px;
+
+padding:10px;
+
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+background:#ef4444;
+
+color:white;
+
+font-weight:600;
+
+}
+/* CLOSE BUTTON TOP RIGHT */
+
+.popup-head button {
+      background: red;
+      color: white;
+      border: none;
+      
+      width:36px;
+
+height:36px;
+ cursor:pointer;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+
+
+/* HEADER (FIXED TOP) */
+
+.popup-head{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:10px 12px;
+
+border-bottom:1px solid #ddd;
+
+background:#fff;
+
+position:sticky;
+
+top:0;
+
+z-index:10;
+
+}
+
+/* TITLE */
+
+.popup-head h2{
+
+margin:0;
+
+font-size:18px;
+
+}
+
+
+
+
+
+/* MAIN BOX */
+
+.storage-popup-box{
+
+  width:92%;
+
+  max-width:430px;
+
+  max-height:85vh;
+
+  background:white;
+    color:#000;
+
+  border-radius:22px;
+
+  padding:18px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  overflow:hidden;
+
+  box-sizing:border-box;
+
+  box-shadow:
+  0 10px 35px rgba(0,0,0,.18);
+
+  border:1px solid #ececec;
+
+}
+/* MOBILE BUTTON FIX */
+
+@media(max-width:480px){
+
+.reportItem button{
+
+width:100%;
+
+margin:4px 0;
+
+}
+.storage-popup-box{
+
+    width:96%;
+
+    max-height:88vh;
+
+    border-radius:18px;
+
+    padding:14px;
+
+  }
+}
+
+/* ///////////////////// */
+
+/* .reportItem .actions{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:10px;
+
+}
+
+.reportItem .actions button{
+
+  width:100%;
+
+  margin:0;
+
+} */
+ 
+#storagePopup{
+
+  align-items:flex-start;
+
+  padding-top:50px;
+
+}
+
+
+/* 
+  .radhe{
+  text-align: center;
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  color: #ff6a00;
+  
+  text-shadow: 
+    0 0 5px rgba(255, 106, 0, 0.6),
+    0 0 15px rgba(255, 140, 0, 0.5),
+    0 0 25px rgba(255, 94, 0, 0.4);
+
+  animation: glow 2s infinite alternate;
+}
+
+
+@keyframes glow {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 1;
+    
+  }
+} */
+
+.radhe{
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+  color:#ff6a00;
+
+  text-shadow: 0 0 6px rgba(255, 106, 0, 0.6);
+
+  animation: softFire 2s ease-in-out infinite;
+}
+
+
+@keyframes softFire {
+  0% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+}
+/* 
+.radhe{
+  text-align:center;
+  font-size:22px;
+  font-weight:800;
+  color:#ff6a00;
+  letter-spacing:2px;
+
+  text-shadow:
+    0 0 5px #ff6a00,
+    0 0 10px #ff3c00,
+    0 0 20px #ff0000,
+    0 0 30px #ffae00;
+
+  animation: fireGlow 0.8s infinite alternate;
+}
+
+//////fire flicker effect
+@keyframes fireGlow {
+  0% {
+    transform: scale(1);
+    text-shadow:
+      0 0 5px #ff6a00,
+      0 0 10px #ff3c00,
+      0 0 20px #ff0000;
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1.05);
+    text-shadow:
+      0 0 10px #ffae00,
+      0 0 20px #ff4500,
+      0 0 40px #ff0000;
+    opacity: 1;
+  }
+} */
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* .btnAddDate,
+.btnEdit,
+.btnContinue,
+.btnPrint,
+.btnDelete{
+
+padding:14px;
+
+margin:5px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:10px;
+
+min-width:140px;
+
+min-height:55px;
+
+font-size:16px;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+white-space:nowrap;
+
+}
+
+.card button{
+
+vertical-align:middle;
+
+}
+
+@media(max-width:600px){
+
+.btnAddDate,
+.btnEdit,
+.btnContinue,
+.btnPrint,
+.btnDelete{
+
+width:100%;
+
+margin:4px 0;
+
+}
+
+} */
+
+/* 
+.btnAddDate,
+.btnEdit,
+.btnContinue,
+.btnPrint,
+  .btnDelete{
+
+width:calc(45% - 10px) !important; 
+
+padding:14px;
+
+margin:5px;
+
+font-size:15px;
+
+min-height:55px !important;
+
+box-sizing:border-box;
+
+} */
+
+/* .btnDelete{
+
+width:calc(100% - 10px);
+
+padding:14px;
+
+margin:5px;
+
+font-size:15px;
+
+min-height:55px;
+
+box-sizing:border-box;
+
+} */
+
+
+
+/* //////////////// */
+.btnAddDate,
+.btnEdit,
+.btnContinue,
+.btnPrint,
+.btnDelete{
+
+padding:15px;
+
+margin:5px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:8px;
+
+min-height:55px;
+
+box-sizing:border-box;
+
+}
+
+/* 📱 Mobile */
+
+@media(max-width:700px){
+
+.btnAddDate,
+.btnEdit,
+.btnContinue,
+.btnPrint{
+ margin-left: 10px !important;
+width:calc(45% - 10px);
+
+}
+.btnAddDate{
+  margin-right: 9px !important;  
+}
+.btnDelete{
+margin-left: 7px !important;
+width:90%;
+
+}
+
+}
+
+/* 💻 Laptop */
+
+@media(min-width:701px){
+
+.btnAddDate,
+.btnEdit,
+.btnContinue,
+.btnPrint,
+.btnDelete{
+
+width:auto;
+margin-right: 7px !important;
+
+display:inline-block;
+
+}
+
+}
+
+
   </style>
 
 
 
 </head>
 
+
 <body>
 
   <div id="splash">
     <img src="./icon.png" alt="logo">
     <h2>Radhe Radhe</h2>
+     <p class="loading">Loading...</p>
   </div>
 
   <div class="app-header">
@@ -2846,21 +3515,20 @@ display:none;
     </div>
 
   </div>
-  <div id="storagePopup">
+ <div id="storagePopup">
 
-    <div class="storage-popup-box">
+  <div class="storage-popup-box">
 
+    <div class="popup-head">
       <h2 id="savedReportsText"></h2>
-
-      <div id="storageList"></div>
-
-      <button onclick="closeStorage()" id="storageCloseBtn">
-        ❌ Close
-      </button>
-
+      <button onclick="closeStorage()">✖</button>
     </div>
 
+    <div id="storageList"></div>
+
   </div>
+
+</div>
 
   <div id="reportViewPopup" style="display:none;">
 
@@ -2908,7 +3576,7 @@ display:none;
 
   </div>
 
-
+<!-- 
   <div id="appInfoPopup" class="recycle-popup">
 
     <div class="recycle-box">
@@ -2929,7 +3597,30 @@ display:none;
 
     </div>
 
-  </div>
+  </div> -->
+
+  <div id="appInfoPopup" class="recycle-popup">
+
+<div class="appInfo-box">
+
+<div class="appInfo-head">
+
+<h3 id="appInfoTitle">
+ℹ️ App Info
+</h3>
+
+<button onclick="closeAppInfo()">
+✖️
+</button>
+
+</div>
+
+<div id="appInfoContent">
+</div>
+
+</div>
+
+</div>
 
  
   <div style="text-align:center; margin-bottom:12px;">
@@ -3035,6 +3726,8 @@ display:none;
   <div id="noteViewer" onclick="closeNoteView()">
     <div id="noteContent"></div>
   </div>
+
+
   <div id="securityPopup" class="sec-popup">
     <div class="sec-box">
 
@@ -3076,11 +3769,11 @@ onclick="setOrChangePassword()">
   <label id="lockMembersText"></label>
 </div>
 
-<button id="securitySaveBtn"
+<button id="securitySaveBtn" class="security-save"
 onclick="saveSecurity()">
 </button>
 
-<button id="securityCloseBtn"
+<button id="securityCloseBtn" class="security-close"
 onclick="closeSecurity()">
 </button>
 
@@ -3975,13 +4668,59 @@ function closeMenu() {
         displayTime = `<b>⏳ Time:</b> ${days} दिन<br>`;
       }
 
-      document.getElementById("calcResult").innerHTML = `
-    ${displayTime}
-    <b>💰 Interest:</b> ₹ ${interest.toFixed(2)} <br>
-    <b>🔢 Total:</b> ₹ ${total.toFixed(2)}
-  `;
-    }
+  //     document.getElementById("calcResult").innerHTML = `
+       
+  //   ${displayTime}
+  //   <b>💰 Interest:</b> ₹ ${interest.toFixed(2)} <br>
+  //   <b>🔢 Total:</b> ₹ ${total.toFixed(2)}
+  // `;
+  //   }
+      let a= `<b>    🟰  (</b>`+interest+`<b> ➕ </b>`+amount+")";
 
+document.getElementById("calcResult").innerHTML = `
+
+<span style="color:#2563eb;
+font-size:18px;
+font-weight:bold;">
+
+${displayTime}
+
+</span>
+
+
+<b style="color:#16a34a;">
+💰 Interest: 
+</b>
+
+<span style="
+color:#16a34a;
+font-weight:bold;
+font-size:20px;
+">
+
+₹ ${interest.toFixed(2)}
+
+</span>
+
+<br>
+
+<b style="color:#dc2626;">
+🔢 Total:
+</b>
+  
+<span style="
+color:#dc2626;
+font-weight:bold;
+font-size:22px;
+">
+
+₹ ${total.toFixed(2)+a}
+
+
+</span>
+
+`;
+    }
 
     function calculate(start, end) {
       let d1 = new Date(start);
@@ -4282,7 +5021,11 @@ ${historyHTML}<br><br>
 `;
 
         if (remain <= 0) {
-          html += `<b style="color:green;">✔ पूरा भुगतान हो चुका है<b>`;
+          html += `<b style="color:green;">
+            
+✔ ${t.fullPaid}
+
+            <b>`;
         }
         else if (e.completed) {
           html += `${e.status ? "📌 " + e.status + "<br>" : ""}`;
@@ -4355,6 +5098,11 @@ ${historyHTML}<br><br>
     }
 
     function continueLoan(name, index) {
+      let lang =
+localStorage.getItem("appLang") || "en";
+
+let t =
+langData[lang];
       try {
         let user = users.find(u => u.name === name);
 
@@ -4376,11 +5124,15 @@ ${historyHTML}<br><br>
         let remaining = currentTotal - entry.paid;
 
         if (remaining <= 0) {
-          alert("✔ पूरा पैसा जमा हो चुका है");
+          // alert("✔ पूरा पैसा जमा हो चुका है");
+          alert(t.fullPaid);
+
           return;
         }
 
-        let choice = prompt("क्या पैसा जमा किया? (yes / no)");
+        let choice =
+        prompt(t.askPaid);
+        //  prompt("क्या पैसा जमा किया? (yes / no)");
         if (!choice) return;
 
         let newAmount = 0;
@@ -4390,7 +5142,10 @@ ${historyHTML}<br><br>
         entry.status = "";
 
         if (choice === "yes" || choice === "y" || choice === "YES") {
-          paidAmount = parseFloat(prompt("कितना पैसा जमा किया?")) || 0;
+          paidAmount = parseFloat(
+            prompt(t.askAmount)
+            // prompt("कितना पैसा जमा किया?")
+          ) || 0;
 
           // Add payment
           entry.paid = parseFloat((entry.paid + paidAmount).toFixed(2));
@@ -4415,14 +5170,22 @@ ${historyHTML}<br><br>
           // Set end date to today (when jama was done)
           entry.endDate = todayStr;
 
-          entry.status = `✔ ₹${paidAmount} जमा किया`;
-          status = `✔ ₹${paidAmount} जमा करके आगे बढ़ाया`;
+          entry.status =
+          //  `✔ ₹${paidAmount} जमा किया`;
+          `✔ ₹${paidAmount} ${t.paid}`;
+          status =
+          `✔ ₹${paidAmount} ${t.paidForward}`;
+          //  `✔ ₹${paidAmount} जमा करके आगे बढ़ाया`;
         } else {
           newAmount = parseFloat(currentTotal.toFixed(2));
           entry.total = parseFloat(currentTotal.toFixed(2));
           entry.endDate = todayStr;
-          entry.status = "❌ पैसा जमा नहीं किया पूरा जोड़कर आगे बढ़ाया";
-          status = "❌ पैसा जमा नहीं किया, पूरा जोड़कर आगे बढ़ाया";
+          entry.status = 
+          t.notPaid;
+          // "❌ पैसा जमा नहीं किया पूरा जोड़कर आगे बढ़ाया";
+          status =
+          t.notPaid;
+          //  "❌ पैसा जमा नहीं किया, पूरा जोड़कर आगे बढ़ाया";
         }
 
         let baseKist = entry.kistNo || (index + 1);
@@ -4455,7 +5218,8 @@ ${historyHTML}<br><br>
         // entry.completed = "old";
 
         localStorage.setItem("users", JSON.stringify(users));
-        alert("✅ कंटिन्यू हो गया!");
+        // alert("✅ कंटिन्यू हो गया!");
+        alert(t.continuedDone);
 
         // openUser(name);
         forceOpenUser = true;
@@ -4508,14 +5272,23 @@ ${historyHTML}<br><br>
 
       let html = `
     <h3>📊 ${t.overview}</h3>
-    <table>
+  <div style="
+overflow-x:auto;
+width:100%;
+-webkit-overflow-scrolling:touch;
+">
+
+<table style="
+min-width:700px;
+white-space:nowrap;
+">
       <tr>
-        <th>S.No</th>
+        <th >S.No</th>
         <th>${t.members}</th>
         <th>${t.amount}</th>
         <th>${t.interest}</th>
-        <th>${t.total}</th>
-        <th>${t.date}</th>
+        <th >${t.total}</th>
+        <th >${t.date}</th>
       </tr>
   `;
 
@@ -4540,7 +5313,7 @@ ${historyHTML}<br><br>
           let dateToShow = e.endDate || e.start || todayStr;
 
           html += `
-        <tr>
+        <tr class= "td-over">
           <td>${i + 1}.${j + 1}</td>
           <td>${u.originalName || u.name}</td>
           <td>₹${remaining.toFixed(2)}</td>
@@ -4569,7 +5342,8 @@ ${historyHTML}<br><br>
     </tr>
   `;
 
-      html += `</table>`;
+      html += `</table> 
+      </div>`;
 
       box.innerHTML = html;
       box.setAttribute("data-open", "overview");
@@ -5026,36 +5800,65 @@ ${historyHTML}<br><br>
 
     // PASSWORD SYSTEM
     function setOrChangePassword() {
+      let lang =
+localStorage.getItem("appLang") || "en";
+
+let t =
+langData[lang];
       let saved = localStorage.getItem("appPass");
 
       if (!saved) {
-        let p = prompt("Set Password:");
+        let p = 
+        prompt(t.setPassword);
+
+        // prompt("Set Password:");
         if (p) localStorage.setItem("appPass", p);
+          alert(t.saved);
         return;
       }
 
       let action = prompt("1=Change\n2=Remove\n3=Test");
 
       if (action === "1") {
-        let old = prompt("Old password:");
+        let old =
+        prompt(t.oldPassword);
+        //  prompt("Old password:");
         if (old === saved) {
-          let np = prompt("New password:");
+          let np =
+          prompt(t.newPassword);
+          //  prompt("New password:");
           localStorage.setItem("appPass", np);
-          alert("Changed!");
-        } else alert("Wrong!");
+          // alert("Changed!");
+          alert(t.changed);
+        } else 
+        alert(t.wrong);
+        // alert("Wrong!");
       }
 
       if (action === "2") {
-        let old = prompt("Enter password:");
+        let old =
+        prompt(t.enterPassword);
+        //  prompt("Enter password:");
         if (old === saved) {
           localStorage.removeItem("appPass");
-          alert("Removed!");
-        } else alert("Wrong!");
+          // alert("Removed!");
+          alert(t.removed);
+        } else
+        //  alert("Wrong!");
+        alert(t.wrong);
       }
 
+
       if (action === "3") {
-        let t = prompt("Enter password:");
-        alert(t === saved ? "Correct" : "Wrong");
+        let tt =
+        prompt(t.enterPassword);
+        //  prompt("Enter password:");
+        alert(tt === saved 
+        // ? "Correct"
+        //  : "Wrong");
+        ? t.correct
+: t.wrong);
+
       }
 
     }
@@ -5063,6 +5866,11 @@ ${historyHTML}<br><br>
 
     // SAVE SECURITY
     function saveSecurity() {
+            let lang =
+localStorage.getItem("appLang") || "en";
+
+let t =
+langData[lang];
       let data = {
         active: document.getElementById("securityActive").checked,
         overview: document.getElementById("lockOverview").checked,
@@ -5073,13 +5881,20 @@ ${historyHTML}<br><br>
       };
 
       localStorage.setItem("securityLock", JSON.stringify(data));
-      alert("Saved!");
+      // alert("Saved!");
+      alert(t.saved);
       closeSecurity();
     }
 
 
     // MAIN CHECK FUNCTION
     function checkAccess(page) {
+      
+  let lang =
+  localStorage.getItem("appLang") || "en";
+
+  let t =
+  langData[lang];
 
       let sec = JSON.parse(localStorage.getItem("securityLock")) || {};
       let pass = localStorage.getItem("appPass");
@@ -5087,11 +5902,12 @@ ${historyHTML}<br><br>
       if (!sec.active || !pass) return true;
       if (!sec[page]) return true;
 
-      let input = prompt("Enter password:");
+      let input = prompt(t.enterPassword);
+   
       if (input === pass) {
         return true;
       } else {
-        alert("Wrong password");
+        alert(t.wrong);
         return false;
       }
     }
@@ -5099,7 +5915,11 @@ ${historyHTML}<br><br>
 
 
     function checkLock(type) {
+let lang =
+localStorage.getItem("appLang") || "en";
 
+let t =
+langData[lang];
       let sec = JSON.parse(localStorage.getItem("securityLock"));
 
       // 👉 अगर security data नहीं है
@@ -5118,12 +5938,20 @@ ${historyHTML}<br><br>
         return true;   // ✔ ना alert, ना block
       }
 
-      let input = prompt("Enter Password:");
+      let input = prompt(t.enterPassword+":");
 
+        // ❌ Cancel dabaya
+  if (input === null) {
+
+    return false;
+
+  }
       if (input === pass) {
         return true;
-      } else {
-        alert("❌ Wrong Password");
+      } 
+      else {
+        // alert("❌ Wrong Password");
+        alert(t.wrongPassword);
         return false;
       }
     }
@@ -5132,6 +5960,9 @@ ${historyHTML}<br><br>
     // LANGUAGE DATA
     const langData = {
       en: {
+        wrongPassword:"❌ Wrong Password",
+
+        saved:"Saved!",
         overview: "Overview",
         add: "New Entry",
         notes: "Notes",
@@ -5379,17 +6210,158 @@ localDataStorage:"Local Data Storage",
 interestHistoryTracking:"Interest History Tracking",
 appType:"App Type",
 mode:"Mode",
-platform:"Platform"
+platform:"Platform",
+fullPaid:"✔ Full payment completed",
+askPaid:"Did money get deposited? (yes / no)",
+askAmount:"How much money deposited?",
+paid:"Deposited",
+paidForward:"Deposited and moved forward",
+notPaid:"❌ Money not deposited, full amount moved forward",
+continuedDone:"✅ Continued Successfully!",
+fullPaid:" Full Payment completed successfully",
+setPassword:"Set Password:",
 
+oldPassword:"Old Password:",
 
+newPassword:"New Password:",
+
+enterPassword:"Enter Password:",
+
+changed:"Password Changed!",
+
+removed:"Password Removed!",
+
+correct:"Correct Password",
+
+wrong:"Wrong Password",
+nothingUndo:"Nothing to undo",
+restoreDone:"♻️ First deleted restored (LIFO)",
+restoreItem:
+"♻️ Restore this item?",
+recycleCleared:
+"🗑️ Recycle bin cleared",
+deleteAllConfirm:
+"⚠️ Delete all permanently?",
+
+restoreAllDone:
+"♻️ All restored!",
+restoreAll:
+"♻️ Restore ALL items?",
+deleteEntry:"⚠️ Delete entry?",
+amountUpdated:"✅ Amount Updated",
+nameUpdated:"✅ Name Updated Successfully",
+
+rateUpdated:"✅ Rate Updated",
+
+rateGreater:"❌ Rate must be greater than 0!",
+
+selectStartDate:"❌ Select start date!",
+
+startDateUpdated:"✅ Start Date Updated",
+
+selectEndDate:"❌ Select end date!",
+
+endDateSmall:"❌ End date cannot be earlier than start date!",
+
+endDateUpdated:"✅ End Date Updated",
+
+numberRemoved:"✅ Number Removed",
+
+onlyNumber:"❌ Enter numbers only!",
+
+validMobile:"❌ Enter valid mobile number!",
+
+contactUpdated:"✅ Contact Updated",
+
+photoRemoved:"✅ Photo Removed",
+
+photoSaved:"✅ Photo Saved",
+
+permanentDeleted:"🗑️ Permanently deleted!",
+
+recycleMoved:"🗑️ Moved to recycle",
+mergeDone:"✅ Merged Successfully!",
+
+select2Kist:"⚠️ Select at least 2 installments!"
 
 
       },
 
-
-
-
       hi: {
+        mergeDone:"✅ मर्ज हो गया!",
+
+select2Kist:"⚠️ कम से कम 2 किस्त चुनो!",
+nameUpdated:"✅ नाम सफलतापूर्वक अपडेट हो गया",
+amountUpdated:"✅ राशि अपडेट हो गई",
+
+rateUpdated:"✅ ब्याज दर अपडेट हो गई",
+
+rateGreater:"❌ ब्याज दर 0 से बड़ी होनी चाहिए!",
+
+selectStartDate:"❌ प्रारंभ तिथि चुनें!",
+
+startDateUpdated:"✅ प्रारंभ तिथि अपडेट हो गई",
+
+selectEndDate:"❌ समाप्ति तिथि चुनें!",
+
+endDateSmall:"❌ समाप्ति तिथि प्रारंभ तिथि से छोटी नहीं हो सकती!",
+
+endDateUpdated:"✅ समाप्ति तिथि अपडेट हो गई",
+
+numberRemoved:"✅ नंबर हटा दिया गया",
+
+onlyNumber:"❌ केवल नंबर दर्ज करें!",
+
+validMobile:"❌ सही मोबाइल नंबर दर्ज करें!",
+
+contactUpdated:"✅ संपर्क अपडेट हो गया",
+
+photoRemoved:"✅ फोटो हटा दी गई",
+
+photoSaved:"✅ फोटो सेव हो गई",
+
+permanentDeleted:"🗑️ हमेशा के लिए हटा दिया गया!",
+
+recycleMoved:"🗑️ रीसायकल में भेज दिया गया",
+        deleteEntry:"⚠️ एंट्री हटानी है?",
+        restoreAll:
+"♻️ सभी आइटम वापस लाना चाहते हो?",
+
+        restoreAllDone:
+"♻️ सब वापस आ गया!",
+        recycleCleared:
+"🗑️ रीसायकल बिन खाली हो गया",
+deleteAllConfirm:
+"⚠️ सबको हमेशा के लिए डिलीट करना चाहते हो?",
+        restoreItem:
+"♻️ क्या इस आइटम को वापस लाना चाहते हो?",
+        restoreDone:"♻️ सबसे पहले डिलीट किया हुआ वापस आ गया (LIFO)",
+        nothingUndo:"Undo करने के लिए कुछ नहीं है",
+        wrongPassword:"❌ गलत पासवर्ड",
+        saved:"सेव हो गया!",
+        setPassword:"पासवर्ड सेट करें:",
+
+oldPassword:"पुराना पासवर्ड डालें:",
+
+newPassword:"नया पासवर्ड डालें:",
+
+enterPassword:"पासवर्ड डालें",
+
+changed:"पासवर्ड बदल दिया गया!",
+
+removed:"पासवर्ड हटा दिया गया!",
+
+correct:"सही पासवर्ड",
+
+wrong:"गलत पासवर्ड",
+        fullPaid:"पूरा भुगतान हो चुका है",
+        continuedDone:"✅ कंटिन्यू हो गया!",
+        fullPaid:"✔ पूरा पैसा जमा हो चुका है",
+askPaid:"क्या पैसा जमा किया? (yes / no)",
+askAmount:"कितना पैसा जमा किया?",
+paid:"जमा किया",
+paidForward:"जमा करके आगे बढ़ाया",
+notPaid:"❌ पैसा जमा नहीं किया, पूरा जोड़कर आगे बढ़ाया",
         appType:"ऐप टाइप",
 mode:"मोड",
 platform:"प्लेटफॉर्म",
@@ -5660,6 +6632,7 @@ lockMembers:"👥 सदस्य",
         endDate: "अंतिम तारीख",
         photo: "फोटो",
         save: "सेव करें",
+        
         selectKist: "मर्ज करने के लिए किस्त चुनें",
 
         merge: "मर्ज करें"
@@ -5982,11 +6955,13 @@ lockMembers:"👥 सदस्य",
       document.getElementById("mergeBoxPanel").style.display = "flex";
     }
     function mergeSelected() {
+       
+      let t =getText();
 
       let selected = document.querySelectorAll(".mergeBox:checked");
 
       if (selected.length < 2) {
-        alert("⚠️ कम से कम 2 kist select karo!");
+      alert(t.select2Kist);
         return;
       }
 
@@ -6045,7 +7020,7 @@ lockMembers:"👥 सदस्य",
 
       closeMergePanel();
 
-      alert("✅ Merge ho gaya!");
+  alert(t.mergeDone);
       closeMergePanel();
       openUser(userName);
     }
@@ -6349,6 +7324,7 @@ ${t.save || "Save"}
 
     function saveEditName() {
 
+      let t =getText();
       let newName =
         document.getElementById("editNameInput").value.trim();
 
@@ -6375,10 +7351,13 @@ ${t.save || "Save"}
       showAll();
       openUser(editUser);
 
-      alert("✅ Name Updated Successfully");
+      // alert("✅ Name Updated Successfully");
+      alert(t.nameUpdated);
     }
 
     function saveEditAmount() {
+
+          let t = getText();
 
       let input = document.getElementById("editAmountInput").value.trim();
       let value = parseFloat(input);
@@ -6403,15 +7382,17 @@ ${t.save || "Save"}
 
       user.entries[editIndex].amount = value;
 
-      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("users", JSON.stringify(users)); 
 
       showAll();
 
-      alert("✅ Amount Updated");
+  alert(t.amountUpdated);fg
     }
 
 
     function saveEditRate() {
+
+          let t = getText();
 
       let input = document.getElementById("editRateInput").value.trim();
       let value = parseFloat(input);
@@ -6423,7 +7404,7 @@ ${t.save || "Save"}
       }
 
       if (value <= 0) {
-        alert("❌ Rate 0 se bada hona chahiye!");
+     alert(t.rateGreater);
         return;
       }
 
@@ -6440,18 +7421,21 @@ ${t.save || "Save"}
 
       showAll();
 
-      alert("✅ Rate Updated");
+alert(t.rateUpdated);
+
     }
 
 
 
     function saveEditStart() {
 
+          let t = getText();
+
       let value = document.getElementById("editStartInput").value;
 
       // ❌ EMPTY CHECK WITH ALERT
       if (!value) {
-        alert("❌ Start date select karo!");
+       alert(t.selectStartDate);
         return;
       }
 
@@ -6469,15 +7453,17 @@ ${t.save || "Save"}
 
       showAll();
 
-      alert("✅ Start Date Updated");
+      alert(t.startDateUpdated);
     }
     function saveEditEnd() {
+
+          let t = getText();
 
       let value = document.getElementById("editEndInput").value;
 
       // ❌ EMPTY CHECK
       if (!value) {
-        alert("❌ End date select karo!");
+      alert(t.selectEndDate);
         return;
       }
 
@@ -6492,7 +7478,7 @@ ${t.save || "Save"}
 
       // ❌ LOGIC CHECK (important)
       if (start && new Date(value) < new Date(start)) {
-        alert("❌ End date start date se chhoti nahi ho sakti!");
+  alert(t.endDateSmall);
         return;
       }
 
@@ -6503,14 +7489,14 @@ ${t.save || "Save"}
       showAll();
 
 
-
-      alert("✅ End Date Updated");
+alert(t.endDateUpdated);
     }
     
    
 
     function saveEditContact() {
 
+          let t = getText();
       let input =
         document.getElementById(
           "editContactInput"
@@ -6544,7 +7530,7 @@ ${t.save || "Save"}
 
         openUser(editUser);
 
-        alert("✅ Number Removed");
+  alert(t.numberRemoved);
 
         return;
       }
@@ -6552,9 +7538,7 @@ ${t.save || "Save"}
       // ❌ ONLY NUMBER CHECK
       if (isNaN(input)) {
 
-        alert(
-          "❌ Sirf number enter karo!"
-        );
+      alert(t.onlyNumber);
 
         return;
       }
@@ -6562,9 +7546,7 @@ ${t.save || "Save"}
       // ❌ LENGTH CHECK
       if (input.length < 10) {
 
-        alert(
-          "❌ Valid mobile number enter karo!"
-        );
+alert(t.validMobile);
 
         return;
       }
@@ -6584,13 +7566,13 @@ ${t.save || "Save"}
 
       openUser(editUser);
 
-      alert(
-        "✅ Contact Updated"
-      );
+    alert(t.contactUpdated);
 
     }
 
     function saveUserPhoto() {
+
+    let t = getText();
 
       let file =
         document.getElementById(
@@ -6623,7 +7605,8 @@ ${t.save || "Save"}
 
         openUser(editUser);
 
-        alert("✅ Photo Removed");
+alert(t.photoRemoved);
+
 
         return;
       }
@@ -6643,7 +7626,7 @@ ${t.save || "Save"}
 
         openUser(editUser);
 
-        alert("✅ Photo Saved");
+      alert(t.photoSaved);
 
       };
 
@@ -6652,6 +7635,7 @@ ${t.save || "Save"}
     }
 
     function removeUserPhoto() {
+
 
       let lang =
         localStorage.getItem("appLang") || "en";
@@ -6691,8 +7675,9 @@ ${t.save || "Save"}
 
 
     function permanentDelete(id) {
+      let t = getText();
 
-      if (!confirm("⚠️ Permanently delete?"))
+      if (!confirm(t.permanentDeleted))
         return;
 
       let recycle = getRecycle();
@@ -6709,7 +7694,8 @@ ${t.save || "Save"}
         JSON.stringify(recycle)
       );
 
-      alert("🗑️ Permanently deleted!");
+      alert(t.permanentDeleted);
+
 
       openRecycleBin(true);
     }
@@ -6717,7 +7703,9 @@ ${t.save || "Save"}
     // let lastDeleted = null;
     function deleteEntry(name, index) {
 
-      if (!confirm("⚠️ Delete entry?")) return;
+      let t = getText();
+
+    if (!confirm(t.deleteEntry)) return;
 
       let user = users.find(u => u.name === name);
       if (!user) return;
@@ -6738,16 +7726,23 @@ ${t.save || "Save"}
 
       localStorage.setItem("users", JSON.stringify(users));
 
-      alert("🗑️ Moved to recycle");
+     alert(t.recycleMoved);
 
       openUser(name);
     }
     function undoDelete() {
+        let lang =
+  localStorage.getItem("appLang") || "en";
 
+  let t =
+  langData[lang];
+
+      
       let recycle = getRecycle();
 
       if (!recycle.length) {
-        alert("Nothing to undo");
+        // alert("Nothing to undo");
+          alert(t.nothingUndo);
         return;
       }
 
@@ -6803,7 +7798,8 @@ ${t.save || "Save"}
       localStorage.setItem("notes", JSON.stringify(notes));
       localStorage.setItem("recycle", JSON.stringify(recycle));
 
-      alert("♻️ First deleted restored (LIFO)");
+      // alert("♻️ First deleted restored (LIFO)");
+      alert(t.restoreDone);
 
       openRecycleBin(true);
     }
@@ -6839,7 +7835,36 @@ ${t.save || "Save"}
 
       let title = document.getElementById("recycleTitle");
 
-      let html = `
+//       let html = `
+// <input
+// type="text"
+// id="recycleSearch"
+// placeholder="${t.recycleSearch}"
+// onkeyup="filterRecycleBin()" />
+
+// <br><br>
+
+
+//     <button class="undo-btn" onclick="undoDelete()">
+//       ${t.undoDelete || "↩️ Undo Last Delete"}
+//     </button>
+
+//   <button class="restore-btn"
+// onclick="restoreAllDeleted()">
+
+// ${t.restoreAll}
+
+// </button>
+
+//     <button class="delete-btn" onclick="emptyRecycleBin()" id="btnEmptyBin">
+//       🗑️ ${t.emptyBin || "Empty Bin"}
+//     </button>
+
+//     <br><br>
+//   `;
+
+let html = `
+
 <input
 type="text"
 id="recycleSearch"
@@ -6848,24 +7873,38 @@ onkeyup="filterRecycleBin()" />
 
 <br><br>
 
+<div class="recycle-btn-row">
 
-    <button onclick="undoDelete()">
-      ${t.undoDelete || "↩️ Undo Last Delete"}
-    </button>
+<button
+class="recycle-action-btn undo-btn"
+onclick="undoDelete()">
 
-  <button
+${t.undoDelete || "↩️ Undo Last Deleted"}
+
+</button>
+
+<button
+class="recycle-action-btn restore-btn"
 onclick="restoreAllDeleted()">
 
 ${t.restoreAll}
 
 </button>
 
-    <button onclick="emptyRecycleBin()" id="btnEmptyBin">
-      🗑️ ${t.emptyBin || "Empty Bin"}
-    </button>
+<button
+class="recycle-action-btn delete-btn"
+onclick="emptyRecycleBin()"
+id="btnEmptyBin">
 
-    <br><br>
-  `;
+🗑️ ${t.emptyBin || "Empty Bin"}
+
+</button>
+
+</div>
+
+<br><br>
+
+`;
 
       // =========================
       // 🔥 SINGLE LOOP FIX (IMPORTANT)
@@ -7001,9 +8040,22 @@ ${t.restoreAll}
 
 
 
-    function restoreAllDeleted() {
+function getText(){
 
-      if (!confirm("♻️ Restore ALL items?")) return;
+let lang =
+localStorage.getItem("appLang") || "en";
+
+return langData[lang];
+
+}
+    function restoreAllDeleted() {
+        
+      let t =getText();
+
+      if (!confirm(
+        // "♻️ Restore ALL items?"
+        t.restoreAll
+      )) return;
 
       let recycle = getRecycle();
 
@@ -7055,7 +8107,10 @@ ${t.restoreAll}
       localStorage.setItem("notes", JSON.stringify(notes));
       localStorage.setItem("recycle", JSON.stringify(recycle));
 
-      alert("♻️ All restored!");
+      // alert("♻️ All restored!");
+alert(
+t.restoreAllDone
+);
 
       openRecycleBin(true);
       showAll();
@@ -7071,12 +8126,13 @@ ${t.restoreAll}
 
 
     function emptyRecycleBin() {
+      let t= getText();
 
-      if (!confirm("⚠️ Delete all permanently?")) return;
+      if (!confirm(t.deleteAllConfirm)) return;
 
       localStorage.removeItem("recycle");
 
-      alert("🗑️ Recycle bin cleared");
+      alert(t.recycleCleared);
 
       openRecycleBin(true);
     }
@@ -7093,7 +8149,8 @@ ${t.restoreAll}
 
     function restoreRecycle(id) {
 
-      if (!confirm("♻️ Restore this item?"))
+      let t=getText();
+      if (!confirm(t.restoreItem))
         return;
 
       let recycle = getRecycle();
@@ -7213,17 +8270,23 @@ ${t.restoreAll}
     <div style="
       line-height:1.8;
       margin-bottom:40px;
+
     ">
+      
 
-      <h2 style="text-align:center;">
+      <h2 class="app-info-header" style="text-align:center;">
         📱 Ledger Pro
-      </h2>
+      <hr>
 
+      </h2>
+      
+ 
+  
       <p style="text-align:center;">
         ${t.appAbout}
       </p>
 
-      <hr>
+    
 
       <h3>✨ ${t.features}</h3>
 <p>🎨 ${t.themeCustomization}</p>
@@ -7350,7 +8413,8 @@ Open Repository
         Made with ❤️ by Ashish Gurjar
 
       </p>
-
+        <p class="radhe">Radhe Radhe</p>
+      
     </div>
   `;
 
@@ -7514,7 +8578,7 @@ Open Repository
 
 
     // 🟢 STEP 2
-    function doAction(action) {
+    async function doAction(action) {
 
       let lang =
         localStorage.getItem("appLang") || "en";
@@ -7525,18 +8589,60 @@ Open Repository
       let title = selectedType;
 
       if (action === "save") {
-        if (!confirm("💾 Save this report?")) return;
+       if (!confirm(t.saveConfirm)) return;
         saveReport(title, content);
-        alert("💾 Saved Successfully");
+
+    alert(t.savedSuccess);
 
       }
 
       else if (action === "share") {
 
-        navigator.share?.({
-          title: title,
-          text: content
-        });
+        // navigator.share?.({
+        //   title: title,
+        //   text: content
+        // });
+
+        let temp =
+document.createElement("div");
+
+temp.innerHTML =
+previewData;
+
+// remove buttons
+temp.querySelectorAll("button")
+.forEach(btn=>btn.remove());
+
+// clean text
+let cleanText =
+temp.innerText;
+
+try {
+
+  await navigator.share({
+
+    title: title,
+
+    text:
+      cleanText +
+
+      "\n\n📅 " +
+
+      Date.now()
+
+  });
+
+} catch(err){
+
+  if(err.name !== "AbortError"){
+
+  console.log(err);
+
+  alert("Sharing failed");
+
+}
+
+}
 
       }
 
@@ -7556,6 +8662,7 @@ Open Repository
 
     function saveReport(title, html) {
 
+      
 
 
       let savedReports =
@@ -7691,6 +8798,7 @@ Open Repository
     }
 
     function showStorage() {
+      let t =getText();
 
       savedReports = JSON.parse(localStorage.getItem("savedReports")) || [];
 
@@ -7701,6 +8809,25 @@ Open Repository
 
       box.innerHTML = "";
 
+       //  Empty storage
+  if(savedReports.length===0){
+
+    box.innerHTML=`
+    <div style="
+    padding:20px;
+    text-align:center;
+    color:#777;
+    font-size:15px;
+    ">
+
+    📂 No Saved Reports
+
+    </div>
+    `;
+
+    return;
+
+  }
       savedReports.forEach((r, i) => {
 
         box.innerHTML += `
@@ -7716,9 +8843,9 @@ Open Repository
 
     <div class="actions">
 
-    <button class="pdfviewBtn"  onclick="viewReport(${i})">👁️ view </button>
-    <button class="pdfshareBtn" onclick="shareReport(${i})">📤 Share</button>
-    <button class="pdfremoveBtn" onclick="deleteReport(${i})">🗑️ Remove </button>
+    <button class="pdfviewBtn"  onclick="viewReport(${i})"> ${t.view}</button>
+    <button class="pdfshareBtn" onclick="shareReport(${i})"> ${t.share}</button>
+    <button class="pdfremoveBtn" onclick="deleteReport(${i})"> ${t.remove}</button>
 
     </div>
 
@@ -7794,36 +8921,140 @@ Open Repository
       showStorage();
     }
 
-    function shareReport(index) {
+    // function shareReport(index) {
 
-      savedReports = JSON.parse(localStorage.getItem("savedReports")) || [];
+    //   savedReports = JSON.parse(localStorage.getItem("savedReports")) || [];
 
-      let report = savedReports[index];
+    //   let report = savedReports[index];
 
-      if (!report) {
-        alert("Report not found");
-        return;
-      }
+    //   if (!report) {
+    //     alert("Report not found");     //// apna vala 
+    //     return;
+    //   }
 
-      let text =
-        `📄 ${report.title}\n\n` +
-        `📌 Open this report in app`;
+    //   let text =
+    //     `📄 ${report.title}\n\n` +
+    //     `📌 Open this report in app`;
 
-      if (navigator.share) {
+    //   if (navigator.share) {
 
-        navigator.share({
-          title: report.title,
-          text: text,
-          url: location.href   // 🔥 IMPORTANT: link add
-        });
+    //     navigator.share({
+    //       title: report.title,
+    //       text: text,
+    //       url: location.href   // 🔥 IMPORTANT: link add
+    //     });
 
-      } else {
+    //   } else {
 
-        navigator.clipboard.writeText(text + "\n" + location.href);
-        alert("📋 Copied to clipboard");
-      }
-    }
+    //     navigator.clipboard.writeText(text + "\n" + location.href);
+    //     alert("📋 Copied to clipboard");
+    //   }
+    // }
 
+
+
+// async function shareReport(index){
+
+//   let savedReports =
+//   JSON.parse(
+//     localStorage.getItem("savedReports")
+//   ) || [];
+
+//   let report =
+//   savedReports[index];             ////  second  vala 
+
+//   if(!report){
+
+//     alert("Report not found");
+
+//     return;
+//   }
+
+//   let temp =
+//   document.createElement("div");
+
+//   temp.innerHTML =
+//   report.html;
+
+//   // remove buttons
+//   temp.querySelectorAll("button")
+//   .forEach(btn=>btn.remove());
+
+//   // clean text
+//   let cleanText =
+//   temp.innerText;
+
+//   try{
+
+//     await navigator.share({
+
+//       title: report.title,
+
+//       text:
+//       cleanText +
+
+//       "\n\n📅 " +
+
+//       Date.now()
+
+//     });
+
+//   }catch(err){
+
+//     if(err.name !== "AbortError"){
+
+//   console.log(err);
+
+//   alert("Sharing failed");
+
+// }
+
+//   }
+
+// }
+//////////////////////////////////////////
+async function shareReport(index){
+
+ let savedReports =
+ JSON.parse(
+ localStorage.getItem("savedReports")
+ ) || [];
+
+ let report =
+ savedReports[index];
+
+ if(!report){
+
+   alert("Report not found");
+   return;
+
+ }
+
+ try{
+
+   await navigator.share({
+
+     title: report.title,
+
+     text:
+     `📄 ${report.title}\n\nOpen this report in app`,
+
+     url: location.href
+
+   });
+
+ }catch(err){
+
+   if(err.name!=="AbortError"){
+
+     console.log(err);
+
+   }
+
+ }
+
+}
+    
     async function generatePDF(htmlContent, fileName) {
 
       let temp = document.createElement("div");
@@ -8556,6 +9787,10 @@ let security=
 document.getElementById(
 "securityPopup"
 );
+let storage =
+document.getElementById(
+"storagePopup"
+);
 
 let isOpen=
 menu.classList.contains(
@@ -8577,7 +9812,9 @@ isOpen &&
 
 !recycle.contains(e.target)&&
 
-!security.contains(e.target)
+!security.contains(e.target)&&
+
+!storage.contains(e.target)
 
 ){
 
