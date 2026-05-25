@@ -716,16 +716,30 @@ validEmail:
       }
       let emailPattern =
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (!emailPattern.test(email)) {
-
-        let lang =
+        
+          let lang =
 localStorage.getItem(
 "appLang"
 ) || "en";
 
 let t =
 langData[lang];
+
+        if(email !== email.toLowerCase()){
+  
+
+message.innerHTML =
+t.validEmail;
+
+message.style.color =
+"red";
+
+return;
+
+}
+      if (!emailPattern.test(email)) {
+
+       
 
 message.innerHTML =
 t.validEmail;

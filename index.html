@@ -4273,6 +4273,8 @@ cursor:pointer;
     }
     function toggleMembers() {
 
+      let t=getText();
+
       let box = document.getElementById("members");
 
       // 👉 अगर already open है → close (NO password)
@@ -4283,6 +4285,28 @@ cursor:pointer;
 
       // 👉 open करने से पहले password check
       if (!checkLock("members")) return;
+
+      // No members
+if(users.length === 0){
+
+box.style.display = "block";
+
+box.innerHTML = `
+<div style="
+padding:15px;
+text-align:center;
+font-weight:bold;
+color:red;
+">
+
+${t.noMember}
+
+</div>
+`;
+
+return;
+
+}
 
       // 👉 अब open करो
       box.style.display = "block";
@@ -6282,12 +6306,14 @@ permanentDeleted:"🗑️ Permanently deleted!",
 recycleMoved:"🗑️ Moved to recycle",
 mergeDone:"✅ Merged Successfully!",
 
-select2Kist:"⚠️ Select at least 2 installments!"
+select2Kist:"⚠️ Select at least 2 installments!",
+noMember:"❌ No Member Found"
 
 
       },
 
       hi: {
+        noMember:"❌ कोई सदस्य नहीं है",
         mergeDone:"✅ मर्ज हो गया!",
 
 select2Kist:"⚠️ कम से कम 2 किस्त चुनो!",
