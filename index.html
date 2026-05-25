@@ -4995,11 +4995,15 @@ font-size:22px;
         let tt = calculate(e.start, endDateToShow);
 
         let displayAmount = e.amount;
-        let currentInterest = (displayAmount * e.rate * tt.total) / 100;
+
+        let interestAmount =
+Math.floor(displayAmount / 100) * 100;
+
+        let currentInterest = (interestAmount * e.rate * tt.total) / 100;
 
         let currentTotal = displayAmount + currentInterest;
         let remain = currentTotal - e.paid;
-        let daily = (displayAmount * e.rate) / (100 * 30);
+        let daily = (interestAmount * e.rate) / (100 * 30);
 
         // History
         let historyHTML = "";
