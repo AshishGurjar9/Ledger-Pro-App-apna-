@@ -4746,14 +4746,75 @@ font-size:22px;
 `;
     }
 
-    function calculate(start, end) {
-      let d1 = new Date(start);
-      let d2 = new Date(end);
-      let days = (d2 - d1) / (1000 * 60 * 60 * 24);
-      let months = Math.floor(days / 30);
-      let remDays = Math.floor(days % 30);
-      return { months, remDays, total: days / 30 };
-    }
+    // function calculate(start, end) {
+    //   let d1 = new Date(start);
+    //   let d2 = new Date(end);
+    //   let days = (d2 - d1) / (1000 * 60 * 60 * 24);
+    //   let months = Math.floor(days / 30);
+    //   let remDays = Math.floor(days % 30);
+    //   return { months, remDays, total: days / 30 };
+    // }
+    function calculate(start,end){
+
+let s =
+new Date(start);
+
+let e =
+new Date(end);
+
+let months = 0;
+
+let temp =
+new Date(s);
+
+while(true){
+
+let next =
+new Date(temp);
+
+next.setMonth(
+next.getMonth()+1
+);
+
+if(next<=e){
+
+months++;
+
+temp=next;
+
+}else{
+
+break;
+
+}
+
+}
+
+let remDays =
+Math.floor(
+
+(e-temp)/
+(1000*60*60*24)
+
+);
+
+let total =
+months +
+(remDays/30);
+
+return{
+
+months,
+remDays,
+total,
+
+monthLabel:"months",
+
+dayLabel:"days"
+
+};
+
+}
 
     function saveEntry() {
       document.getElementById("formPopup").style.display = "none";
@@ -5154,7 +5215,16 @@ calculate(
 entry.start,
 continueDate
 );
-        let currentInterest = (displayAmount * entry.rate * tt.total) / 100;
+        // let currentInterest = (displayAmount * entry.rate * tt.total) / 100;
+        let interestAmount =
+Math.floor(displayAmount / 100) * 100;
+
+let currentInterest =
+(
+interestAmount *
+entry.rate *
+tt.total
+) / 100;
         let currentTotal = displayAmount + currentInterest;
         let remaining = currentTotal - entry.paid;
 
