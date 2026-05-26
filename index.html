@@ -5146,7 +5146,14 @@ langData[lang];
 
         // Calculate remaining on current amount
         let displayAmount = entry.amount;
-        let tt = calculate(entry.start, todayStr);
+        // let tt = calculate(entry.start, todayStr);  ye 
+        let continueDate = entry.endDate || todayStr;
+
+let tt =
+calculate(
+entry.start,
+continueDate
+);
         let currentInterest = (displayAmount * entry.rate * tt.total) / 100;
         let currentTotal = displayAmount + currentInterest;
         let remaining = currentTotal - entry.paid;
@@ -5196,7 +5203,9 @@ langData[lang];
           entry.total = parseFloat(currentTotal.toFixed(2));
 
           // Set end date to today (when jama was done)
-          entry.endDate = todayStr;
+          // entry.endDate = todayStr;   ye 
+          entry.endDate =
+continueDate;
 
           entry.status =
           //  `✔ ₹${paidAmount} जमा किया`;
@@ -5227,7 +5236,8 @@ langData[lang];
           amount: newAmount,
           originalAmount: newAmount,
           rate: entry.rate,
-          start: todayStr, // Current date as start
+          // start: todayStr, // Current date as start    ye
+          start: continueDate,
           endDate: null, // End date will be set when jama is done
           months: 0,
           days: 0,
@@ -5633,7 +5643,8 @@ white-space:nowrap;
         notes.push({
           text: text,
           image: img || null,
-          date: todayStr
+          // date: todayStr   ye 
+          date: continueDate
         });
 
         localStorage.setItem("notes", JSON.stringify(notes));
